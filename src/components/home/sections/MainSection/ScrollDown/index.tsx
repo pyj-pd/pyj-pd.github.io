@@ -4,7 +4,7 @@ import { syneFont } from '@/styles/fonts'
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 
-const SCROLL_DOWN_TEXT_NUMBER = 10
+const SCROLL_DOWN_TEXT_NUMBER = 30
 
 export default function ScrollDown() {
   return (

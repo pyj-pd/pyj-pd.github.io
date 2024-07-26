@@ -1,0 +1,17 @@
+@use '@/styles/palette' as palette;
+
+:export {
+  black: palette.$black;
+  gray: palette.$gray;
+  white: palette.$white;
+
+  typescriptBlue: palette.$typescript-blue;
+  reactCyan: palette.$react-cyan;
+  vueGreen: palette.$vue-green;
+
+  green: palette.$green;
+  yellow: palette.$yellow;
+  blue: palette.$blue;
+  purple: palette.$purple;
+  cyan: palette.$cyan;
+}

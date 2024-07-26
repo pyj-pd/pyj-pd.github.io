@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import { CSSProperties, ReactNode } from 'react'
 
-interface WipeTextProps {
+type WipeTextProps = {
   children?: ReactNode
   index: number
 }

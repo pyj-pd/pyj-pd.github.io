@@ -1,0 +1,47 @@
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
+
+.tech-stack-section {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding: 100px 0;
+}
+
+$border-gap: 7px;
+
+.tech-stack-container {
+  background-color: palette.$black;
+
+  padding: $border-gap 0;
+
+  width: 100%;
+
+  user-select: none;
+  cursor: grab;
+
+  overflow: hidden;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.drag-container {
+  width: fit-content;
+}
+
+.drag-view {
+  display: flex;
+  flex-direction: column;
+  gap: $border-gap;
+}
+
+.tech-stack-row {
+  display: flex;
+  gap: $border-gap;
+
+  height: 170px;
+}

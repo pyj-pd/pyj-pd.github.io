@@ -1,0 +1,19 @@
+@use '@/styles/palette' as palette;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+
+  background-color: palette.$white;
+  color: palette.$black;
+}
+
+::selection {
+  background-color: palette.$black;
+  color: palette.$white;
+}

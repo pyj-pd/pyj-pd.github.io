@@ -1,0 +1,38 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: value.$view-padding;
+
+  font-size: 4.5vw;
+  text-transform: uppercase;
+}
+
+.highlighted-text {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 60%;
+
+    background-color: palette.$green;
+    border-radius: 100%;
+
+    mix-blend-mode: exclusion;
+  }
+}

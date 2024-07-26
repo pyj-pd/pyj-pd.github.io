@@ -1,0 +1,17 @@
+@use '@/styles/palette' as palette;
+
+.wipe-text-container {
+  animation: wipe-animation 0.7s 1 both linear;
+  animation-delay: calc(var(--i) * 0.3s);
+
+  background-color: palette.$white;
+}
+
+@keyframes wipe-animation {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}

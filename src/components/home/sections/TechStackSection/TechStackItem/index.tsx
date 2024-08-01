@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { syneFont } from '@/styles/fonts'
 import { CSSProperties } from 'react'
-import { TechStack } from '@/constants/techstack'
+import { type TechStackItem } from '@/constants/section-data/tech-stacks'
 
-type TechStackItemProps = TechStack
+type TechStackItemProps = TechStackItem
 
 export default function TechStackItem({
   name,

@@ -1,0 +1,7 @@
+@use '@/styles/value' as value;
+
+.project-section {
+  width: 100%;
+
+  padding: value.$section-padding;
+}

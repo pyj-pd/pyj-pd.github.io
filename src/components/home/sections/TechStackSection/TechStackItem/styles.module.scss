@@ -1,5 +1,6 @@
 @use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
+@use '@/styles/fontsize' as fontsize;
 
 .tech-stack-item-container {
   display: flex;
@@ -21,7 +22,7 @@
 .tech-name {
   display: block;
 
-  font-size: 4rem;
+  font-size: fontsize.$extra-large;
   text-transform: uppercase;
   letter-spacing: value.$letter-spacing;
   font-weight: 700;

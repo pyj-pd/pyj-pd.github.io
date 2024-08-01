@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import { CSSProperties, ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 type WipeTextProps = {
   children?: ReactNode

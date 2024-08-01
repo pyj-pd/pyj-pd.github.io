@@ -1,4 +1,7 @@
-import { TechStackId } from './tech-stacks'
+import type { TechStackId } from './tech-stacks'
+
+export const PATTERN_IMAGE_PATH = '/patterns/',
+  PATTERN_IMAGE_EXT = '.svg'
 
 /** @todo add project demo video */
 export type ProjectItem = {

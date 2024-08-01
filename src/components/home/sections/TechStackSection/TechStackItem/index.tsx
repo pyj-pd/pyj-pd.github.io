@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { syneFont } from '@/styles/fonts'
-import { CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 import { type TechStackItem } from '@/constants/section-data/tech-stacks'
 
 type TechStackItemProps = TechStackItem

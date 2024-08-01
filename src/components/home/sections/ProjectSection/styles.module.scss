@@ -1,7 +1,18 @@
+@use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
 
 .project-section {
   width: 100%;
 
   padding: value.$section-padding;
+
+  background-color: palette.$black;
+  color: palette.$white;
+}
+
+.project-list-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
 }

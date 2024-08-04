@@ -7,6 +7,12 @@
   align-items: center;
 
   padding: 50px value.$view-padding;
+
+  @media screen and (max-width: value.$small-screen-width) {
+    & {
+      padding: 50px value.$small-screen-padding;
+    }
+  }
 }
 
 .square {

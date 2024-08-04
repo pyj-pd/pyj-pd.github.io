@@ -15,7 +15,7 @@ export default function SectionTitle({ children }: SectionTitleProps) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end 80%', 'start 20%'],
+    offset: ['end 80%', 'start 30%'],
   })
 
   const clipPath = useTransform(

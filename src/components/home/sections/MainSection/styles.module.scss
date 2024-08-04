@@ -12,7 +12,13 @@
 
   padding: value.$view-padding;
 
-  font-size: 4.5vw;
+  @media screen and (max-width: value.$small-screen-width) {
+    & {
+      padding: value.$view-padding value.$small-screen-padding;
+    }
+  }
+
+  font-size: 5vw;
   letter-spacing: value.$letter-spacing;
   text-transform: uppercase;
 }

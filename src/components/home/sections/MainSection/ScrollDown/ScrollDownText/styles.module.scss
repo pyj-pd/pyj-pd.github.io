@@ -1,0 +1,29 @@
+@use '@/styles/value' as value;
+@use '@/styles/fontsize' as fontsize;
+
+.text-container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.text {
+  display: block;
+
+  font-size: fontsize.$large;
+  font-weight: 700;
+  letter-spacing: value.$letter-spacing;
+  text-transform: uppercase;
+}
+
+.circle {
+  display: block;
+
+  width: 18px;
+  height: 14px;
+  border-radius: 100%;
+
+  margin: 0 16px;
+
+  background-color: currentColor;
+}

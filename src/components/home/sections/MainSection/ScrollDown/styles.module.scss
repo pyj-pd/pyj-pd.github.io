@@ -21,7 +21,7 @@
 .animation-area {
   display: flex;
 
-  animation: scroll-animation 25s infinite both linear;
+  animation: scroll-animation var(--duration) infinite both linear;
 }
 
 @keyframes scroll-animation {
@@ -31,31 +31,4 @@
   100% {
     transform: translateX(-50%);
   }
-}
-
-.text-container {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.scroll-down-text {
-  display: block;
-
-  font-size: fontsize.$large;
-  font-weight: 700;
-  letter-spacing: value.$letter-spacing;
-  text-transform: uppercase;
-}
-
-.circle {
-  display: block;
-
-  width: 18px;
-  height: 14px;
-  border-radius: 100%;
-
-  margin: 0 16px;
-
-  background-color: currentColor;
 }

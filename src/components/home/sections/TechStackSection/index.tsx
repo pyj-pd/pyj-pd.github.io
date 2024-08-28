@@ -7,6 +7,7 @@ import { techStackList } from '@/constants/section-data/tech-stacks'
 import { motion } from 'framer-motion'
 import { useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
+import { customEase } from '@/constants/animation'
 
 export default function TechStackSection() {
   const dragRef = useRef<HTMLDivElement>(null)
@@ -62,11 +63,28 @@ export default function TechStackSection() {
           ))}
         </motion.div>
         {!hasClicked && (
-          <div className={styles['drag-text-container']}>
+          <motion.div
+            className={styles['drag-text-container']}
+            initial={{
+              clipPath: 'polygon(-20% 0%, 0% 0%, -10% 100%, -20% 100%)',
+            }}
+            whileInView={{
+              clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+            }}
+            viewport={{
+              margin: '-50%',
+              once: true,
+            }}
+            transition={{
+              ease: customEase,
+              duration: 0.3,
+              delay: 0.2,
+            }}
+          >
             <span className={styles['drag-arrow']} />
             <span>Try dragging</span>
             <span className={classNames(styles['drag-arrow'], styles.right)} />
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

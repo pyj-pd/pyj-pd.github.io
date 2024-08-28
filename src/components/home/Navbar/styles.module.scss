@@ -19,9 +19,9 @@
   padding: 0 value.$view-padding;
 
   @media screen and (max-width: value.$small-screen-width) {
-    & {
-      padding: 0 calc(value.$view-padding / 2);
-    }
+    height: 60px;
+
+    padding: 0 calc(value.$view-padding / 2);
   }
 }
 
@@ -38,6 +38,8 @@
 .logo-container {
   display: flex;
   flex-direction: column;
+
+  color: palette.$white;
 }
 
 .logo-container > span {

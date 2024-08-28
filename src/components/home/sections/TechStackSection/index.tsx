@@ -6,7 +6,6 @@ import TechStackItem from './TechStackItem'
 import { techStackList } from '@/constants/section-data/tech-stacks'
 import { motion } from 'framer-motion'
 import { useLayoutEffect, useRef, useState } from 'react'
-import { archivoFont } from '@/styles/fonts'
 import classNames from 'classnames'
 
 export default function TechStackSection() {
@@ -65,7 +64,7 @@ export default function TechStackSection() {
         {!hasClicked && (
           <div className={styles['drag-text-container']}>
             <span className={styles['drag-arrow']} />
-            <span className={archivoFont.className}>Try scrolling</span>
+            <span>Try dragging</span>
             <span className={classNames(styles['drag-arrow'], styles.right)} />
           </div>
         )}

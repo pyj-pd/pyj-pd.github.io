@@ -1,8 +1,6 @@
 'use client'
 
-import classNames from 'classnames'
 import styles from './styles.module.scss'
-import { archivoFont } from '@/styles/fonts'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -34,7 +32,7 @@ export default function SectionTitle({ children }: SectionTitleProps) {
         style={{
           clipPath: clipPath,
         }}
-        className={classNames(archivoFont.className, styles.title)}
+        className={styles.title}
       >
         {children}
       </motion.span>

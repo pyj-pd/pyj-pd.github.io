@@ -8,7 +8,7 @@
   --f-content: 1.5rem;
   --f-small: 1rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: value.$small-screen-width) {
     --f-x-large: 3rem;
     --f-large: 2rem;
     --f-medium: 1.5rem;

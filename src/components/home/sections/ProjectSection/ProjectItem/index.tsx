@@ -1,3 +1,6 @@
+'use client'
+
+import { customEase } from '@/constants/animation'
 import styles from './styles.module.scss'
 import {
   PATTERN_IMAGE_EXT,
@@ -7,6 +10,7 @@ import {
 import { syneFont, tiny5Font } from '@/styles/fonts'
 import { getTechStackData } from '@/utils/tech-stacks'
 import classNames from 'classnames'
+import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 
 type ProjectItemProps = {
@@ -24,10 +28,25 @@ export default function ProjectItem({ data, alignToRight }: ProjectItemProps) {
   )
 
   return (
-    <div
+    <motion.div
       className={classNames(styles['project-item-container'], {
         [styles['align-to-right']]: alignToRight,
       })}
+      initial={{ scale: 0.9, opacity: 0, y: 30 }}
+      whileInView={{
+        scale: 1,
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        margin: '-30%',
+        once: true,
+      }}
+      transition={{
+        ease: customEase,
+        duration: 2,
+        opacity: { duration: 0 },
+      }}
     >
       <div
         className={styles['pattern-image']}
@@ -60,6 +79,6 @@ export default function ProjectItem({ data, alignToRight }: ProjectItemProps) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

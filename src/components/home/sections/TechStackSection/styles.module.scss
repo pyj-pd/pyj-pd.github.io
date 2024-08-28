@@ -13,6 +13,8 @@
 $border-gap: 7px;
 
 .tech-stack-container {
+  position: relative;
+
   background-color: palette.$black;
 
   padding: $border-gap 0;
@@ -43,4 +45,71 @@ $border-gap: 7px;
   gap: $border-gap;
 
   height: calc(var(--f-large) * 4);
+}
+
+// Drag text
+.drag-text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(palette.$black, 80%);
+  color: palette.$white;
+
+  pointer-events: none;
+
+  font-size: var(--f-medium);
+  text-align: center;
+}
+
+$arrow-border-width: value.$slim-border-width;
+$arrow-size: 20px;
+
+.drag-arrow {
+  & {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 100px;
+    height: $arrow-border-width;
+
+    background-color: currentColor;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+
+    width: $arrow-size;
+    height: $arrow-size;
+
+    border: solid currentColor;
+  }
+
+  &:not(.right)::after {
+    // Left arrow
+    left: $arrow-border-width;
+
+    border-width: 0 0 $arrow-border-width $arrow-border-width;
+  }
+
+  &.right::after {
+    // Right arrow
+    right: $arrow-border-width;
+
+    border-width: $arrow-border-width $arrow-border-width 0 0;
+  }
 }

@@ -1,6 +1,5 @@
 @use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
-@use '@/styles/fontsize' as fontsize;
 
 .tech-stack-item-container {
   display: flex;
@@ -8,12 +7,15 @@
 
   height: 100%;
 
-  padding: 0 200px;
+  padding: 0 150px;
 
   background-color: palette.$gray;
   color: palette.$black;
 
-  &:hover {
+  white-space: nowrap;
+
+  &:hover,
+  &:active {
     background-color: var(--background-color);
     color: var(--text-color);
   }
@@ -22,7 +24,7 @@
 .tech-name {
   display: block;
 
-  font-size: fontsize.$extra-large;
+  font-size: var(--f-large);
   text-transform: uppercase;
   letter-spacing: value.$letter-spacing;
   font-weight: 700;

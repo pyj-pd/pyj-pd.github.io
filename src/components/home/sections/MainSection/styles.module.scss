@@ -2,6 +2,8 @@
 @use '@/styles/palette' as palette;
 
 .main-section {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 }
@@ -13,11 +15,9 @@
   padding: value.$view-padding;
 
   @media screen and (max-width: value.$small-screen-width) {
-    & {
-      padding: value.$view-padding value.$small-screen-padding;
+    padding: value.$view-padding value.$small-screen-padding;
 
-      font-size: 6vw;
-    }
+    font-size: 6vw;
   }
 
   font-size: 5vw;

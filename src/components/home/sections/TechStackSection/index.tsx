@@ -32,7 +32,7 @@ export default function TechStackSection() {
 
   return (
     <section className={styles['tech-stack-section']}>
-      <SectionTitle>I am capable of</SectionTitle>
+      <SectionTitle>I am capable of using...</SectionTitle>
       <div className={styles['tech-stack-container']}>
         <motion.div
           className={styles['drag-view']}

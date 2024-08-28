@@ -62,6 +62,22 @@ export const techStackList = [
       textColor: palette.white,
     },
   ],
+  [
+    {
+      id: 'framer-motion',
+      name: 'Framer Motion',
+
+      backgroundColor: palette.black,
+      textColor: palette.purple,
+    },
+    {
+      id: 'scss',
+      name: 'SCSS',
+
+      backgroundColor: palette.white,
+      textColor: palette.pink,
+    },
+  ],
 ] as const satisfies TechStackItem[][]
 
 export type TechStackId = (typeof techStackList)[number][number]['id']

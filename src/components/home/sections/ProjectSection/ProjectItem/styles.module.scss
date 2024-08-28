@@ -1,4 +1,3 @@
-@use '@/styles/fontsize' as fontsize;
 @use '@/styles/value' as value;
 
 .project-item-container {
@@ -39,6 +38,7 @@
       height: 300px;
 
       background-size: cover;
+      background-size: 100% 60%;
     }
   }
 }
@@ -65,11 +65,11 @@
 
   width: 100%;
 
-  font-size: fontsize.$content;
+  font-size: var(--f-content);
 
   & > .project-id {
     text-transform: uppercase;
-    font-size: fontsize.$medium;
+    font-size: var(--f-medium);
   }
 }
 
@@ -79,7 +79,7 @@
   & > span {
     display: block;
 
-    font-size: fontsize.$small;
+    font-size: var(--f-small);
     font-weight: 550;
     text-transform: uppercase;
 

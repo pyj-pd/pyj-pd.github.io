@@ -35,11 +35,12 @@ $border-gap: 7px;
   gap: $border-gap;
 
   width: fit-content;
+  min-width: 100%;
 }
 
 .tech-stack-row {
   display: flex;
   gap: $border-gap;
 
-  height: 170px;
+  height: calc(var(--f-large) * 4);
 }

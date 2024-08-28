@@ -1,6 +1,22 @@
 @use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
 
+:root {
+  --f-x-large: 4rem;
+  --f-large: 3rem;
+  --f-medium: 2.5rem;
+  --f-content: 1.5rem;
+  --f-small: 1rem;
+
+  @media screen and (max-width: 1000px) {
+    --f-x-large: 3rem;
+    --f-large: 2rem;
+    --f-medium: 1.5rem;
+    --f-content: 1rem;
+    --f-small: 0.7rem;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

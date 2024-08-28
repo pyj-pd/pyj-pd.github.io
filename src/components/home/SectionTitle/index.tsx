@@ -15,7 +15,7 @@ export default function SectionTitle({ children }: SectionTitleProps) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end 80%', 'start 30%'],
+    offset: ['end 80%', 'start 50%'],
   })
 
   const clipPath = useTransform(
@@ -32,7 +32,7 @@ export default function SectionTitle({ children }: SectionTitleProps) {
       <span className={styles.square} />
       <motion.span
         style={{
-          clipPath,
+          clipPath: clipPath,
         }}
         className={classNames(archivoFont.className, styles.title)}
       >

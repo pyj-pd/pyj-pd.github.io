@@ -1,5 +1,4 @@
 @use '@/styles/value' as value;
-@use '@/styles/fontsize' as fontsize;
 
 .text-container {
   display: flex;
@@ -10,7 +9,7 @@
 .text {
   display: block;
 
-  font-size: fontsize.$large;
+  font-size: var(--f-large);
   font-weight: 700;
   letter-spacing: value.$letter-spacing;
   text-transform: uppercase;

@@ -13,17 +13,16 @@
   width: 100%;
   height: 90px;
 
-  background-color: palette.$white;
+  background-color: palette.$black;
+  color: palette.$white;
 
   padding: 0 value.$view-padding;
-  
+
   @media screen and (max-width: value.$small-screen-width) {
     & {
-      padding: 0 value.$small-screen-padding;
+      padding: 0 calc(value.$view-padding / 2);
     }
   }
-
-  border-bottom: solid value.$border-width palette.$black;
 }
 
 .navbar-content {
@@ -44,7 +43,7 @@
 .logo-container > span {
   width: 30px;
 
-  background-color: palette.$black;
+  background-color: currentColor;
 
   // Triangle on the top
   &:nth-child(1) {

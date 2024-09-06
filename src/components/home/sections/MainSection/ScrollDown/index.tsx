@@ -13,7 +13,7 @@ import styles from './styles.module.scss'
 /**
  * The lower, the faster. Vice versa.
  */
-const SECONDS_PER_PIXEL = 0.002
+const SECONDS_PER_PIXEL = 0.01
 
 export default function ScrollDown() {
   const scrollDownTextRef = useRef<HTMLDivElement>(null),

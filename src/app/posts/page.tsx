@@ -1,3 +1,3 @@
-export default function PostListPage() {
-  return <main>sdfsdf</main>
+export default function BlogPostListPage() {
+  return <div>hello</div>
 }

@@ -6,6 +6,7 @@ export default function IntroduceMyself() {
     <div className={styles.container}>
       <Image
         src="/assets/mathstudent.gif"
+        unoptimized
         width={100}
         height={100}
         alt="A student lying on the floor while studying with a book. There is also a textbook which 'math' is written on the side next to him."

@@ -1,10 +1,10 @@
-$view-padding: 120px;
-$section-padding: 100px 0;
+$view-padding: 20px;
+$content-gap: 15px;
 
-$small-screen-padding: 5px;
-$small-screen-width: 1000px;
+$fixed-width: 600px;
 
-$border-width: 6px;
-$slim-border-width: 3px;
-
-$letter-spacing: -0.02em;
+// Dittering
+@mixin add-dittering() {
+  background-image: url('/assets/dittering.webp');
+  background-repeat: repeat;
+}

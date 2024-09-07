@@ -1,21 +1,4 @@
 @use '@/styles/palette' as palette;
-@use '@/styles/value' as value;
-
-:root {
-  --f-x-large: 4rem;
-  --f-large: 3rem;
-  --f-medium: 2.5rem;
-  --f-content: 1.5rem;
-  --f-small: 1rem;
-
-  @media screen and (max-width: value.$small-screen-width) {
-    --f-x-large: 3rem;
-    --f-large: 2rem;
-    --f-medium: 1.5rem;
-    --f-content: 1rem;
-    --f-small: 0.7rem;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -26,11 +9,20 @@
 body {
   width: 100vw;
 
-  background-color: palette.$white;
-  color: palette.$black;
+  background-image: url('/assets/background.webp');
+  background-repeat: repeat;
+
+  color: palette.$white;
+
+  font-size: 12pt;
+  line-height: 1.4;
+
+  image-rendering: pixelated;
 }
 
-::selection {
-  background-color: palette.$black;
-  color: palette.$white;
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
 }

@@ -1,6 +1,16 @@
+@use '@/styles/value' as value;
+
 .main-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
 
+  padding: value.$view-padding 0;
+
   width: 100%;
+}
+
+.break {
+  display: block;
+  margin: 30px 0;
 }

@@ -1,0 +1,11 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: value.$content-gap;
+
+  width: 100%;
+}

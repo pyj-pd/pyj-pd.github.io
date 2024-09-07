@@ -4,6 +4,7 @@ import IntroduceMyself from '@/components/home/IntroduceMyself'
 import HyperLinkGroup from '@/components/home/HyperLinkGroup'
 import ThanksBanner from '@/components/home/ThanksBanner'
 import UnderConstruction from '@/components/home/UnderConstruction'
+import TechStackSection from '@/components/home/sections/TechStackSection'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <span className={styles.break} />
       <ThanksBanner />
       <span className={styles.break} />
+      <TechStackSection />
     </main>
   )
 }

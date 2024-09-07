@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+::selection {
+  background-color: palette.$blue;
+  color: palette.$white;
+}
+
 body {
   width: 100vw;
 
@@ -19,6 +24,8 @@ body {
   line-height: 1.4;
 
   image-rendering: pixelated;
+
+  cursor: url('/assets/cursor/arrow');
 }
 
 input,

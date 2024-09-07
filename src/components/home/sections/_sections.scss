@@ -1,0 +1,11 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+@mixin default-section-style() {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: value.$fixed-width;
+}

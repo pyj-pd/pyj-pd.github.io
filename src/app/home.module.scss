@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: value.$content-gap;
 
   padding: value.$view-padding 0;
 

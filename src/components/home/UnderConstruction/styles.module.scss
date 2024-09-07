@@ -1,0 +1,7 @@
+@use '@/styles/palette' as palette;
+
+.text {
+  font-weight: bold;
+
+  color: palette.$red;
+}

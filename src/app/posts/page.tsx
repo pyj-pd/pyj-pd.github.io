@@ -1,3 +1,3 @@
 export default function BlogPostListPage() {
-  return <div>hello</div>
+  return <div>Staffs only!!</div>
 }

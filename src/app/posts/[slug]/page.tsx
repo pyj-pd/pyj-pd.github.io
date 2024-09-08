@@ -1,3 +1,4 @@
+import styles from './styles.module.scss'
 import type { PostContentData } from '@/types/post'
 import { getPostContentData, getPostImagePath } from '@/utils/post'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -22,6 +23,7 @@ export default async function BlogPostPage({
               width={Number(props.width)}
               height={Number(props.height)}
               alt={props.alt}
+              className={styles.image}
             />
           ),
         }}

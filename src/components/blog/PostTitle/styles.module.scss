@@ -1,0 +1,12 @@
+@use '@/styles/blog/palette' as palette;
+
+.container {
+  position: relative;
+
+  width: 100%;
+}
+
+.text {
+  background-color: palette.$text-color;
+  color: palette.$background-color;
+}

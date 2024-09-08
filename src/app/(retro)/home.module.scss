@@ -1,0 +1,15 @@
+@use '@/styles/retro/value' as value;
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: value.$content-gap;
+
+  width: 100%;
+}
+
+.break {
+  display: block;
+  margin: 15px 0;
+}

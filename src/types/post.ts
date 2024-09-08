@@ -7,6 +7,11 @@ export type PostData = {
   path: string
 }
 
+export type PostMetadata = {
+  title: string
+  date?: string
+}
+
 export type PostContentData = PostData & {
   content: string
 }

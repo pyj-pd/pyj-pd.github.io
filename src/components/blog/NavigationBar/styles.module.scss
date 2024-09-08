@@ -1,0 +1,36 @@
+@use '@/styles/blog/value' as value;
+@use '@/styles/blog/palette' as palette;
+
+.container {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+
+  padding: value.$content-gap;
+  margin: value.$content-gap 0;
+
+  width: fit-content;
+
+  background-color: palette.$black-beige;
+  color: palette.$beige;
+}
+
+.list-container {
+  list-style: none;
+
+  display: flex;
+  gap: 20px;
+
+  & > li {
+    display: block;
+
+    > a {
+      text-decoration: underline;
+
+      color: currentColor;
+    }
+  }
+}

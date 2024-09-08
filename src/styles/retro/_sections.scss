@@ -1,0 +1,12 @@
+@use '@/styles/retro/value' as value;
+@use '@/styles/retro/palette' as palette;
+
+@mixin default-section-style() {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: value.$content-gap;
+
+  width: 100%;
+  max-width: value.$fixed-width;
+}

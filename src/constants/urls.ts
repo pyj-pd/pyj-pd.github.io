@@ -22,7 +22,7 @@ export const navbarRouteList: NavbarRouteData[] = [
   },
   {
     path: '/posts',
-    name: 'Blog',
+    name: 'Blog(한국어/Korean)',
   },
 
   // External links

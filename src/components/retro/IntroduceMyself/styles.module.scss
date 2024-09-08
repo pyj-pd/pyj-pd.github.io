@@ -1,0 +1,14 @@
+@use '@/styles/retro/value';
+
+.container {
+  display: flex;
+  gap: value.$content-gap;
+
+  width: 100%;
+  max-width: value.$fixed-width;
+}
+
+.text-container {
+  display: block;
+  text-align: left;
+}

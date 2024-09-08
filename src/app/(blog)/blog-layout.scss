@@ -1,0 +1,7 @@
+@use '@/styles/blog/palette' as palette;
+
+body {
+  background-color: palette.$background-color;
+
+  color: palette.$text-color;
+}

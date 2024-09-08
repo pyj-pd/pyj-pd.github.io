@@ -1,0 +1,33 @@
+@use '@/styles/retro/value' as value;
+@use '@/styles/retro/palette' as palette;
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: value.$content-gap;
+
+  width: 100%;
+}
+
+.text {
+  color: palette.$red;
+
+  text-shadow: 3px 3px 0 palette.$white;
+
+  font-size: 3rem;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    animation: blink-animation 1s infinite steps(1, end);
+  }
+}
+
+@keyframes blink-animation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

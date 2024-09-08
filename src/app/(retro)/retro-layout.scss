@@ -1,0 +1,21 @@
+@use '@/styles/retro/palette' as palette;
+
+::selection {
+  background-color: palette.$blue;
+  color: palette.$white;
+}
+
+body {
+  background-color: palette.$black;
+  background-image: url('/assets/retro/background.webp');
+  background-repeat: repeat;
+
+  color: palette.$white;
+
+  image-rendering: pixelated;
+}
+
+a {
+  color: palette.$lightblue;
+  text-decoration: underline;
+}

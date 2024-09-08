@@ -57,7 +57,7 @@ export const getPostContentData = async (
   return postContentData
 }
 
-const POST_IMAGE_PATH_PUBLIC = '/assets/posts'
+const POST_IMAGE_PATH_PUBLIC = '/assets/blog/posts'
 
 /**
  * Converts image path in markdown into Next.js-compatiable path(which points to `public`).

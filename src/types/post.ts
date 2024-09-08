@@ -15,3 +15,5 @@ export type PostMetadata = {
 export type PostContentData = PostData & {
   content: string
 }
+
+export type PostInfoData = PostData & PostMetadata

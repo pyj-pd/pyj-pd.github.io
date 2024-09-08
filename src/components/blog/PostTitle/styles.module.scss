@@ -1,5 +1,7 @@
+@use 'sass:color';
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
+@use '@/styles/blog/skeleton' as skeleton;
 
 .container {
   position: relative;
@@ -9,6 +11,29 @@
   align-items: center;
 
   width: 100%;
+  height: 300px;
 
-  padding: 100px 0;
+  border-bottom: solid value.$border-slim-width palette.$darker-beige;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  padding: value.$safe-padding;
+
+  text-align: center;
+}
+
+.skeleton {
+  display: block;
+
+  width: 100%;
+  max-width: 550px;
+  height: 50px;
+
+  @include skeleton.skeleton-styles;
 }

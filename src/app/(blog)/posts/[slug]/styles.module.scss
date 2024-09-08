@@ -1,5 +1,6 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
+@use '@/styles/blog/skeleton' as skeleton;
 
 .container {
   display: flex;
@@ -10,15 +11,78 @@
 }
 
 .content-container {
+  & {
+    width: 100%;
+    max-width: value.$fixed-width;
+
+    line-height: value.$reading-line-spacing;
+
+    padding: value.$safe-padding;
+
+    font-size: 1.1rem;
+  }
+
+  h2,
+  p,
+  img,
+  hr,
+  ul,
+  ol {
+    margin: value.$content-gap 0;
+  }
+
+  hr {
+    color: palette.$darker-beige;
+  }
+
+  // Syntax highlighting
+  code {
+    font-size: 0.9rem;
+  }
+
+  :not(pre) code {
+    border-radius: value.$border-radius;
+
+    padding: 5px 8px;
+
+    background-color: palette.$darker-beige;
+    color: palette.$beige;
+  }
+
+  pre {
+    border-radius: value.$border-radius;
+
+    padding: value.$content-gap 0;
+
+    overflow-x: auto;
+
+    code span:global(.line) {
+      display: inline-block;
+      width: 100%;
+
+      padding: 0 (value.$content-gap + 5px);
+
+      &:global(.highlighted) {
+        background-color: palette.$darker-beige;
+      }
+    }
+  }
+
+  // Blockquote
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+
   width: 100%;
-  max-width: value.$fixed-width;
-
-  line-height: value.$reading-line-spacing;
-
-  padding: value.$safe-padding;
 }
 
 .image {
   width: 350px;
   height: auto;
+
+  border-radius: value.$border-radius;
+
+  background-color: skeleton.$skeleton-color;
 }

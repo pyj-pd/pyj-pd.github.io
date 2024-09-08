@@ -1,11 +1,16 @@
-import { Comic_Neue } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Comic_Neue, Noto_Serif_KR, PT_Mono } from 'next/font/google'
 
 export const comicFont = Comic_Neue({
   weight: '700',
   subsets: ['latin'],
 })
 
-export const serifFont = localFont({
-  src: '../assets/fonts/RIDIBatang.otf',
+export const serifFont = Noto_Serif_KR({
+  weight: ['600', '900'],
+  subsets: ['latin'],
+})
+
+export const monospaceFont = PT_Mono({
+  subsets: ['latin'],
+  weight: '400',
 })

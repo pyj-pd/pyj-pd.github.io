@@ -5,9 +5,10 @@ import { serifFont } from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
+import { getTitleName } from '@/utils/blog'
 
 export const metadata: Metadata = {
-  title: 'pyj-pd',
+  title: getTitleName(),
   description:
     'JavaScript/TypeScript를 다루며, 컴퓨터를 다루며 배우게 된 점, 느끼게 된 점을 나누고 싶습니다.',
   icons: '/favicon.svg',

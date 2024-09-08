@@ -2,8 +2,10 @@
 
 $beige: hsl(33, 58%, 93%);
 $dark-beige: color.adjust($beige, $lightness: -10%);
-$darker-beige: color.adjust($beige, $lightness: -20%);
-$black-beige: hsl(26, 20%, 7%);
+$black-beige: hsl(36, 14%, 7%);
+$darker-beige: color.adjust($black-beige, $lightness: 10%);
 
-$background-color: $beige;
-$text-color: $black-beige;
+$mint: hsl(174, 30%, 56%);
+
+$background-color: $black-beige;
+$text-color: $beige;

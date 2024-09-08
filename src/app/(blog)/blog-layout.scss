@@ -2,6 +2,10 @@
 
 body {
   background-color: palette.$background-color;
-
   color: palette.$text-color;
+}
+
+a {
+  text-decoration: underline;
+  color: palette.$mint;
 }

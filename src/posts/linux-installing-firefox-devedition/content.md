@@ -70,7 +70,7 @@ sudo nano ~/.local/share/applications/firefox-aurora.desktop
 
 그 후 표시되는 화면에서 다음을 복사 및 붙여넣기(터미널 내에서는 `Ctrl` + `Shift` + `V`)하여 입력한다.
 
-```
+```desktop
 [Desktop Entry]
 Name=Firefox Developer
 GenericName=Firefox Developer Edition

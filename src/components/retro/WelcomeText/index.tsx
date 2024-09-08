@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import GlowStar from './GlowStar'
+import welcomeTextImage from '@public/assets/retro/welcome-text.webp'
 
 const STAR_MARGIN = '10px'
 
@@ -9,9 +10,7 @@ export default function WelcomeText() {
     <div className={styles.container}>
       <Image
         className={styles['welcome-text-image']}
-        src="/assets/retro/welcome-text.webp"
-        width={500}
-        height={120}
+        src={welcomeTextImage}
         alt="Welcome to my homepage"
       />
       <GlowStar style={{ top: STAR_MARGIN, left: STAR_MARGIN }} />

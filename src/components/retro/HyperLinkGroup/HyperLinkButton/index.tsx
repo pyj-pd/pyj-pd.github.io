@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../styles.module.scss'
 import Link from 'next/link'
+import ovalButtonImage from '@public/assets/retro/oval-button.webp'
 
 type HyperLinkButtonProps = {
   /**
@@ -27,9 +28,7 @@ export default function HyperLinkButton({
       <button className={styles['button-container']}>
         <span className={styles['button-label']}>{children}</span>
         <Image
-          src="/assets/retro/oval-button.webp"
-          width={120}
-          height={70}
+          src={ovalButtonImage}
           alt="A sphere."
           priority
           style={

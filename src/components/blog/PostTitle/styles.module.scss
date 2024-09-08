@@ -1,12 +1,28 @@
 @use '@/styles/blog/palette' as palette;
+@use '@/styles/blog/value' as value;
 
 .container {
   position: relative;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
+
+  padding: 100px 0;
+
+  background-color: palette.$dark-beige;
+  background-image: radial-gradient(
+    at center,
+    palette.$beige 10%,
+    transparent 10%
+  );
+  background-size: 20px 20px;
+
+  color: palette.$black-beige;
 }
 
-.text {
-  background-color: palette.$text-color;
-  color: palette.$background-color;
+.text-container {
+  width: value.$fixed-width;
 }

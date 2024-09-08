@@ -30,10 +30,8 @@ export default async function BlogPostPage({
 
   return (
     <div className={styles.container}>
-      <main className={styles['content-container']}>
-        <PostTitle>{mdxSource.frontmatter.title}</PostTitle>
-        {mdxSource.content}
-      </main>
+      <PostTitle>{mdxSource.frontmatter.title}</PostTitle>
+      <main className={styles['content-container']}>{mdxSource.content}</main>
     </div>
   )
 }

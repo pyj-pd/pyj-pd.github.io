@@ -1,7 +1,7 @@
 @use 'sass:color';
 
 $beige: hsl(33, 58%, 93%);
-$dark-beige: color.adjust($beige, $lightness: -40%);
+$dark-beige: color.adjust($beige, $lightness: -10%);
 $black-beige: hsl(26, 20%, 7%);
 
 $background-color: $beige;

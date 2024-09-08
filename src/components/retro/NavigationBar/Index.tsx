@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 import { navbarRouteList } from '@/constants/urls'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import linkIconGif from '@public/assets/retro/link.gif'
 
 export default function NavigationBar() {
   const pathname = usePathname()
@@ -28,9 +29,8 @@ export default function NavigationBar() {
                   // External link
                   route.openInNewTab && (
                     <Image
-                      src="/assets/retro/link.gif"
-                      width={15}
-                      height={15}
+                      src={linkIconGif}
+                      unoptimized
                       alt="External link"
                     />
                   )

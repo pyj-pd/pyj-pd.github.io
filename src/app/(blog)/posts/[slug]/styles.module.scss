@@ -3,11 +3,10 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   width: 100%;
-
-  padding: value.$safe-padding;
 }
 
 .content-container {
@@ -15,6 +14,8 @@
   max-width: value.$fixed-width;
 
   line-height: value.$reading-line-spacing;
+
+  padding: value.$safe-padding;
 }
 
 .image {

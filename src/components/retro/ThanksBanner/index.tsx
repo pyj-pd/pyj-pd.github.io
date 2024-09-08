@@ -1,12 +1,11 @@
 import Image from 'next/image'
+import thanksGif from '@public/assets/retro/thanks.gif'
 
 export default function ThanksBanner() {
   return (
     <Image
-      src="/assets/retro/thanks.gif"
+      src={thanksGif}
       unoptimized
-      width={270}
-      height={100}
       alt="Thanks for visiting!"
     />
   )

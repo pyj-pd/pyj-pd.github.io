@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import styles from '../styles.module.scss'
 import Image from 'next/image'
+import glowStarImage from '@public/assets/retro/glow.webp'
 
 type GlowStarProps = {
   style: Pick<CSSProperties, 'top' | 'right' | 'bottom' | 'left'>
@@ -13,9 +14,7 @@ type GlowStarProps = {
 export default function GlowStar({ style, delay }: GlowStarProps) {
   return (
     <Image
-      src="/assets/retro/glow.webp"
-      width={50}
-      height={50}
+      src={glowStarImage}
       alt="Glowing"
       className={styles.glow}
       style={{

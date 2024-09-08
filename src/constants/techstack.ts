@@ -47,8 +47,7 @@ export const techStackList: TechStackData[][] = [
   [
     {
       name: 'TypeScript',
-      description:
-        "I will never be able to return to the time when I wasn't using TypeScript...",
+      description: "I can't imagine how I had lived without TypeScript...",
     },
     {
       name: 'Recoil',

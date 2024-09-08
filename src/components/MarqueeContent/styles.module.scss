@@ -12,7 +12,9 @@
 .marquee-container {
   width: 100%;
 
-  animation: marquee-animation var(--duration, 4s) infinite linear;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    animation: marquee-animation var(--duration, 6s) infinite linear;
+  }
 }
 
 @keyframes marquee-animation {

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import styles from './layout.module.scss'
 import '@/styles/globals.scss'
-import { msFont } from '@/styles/fonts'
+import { serifFont } from '@/styles/fonts'
+import classNames from 'classnames'
+import NavigationBar from '@/components/NavigationBar/Index'
 
 export const metadata: Metadata = {
   title: "PYJ's Homepage",
@@ -15,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={msFont.className}>{children}</body>
+      <body className={classNames(styles.container, serifFont.className)}>
+        <NavigationBar />
+        <div className={styles['content-container']}>{children}</div>
+      </body>
     </html>
   )
 }

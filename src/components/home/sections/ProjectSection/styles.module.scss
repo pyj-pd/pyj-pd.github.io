@@ -1,0 +1,24 @@
+@use '../sections' as sections;
+@use '@/styles/palette' as palette;
+
+.container {
+  @include sections.default-section-style;
+}
+
+.table {
+  & {
+    width: 100%;
+
+    table-layout: fixed;
+  }
+
+  &,
+  & td {
+    border: solid 1px palette.$white;
+    border-collapse: collapse;
+  }
+
+  & td {
+    padding: 2px;
+  }
+}

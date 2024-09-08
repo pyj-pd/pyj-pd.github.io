@@ -1,0 +1,16 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+.container {
+  display: flex;
+
+  width: 200px;
+
+  border-right: solid 4px palette.$white;
+
+  padding: value.$view-padding 0;
+}
+
+.link-list {
+  list-style: none;
+}

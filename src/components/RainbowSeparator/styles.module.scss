@@ -22,7 +22,6 @@
   width: 120%;
   height: 100%;
 
-  background-size: 200%;
   background-image: linear-gradient(
     to right,
     palette.$red,
@@ -34,7 +33,11 @@
     palette.$red
   );
 
-  animation: rainbow-animation 1s infinite linear;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    background-size: 200%;
+
+    animation: rainbow-animation 1s infinite linear;
+  }
 }
 
 @keyframes rainbow-animation {

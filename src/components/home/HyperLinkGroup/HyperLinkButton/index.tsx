@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import styles from '../styles.module.scss'
-import classNames from 'classnames'
-import { react95Font } from '@/styles/fonts'
 import Link from 'next/link'
 
 type HyperLinkButtonProps = {
@@ -27,11 +25,7 @@ export default function HyperLinkButton({
       tabIndex={-1}
     >
       <button className={styles['button-container']}>
-        <span
-          className={classNames(styles['button-label'], react95Font.className)}
-        >
-          {children}
-        </span>
+        <span className={styles['button-label']}>{children}</span>
         <Image
           src="/assets/oval-button.webp"
           width={120}

@@ -1,6 +1,17 @@
+@use '@/styles/value' as value;
+
 .container {
   position: relative;
 
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: value.$view-padding;
 }

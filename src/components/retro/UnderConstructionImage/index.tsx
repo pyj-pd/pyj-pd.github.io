@@ -7,6 +7,7 @@ export default function UnderConstructionImage() {
     <div className={styles.container}>
       <Image
         src={underConstructionGif}
+        unoptimized
         alt="Under construction"
       />
     </div>

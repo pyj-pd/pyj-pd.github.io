@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import RainbowSeparator from '../../../RainbowSeparator'
+import RainbowSeparator from '../RainbowSeparator'
 import styles from './styles.module.scss'
 import { comicFont } from '@/styles/fonts'
 

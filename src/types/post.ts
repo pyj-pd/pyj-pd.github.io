@@ -5,7 +5,8 @@ export type PostData = {
 
   categories: PostCategory[]
   path: string
+}
 
-  title: string
-  date?: string
+export type PostContentData = PostData & {
+  content: string
 }

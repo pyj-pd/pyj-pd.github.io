@@ -47,7 +47,7 @@ pnpm run start
 
 Electron 실행 후 터미널에 `rs`를 입력하면 된다.
 
-![터미털에서 `rs`를 입력한 모습](./assets/rs%20vite.gif)
+<Image src="rs vite.gif" unoptimized width="881" height="773" alt="터미털에서 `rs`를 입력한 모습" />
 
 ### React와 같이 사용하기
 

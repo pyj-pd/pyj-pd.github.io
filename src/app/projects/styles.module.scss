@@ -1,0 +1,6 @@
+@use '@/styles/sections' as sections;
+@use '@/styles/palette' as palette;
+
+.container {
+  @include sections.default-section-style;
+}

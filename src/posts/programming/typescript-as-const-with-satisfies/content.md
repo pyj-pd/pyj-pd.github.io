@@ -63,23 +63,23 @@ export type SectionId = // ...
 
 자동 완성 또한 아래와 같이 정상적으로 작동한다.
 
-![자동 완성이 작동하는 모습](./assets/autocompletion-with-as-const.png)
+<Image src="autocompletion-with-as-const.png" width="1210" height="604" alt="자동 완성이 작동하는 모습" />
 
 아래와 같이, 해당 오브젝트가 타입을 만족하지 않게 수정했을 때 오류가 발생하는 모습도 확인할 수 있다.
 
-![타입을 만족하지 않게 수정했을 때 오류가 발생하는 모습](./assets/type-error.png)
+<Image src="type-error.png" width="1238" height="488" alt="타입을 만족하지 않게 수정했을 때 오류가 발생하는 모습" />
 
 또한, 상수로써 타입을 지정했으므로 값을 수정할 때에도 오류가 발생한다.
 
-![값 수정 시 오류가 발생하는 모습](./assets/cant-modify-with-as-const.png)
+<Image src="cant-modify-with-as-const.png" width="1296" height="416" alt="값 수정 시 오류가 발생하는 모습" />
 
 같은 이유로 해당 오브젝트 내의 값들도 `readonly`로 치환되었다.
 
-![`readonly`로 값이 바뀐 모습](./assets/readonly-value-with-as-const.png)
+<Image src="readonly-value-with-as-const.png" width="1294" height="510" alt="`readonly`로 값이 바뀐 모습" />
 
 추가로, `SectionId` 타입도 의도한 대로 작동한다.
 
-![`SectionId` 타입이 작동하는 모습](./assets/sectionid-type.png)
+<Image src="sectionid-type.png" width="816" height="488" alt="`SectionId` 타입이 작동하는 모습" />
 
 ## `satisfies` 문법과 `as` 문법의 차이점
 
@@ -98,6 +98,6 @@ let fruit2 = 'apple' satisfies Fruit
 
 따라서 `fruit1`의 값을 바꿀 때에도 `Fruit` 타입에 맞는 자동 완성이 작동한다.
 
-![`fruit1`의 값을 바꿀 때 자동 완성이 작동하는 모습](./assets/as-autocompletion.png)
+<Image src="as-autocompletion.png" width="337" height="153" alt="`fruit1`의 값을 바꿀 때 자동 완성이 작동하는 모습" />
 
 반면에 `fruit2`는 `string` 타입이므로 자동 완성이 작동하지 않는다.

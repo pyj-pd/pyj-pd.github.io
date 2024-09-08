@@ -2,7 +2,7 @@
 title: CSS로 Long Flat Shadow 그리기
 ---
 
-![최종 그림자의 모습](./assets/longshadow-content-box-2.png)
+<Image src="longshadow-content-box-2.png" width="715" height="345" alt="최종 그림자의 모습" />
 
 이 글에서는 위와 같은 그림자를 만들어 볼 예정이다.
 
@@ -10,7 +10,7 @@ title: CSS로 Long Flat Shadow 그리기
 
 새 프로젝트의 버튼을 디자인하기 위해 `box-shadow`를 사용해 플랫한 그림자를 구현하고자 하였다.
 
-!['시작하기'라는 텍스트가 쓰여진 버튼에 기존 CSS 그림자가 적용되어 있다.](./assets/originalshadow.png)
+<Image src="originalshadow.png" width="310" height="192" alt="'시작하기'라는 텍스트가 쓰여진 버튼에 기존 CSS 그림자가 적용되어 있다." />
 
 위와 같이 그림자가 정상적으로 적용되기는 하였는데, 그림자가 버튼과 동떨어져 있다는 느낌이 크게 들었다. 따라서 한때 유행이었던 Long Shadow를 적용하고자 하였고, 우선 검색을 통해 방법을 모색해보기로 하였다.
 
@@ -41,7 +41,7 @@ Long Shadow를 CSS에서 구현하기 위해서 간단한 검색을 해보기로
 
 `polygon()` 내 파라미터를 통해 다각형의 꼭짓점 좌표를 정하고, 그 다각형의 모양으로 모양이 나타나는 방식이다.
 
-![polygon() 문법을 설명하는 이미지](./assets/polygon.png)
+<Image src="polygon.png" width="1497" height="587" alt="polygon() 문법을 설명하는 이미지" />
 
 위 사진을 보면 이해가 편할 것이다. 각 파라미터들의 순서대로 꼭짓점 좌표들이 정해지고, 그 모양대로 모양이 잘리며 위 예시의 경우 화살표 모양이 나타난다. 시작점은 어디를 해도 무방하며, 마지막 꼭짓점에서 시작점으로 다시 돌아오지 않아도 된다.
 
@@ -101,7 +101,7 @@ button {
 }
 ```
 
-![Long Shadow가 적용된 버튼](./assets/longshadow.png)
+<Image src="longshadow.png" width="303" height="165" alt="Long Shadow가 적용된 버튼" />
 
 1.  우선, `clip-path`는 `box-shadow`에서 사용할 수 없으므로, `&::after`([MDN 문서 - ::after](https://developer.mozilla.org/en-US/docs/Web/CSS/::after))를 사용하여 그림자 역할을 할 새로운 요소를 만들었고, `content: ''`를 추가해 코드상에서 나타나도록 하였다.
 2.  만든 새 그림자는 `absolute`의 위치를 가져야 하기 때문에, 원래 요소에 `relative` 위치를 추가한다.
@@ -112,13 +112,13 @@ button {
 
     따라서 다음과 같은 위치 관계가 형성되었다.
 
-    ![&::after 요소와 버튼 요소가 겹쳐진 모양을 시각화한 이미지](./assets/longshadow-after.png)
+    <Image src="longshadow-after.png" width="303" height="165" alt="&::after 요소와 버튼 요소가 겹쳐진 모양을 시각화한 이미지" />
 
     위 사진에서 빨간색은 `&::after` 요소이다.
 
 5.  **`polygon()` 문법을 이용해서 그림자의 모양이 나타나도록 잘랐다.** 아래 사진은 꼭짓점의 위치를 나타낸 사진이다.
 
-    ![그림자 모양에서 꼭짓점을 나타낸 이미지](./assets/shadow-polygon.png)
+    <Image src="shadow-polygon.png" width="600" height="327" alt="그림자 모양에서 꼭짓점을 나타낸 이미지" />
 
 ## 윤곽선까지 그림자 영역에 추가하기
 
@@ -164,7 +164,7 @@ button {
 
 따라서 우선 윤곽선의 길이를 `$border-width`로 상수로써 정의하고, `&::after` 요소에 `box-sizing: context-box`([MDN 문서 - box-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing))를 추가하여 버튼의 가로 및 세로 길이에서 윤곽선까지 고려하도록 설정하였다.
 
-![box-sizing: content-box를 설정한 모습](./assets/longshadow-content-box-1.png)
+<Image src="longshadow-content-box-1.png" width="857" height="383" alt="box-sizing: content-box를 설정한 모습" />
 
 따라서 위와 같은 모양이 나타났는데, 자세히 보면 그림자의 위치가 윤곽선과 맞지 않는 모습을 볼 수 있다. 이는 위치(`top`과 `left`)는 윤곽선이 끝난 지점부터 측정했기 때문에 나타나는 현상이므로, `top`과 `left`에서 윤곽선 길이만큼을 빼서 그림자가 위치가 정상적으로 설정되도록 하였다.
 
@@ -197,7 +197,7 @@ button {
 
 ## 최종 결과물
 
-![최종 그림자의 모습](./assets/longshadow-content-box-2.png)
+<Image src="longshadow-content-box-2.png" width="715" height="345" alt="최종 그림자의 모습" />
 
 ```scss
 $border-width: 2px;

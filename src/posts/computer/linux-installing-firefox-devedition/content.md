@@ -10,7 +10,7 @@ Windows 환경에서 프로그램을 설치하기란 간단하다. `.msi`나 `.e
 
 [Mozilla 공식 문서](https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions)에 쓰여진 절차들을 **6번을 제외하고** 모두 따른다(해당 명령어들을 실행시킨다).
 
-![Mozilla 공식 문서에 쓰여있는 절차](./assets/ubuntu%20firefox.png)
+<Image src="ubuntu firefox.png" width="1336" height="1187" alt="Mozilla 공식 문서에 쓰여있는 절차" />
 
 그 후 다음 명령어를 실행시켜 Firefox Developer Edition(패키지명: `firefox-devedition`을 설치한다.
 
@@ -23,7 +23,7 @@ sudo apt install firefox-devedition
 
 [Firefox Developer Edition 페이지](https://www.mozilla.org/en-US/firefox/developer/)에서 압축 파일을 내려받는다. "Download for Linux" 버튼을 자신의 환경(64비트 또는 32비트)에 따라 클릭하면 된다. 버전은 시간에 따라 다를 수 있다.
 
-![압축 파일을 내려받은 모습](./assets/firefox%20archive.png)
+<Image src="firefox archive.png" width="1943" height="1023" alt="압축 파일을 내려받은 모습" />
 
 ---
 
@@ -89,12 +89,12 @@ StartupWMClass=firefox-aurora
 
 붙여넣은 뒤, `Ctrl` + `X`를 눌러 파일을 저장해준다. "Save modified buffer?"이라는 텍스트가 뜨면 `Y`와 `Enter` 키를 차례대로 누른다.
 
-![터미널 내에서 "Save modified buffer?"가 뜬 모습](./assets/nano-1.png)
+<Image src="nano-1.png" width="1155" height="802" alt="터미널 내에서 'Save modified buffer?'가 뜬 모습" />
 
-!["File Name to Write:"가 뜬 모습](./assets/nano-2.png)
+<Image src="nano-2.png" width="1155" height="802" alt="'File Name to Write:'가 뜬 모습" />
 
 ---
 
 이제 설치가 완료되었다. 정상 작동을 확인하면 된다.
 
-![메뉴에 검색했을 때 프로그램이 뜨는 모습](./assets/installed%20nicely.png)
+<Image src="installed nicely.png" width="1024" height="347" alt="메뉴에 검색했을 때 프로그램이 뜨는 모습" />

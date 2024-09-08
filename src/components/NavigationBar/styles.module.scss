@@ -3,14 +3,36 @@
 
 .container {
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
   width: 200px;
 
   border-right: solid 4px palette.$white;
 
   padding: value.$view-padding 0;
+
+  @media screen and (max-width: value.$small-screen-width) {
+    flex-direction: row;
+
+    width: 100%;
+
+    border-right: none;
+    border-bottom: solid 4px palette.$white;
+  }
 }
 
 .link-list {
+  $link-margin: 12px;
+
   list-style: none;
+
+  & > li {
+    margin: $link-margin 0;
+
+    @media screen and (max-width: value.$small-screen-width) {
+      display: inline;
+      margin: 0 $link-margin;
+    }
+  }
 }

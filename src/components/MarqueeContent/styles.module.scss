@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+
+  display: flex;
+
+  width: fit-content;
+  height: fit-content;
+
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+
+  animation: marquee-animation var(--duration, 4s) infinite linear;
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  85%,
+  100% {
+    transform: translateX(-100%);
+  }
+}

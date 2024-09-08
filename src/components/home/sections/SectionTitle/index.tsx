@@ -1,4 +1,4 @@
-import RainbowSeparator from '../../RainbowSeparator'
+import RainbowSeparator from '../../../RainbowSeparator'
 import styles from './styles.module.scss'
 
 type SectionTitleProps = { children: string }

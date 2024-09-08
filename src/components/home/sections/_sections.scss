@@ -5,6 +5,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  gap: value.$content-gap;
 
   width: 100%;
   max-width: value.$fixed-width;

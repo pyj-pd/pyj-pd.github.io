@@ -11,18 +11,4 @@
   width: 100%;
 
   padding: 100px 0;
-
-  background-color: palette.$dark-beige;
-  background-image: radial-gradient(
-    at center,
-    palette.$beige 10%,
-    transparent 10%
-  );
-  background-size: 20px 20px;
-
-  color: palette.$black-beige;
-}
-
-.text-container {
-  width: value.$fixed-width;
 }

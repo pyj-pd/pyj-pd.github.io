@@ -2,6 +2,7 @@
 
 $beige: hsl(33, 58%, 93%);
 $dark-beige: color.adjust($beige, $lightness: -10%);
+$darker-beige: color.adjust($beige, $lightness: -20%);
 $black-beige: hsl(26, 20%, 7%);
 
 $background-color: $beige;

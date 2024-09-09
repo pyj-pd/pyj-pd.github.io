@@ -1,7 +1,7 @@
 import type { PostMetadata } from '@/types/post'
 import styles from './styles.module.scss'
 
-type PostTitleProps = { skeleton?: boolean; postMetadata: PostMetadata }
+type PostTitleProps = { skeleton?: boolean; postMetadata?: PostMetadata }
 
 export default function PostTitle({
   skeleton: isSkeleton,
@@ -13,7 +13,7 @@ export default function PostTitle({
         {isSkeleton ? (
           <span className={styles.skeleton} />
         ) : (
-          <h1>{postMetadata.title}</h1>
+          <h1>{postMetadata?.title}</h1>
         )}
       </div>
     </div>

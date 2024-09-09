@@ -42,7 +42,6 @@ const _getPostList = async (): Promise<PostData[]> => {
     const postData: PostData = {
       ...parsedData.frontmatter,
       slug: postSlug,
-      path: postPath,
       content: parsedData.content,
     }
 

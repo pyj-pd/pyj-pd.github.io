@@ -71,19 +71,3 @@
 
   // Blockquote
 }
-
-.image-container {
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-}
-
-.image {
-  width: 350px;
-  height: auto;
-
-  border-radius: value.$border-radius;
-
-  background-color: skeleton.$skeleton-color;
-}

@@ -1,10 +1,7 @@
-import type { PostData } from '@/types/post'
-import { getPostList } from '@/utils/post'
+import { postList } from '@/utils/blog/post'
 import Link from 'next/link'
 
 export default async function BlogPostListPage() {
-  const postList: PostData[] = await getPostList()
-
   return (
     <main>
       <ul>

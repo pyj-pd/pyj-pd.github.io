@@ -1,19 +1,20 @@
-export type PostCategory = string
+import type { CategoryId } from '@/constants/blog/categories'
+import type { CompileMDXResult } from 'next-mdx-remote/rsc'
 
-export type PostData = {
+/**
+ * Metadata inside MDX file.
+ */
+export type MDXPostMetadata = {
+  title: string
+  date?: string
+  categories: CategoryId[]
+}
+
+export type PostMetadata = MDXPostMetadata & {
   slug: string
-
-  categories: PostCategory[]
   path: string
 }
 
-export type PostMetadata = {
-  title: string
-  date?: string
+export type PostData = PostMetadata & {
+  content: CompileMDXResult['content']
 }
-
-export type PostContentData = PostData & {
-  content: string
-}
-
-export type PostInfoData = PostData & PostMetadata

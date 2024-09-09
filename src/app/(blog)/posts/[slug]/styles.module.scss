@@ -70,6 +70,11 @@
     letter-spacing: normal;
   }
 
+  :not(pre) code,
+  pre {
+    border: solid value.$border-slim-width palette.$code-border-color;
+  }
+
   :not(pre) code {
     border-radius: value.$border-radius;
 

@@ -1,8 +1,11 @@
 @use '@/styles/blog/palette' as palette;
+@use '@/styles/blog/value' as value;
 
 body {
   background-color: palette.$background-color;
   color: palette.$text-color;
+
+  padding-bottom: value.$bottom-padding;
 }
 
 a {

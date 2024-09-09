@@ -2,12 +2,12 @@
 
 $gray: hsl(35, 8%, 48%);
 
-$beige: hsl(31, 59%, 88%);
+$beige: hsl(33, 51%, 82%);
 $dark-beige: color.adjust($beige, $lightness: -30%);
-$black-beige: hsl(36, 14%, 7%);
+$black-beige: hsl(30, 14%, 5%);
 $dark-2-beige: color.adjust($dark-beige, $lightness: -20%);
-$dark-3-beige: color.adjust($black-beige, $lightness: 10%);
-$black: color.adjust($black-beige, $lightness: -4%);
+$dark-3-beige: color.adjust($black-beige, $lightness: 7%);
+$dark-4-beige: color.adjust($black-beige, $lightness: -2%);
 
 $mint: hsl(174, 30%, 56%);
 $light-purple: hsl(270, 38%, 73%);
@@ -20,8 +20,10 @@ $background-color: $black-beige;
 $text-color: $beige;
 
 // Code syntax highlight
-$code-background-color: $black;
+$code-background-color: $dark-4-beige;
 $code-text-color: $beige;
+
+$code-border-color: $dark-3-beige;
 
 // Shiki
 @mixin shiki-theme {

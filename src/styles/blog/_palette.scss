@@ -1,11 +1,39 @@
 @use 'sass:color';
 
-$beige: hsl(33, 58%, 93%);
-$dark-beige: color.adjust($beige, $lightness: -10%);
+$gray: hsl(35, 8%, 48%);
+
+$beige: hsl(31, 59%, 88%);
+$dark-beige: color.adjust($beige, $lightness: -30%);
 $black-beige: hsl(36, 14%, 7%);
-$darker-beige: color.adjust($black-beige, $lightness: 10%);
+$dark-2-beige: color.adjust($dark-beige, $lightness: -20%);
+$dark-3-beige: color.adjust($black-beige, $lightness: 10%);
+$black: color.adjust($black-beige, $lightness: -4%);
 
 $mint: hsl(174, 30%, 56%);
+$light-purple: hsl(270, 38%, 73%);
+$red: hsl(0, 36%, 56%);
+
+// Element colors
+$link-color: $mint;
 
 $background-color: $black-beige;
 $text-color: $beige;
+
+// Code syntax highlight
+$code-background-color: $black;
+$code-text-color: $beige;
+
+// Shiki
+@mixin shiki-theme {
+  --shiki-foreground: #{$code-text-color};
+  --shiki-background: #{$code-background-color};
+  --shiki-token-constant: #{$code-text-color};
+  --shiki-token-string: #{$mint};
+  --shiki-token-comment: #{$gray};
+  --shiki-token-keyword: #{$red};
+  --shiki-token-parameter: var(--shiki-token-keyword);
+  --shiki-token-function: #{$light-purple};
+  --shiki-token-string-expression: var(--shiki-token-string);
+  --shiki-token-punctuation: #{$dark-beige};
+  --shiki-token-link: #{$link-color};
+}

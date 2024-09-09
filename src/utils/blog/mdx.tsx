@@ -6,6 +6,14 @@ import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc'
 import { getPostImagePath } from './post'
 import Image from 'next/image'
 import styles from '@/styles/blog/mdx.module.scss'
+import { createCssVariablesTheme } from 'shiki/core'
+
+export const shikiTheme = createCssVariablesTheme({
+  name: 'css-variables',
+  variablePrefix: '--shiki-',
+  variableDefaults: {},
+  fontStyle: true,
+})
 
 /**
  * Internal. Parses raw MDX file content.
@@ -26,7 +34,7 @@ export const parsePostMDX = async (
           [
             rehypeShiki,
             {
-              theme: 'vitesse-black',
+              theme: shikiTheme,
               transformers: [transformerNotationHighlight()],
             },
           ],

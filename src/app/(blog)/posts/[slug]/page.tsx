@@ -2,8 +2,9 @@ import PostTitle from '@/components/blog/PostTitle'
 import styles from './styles.module.scss'
 
 import type { Metadata, ResolvingMetadata } from 'next'
-import { getTitleName as getPageTitleName } from '@/utils/blog'
+import { getPageTitleName } from '@/utils/blog/page'
 import { getPostData, postSlugList } from '@/utils/blog/post'
+import type { PostMetadata } from '@/types/post'
 
 type BlogPostPageProps = {
   params: { slug: string }
@@ -39,9 +40,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   if (mdxData === null) return null
 
+  const postMetadata: PostMetadata = {
+    title: mdxData.title,
+    categories: mdxData.categories,
+    slug: mdxData.slug,
+    date: mdxData.date,
+  }
+
   return (
     <div className={styles.container}>
-      <PostTitle>{mdxData.title}</PostTitle>
+      <PostTitle postMetadata={postMetadata} />
       <main className={styles['content-container']}>{mdxData.content}</main>
     </div>
   )

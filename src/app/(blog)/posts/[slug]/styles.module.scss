@@ -9,7 +9,6 @@
 
   width: 100%;
 }
-
 .content-container {
   & {
     width: 100%;
@@ -22,17 +21,47 @@
     font-size: 1.1rem;
   }
 
+  // Headings
+  h1,
   h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend %headings !optional;
+
+    position: relative;
+
+    margin-top: calc(value.$content-gap * 2.5);
+    margin-bottom: value.$content-gap;
+
+    @media screen and (min-width: value.$small-screen-width) {
+      &::before {
+        content: '#';
+
+        position: absolute;
+        left: 0;
+        transform: translateX(calc(-100% - value.$content-gap));
+
+        color: palette.$dark-beige;
+      }
+    }
+  }
+
+  // Element margins
   p,
   img,
   hr,
   ul,
-  ol {
+  ol,
+  :not(pre) code,
+  pre {
     margin: value.$content-gap 0;
   }
 
+  // Separator
   hr {
-    color: palette.$darker-beige;
+    color: palette.$dark-3-beige;
   }
 
   // Syntax highlighting
@@ -46,8 +75,8 @@
 
     padding: 5px 8px;
 
-    background-color: palette.$darker-beige;
-    color: palette.$beige;
+    background-color: palette.$code-background-color;
+    color: palette.$code-text-color;
   }
 
   pre {
@@ -57,14 +86,19 @@
 
     overflow-x: auto;
 
-    code span:global(.line) {
-      display: inline-block;
-      width: 100%;
+    // Shiki highlighter
+    &:global(.shiki) {
+      @include palette.shiki-theme();
 
-      padding: 0 (value.$content-gap + 5px);
+      code span:global(.line) {
+        display: inline-block;
+        width: 100%;
 
-      &:global(.highlighted) {
-        background-color: palette.$darker-beige;
+        padding: 0 (value.$content-gap + 5px);
+
+        &:global(.highlighted) {
+          background-color: palette.$dark-3-beige;
+        }
       }
     }
   }

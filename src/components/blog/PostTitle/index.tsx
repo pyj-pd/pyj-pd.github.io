@@ -1,10 +1,11 @@
+import type { PostMetadata } from '@/types/post'
 import styles from './styles.module.scss'
 
-type PostTitleProps = { skeleton?: boolean; children?: string }
+type PostTitleProps = { skeleton?: boolean; postMetadata: PostMetadata }
 
 export default function PostTitle({
   skeleton: isSkeleton,
-  children,
+  postMetadata,
 }: PostTitleProps) {
   return (
     <div className={styles.container}>
@@ -12,7 +13,7 @@ export default function PostTitle({
         {isSkeleton ? (
           <span className={styles.skeleton} />
         ) : (
-          <h1>{children}</h1>
+          <h1>{postMetadata.title}</h1>
         )}
       </div>
     </div>

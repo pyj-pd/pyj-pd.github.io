@@ -12,7 +12,6 @@ export type MDXPostMetadata = {
 
 export type PostMetadata = MDXPostMetadata & {
   slug: string
-  path: string
 }
 
 export type PostData = PostMetadata & {

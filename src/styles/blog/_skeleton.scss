@@ -2,7 +2,7 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
 
-$skeleton-color: palette.$darker-beige;
+$skeleton-color: palette.$dark-3-beige;
 $skeleton-color-darker: color.adjust($skeleton-color, $lightness: -4%);
 $animation-delay: 0.13s;
 

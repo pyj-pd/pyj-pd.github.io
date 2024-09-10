@@ -1,5 +1,8 @@
 ---
-title: CSS로 Long Flat Shadow 그리기
+title: 'CSS로 Long Flat Shadow 그리기'
+description: 'clip-path를 이용해 플랫 셰도우를 버튼에 입히는 방법에 대해 알아봅니다.'
+
+categories: ['programming']
 ---
 
 <Image src="longshadow-content-box-2.png" width="715" height="345" alt="최종 그림자의 모습" />

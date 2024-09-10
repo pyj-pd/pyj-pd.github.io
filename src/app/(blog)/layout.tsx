@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
 import { getPageTitleName } from '@/utils/blog/page'
+import BlogFooter from '@/components/blog/BlogFooter'
 
 export const metadata: Metadata = {
   title: getPageTitleName(),
@@ -24,6 +25,7 @@ export default function BlogRootLayout({
       <body className={classNames(styles.container, serifFont.className)}>
         <NavigationBar />
         {children}
+        <BlogFooter />
       </body>
     </html>
   )

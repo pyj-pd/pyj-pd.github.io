@@ -6,8 +6,12 @@ import type { CompileMDXResult } from 'next-mdx-remote/rsc'
  */
 export type MDXPostMetadata = {
   title: string
+  description?: string
+
   date?: string
   categories: CategoryId[]
+
+  draft?: boolean
 }
 
 export type PostMetadata = MDXPostMetadata & {

@@ -9,17 +9,17 @@
 
   width: 100%;
 }
+
 .content-container {
   & {
-    width: 100%;
-    max-width: value.$fixed-width;
+    @include value.fixed-width-container-styles;
 
     line-height: value.$reading-line-spacing;
 
-    padding: value.$safe-padding;
-
     font-size: 1.1rem;
   }
+
+  // @todo organize these classes.. omg
 
   // Headings
   h1,
@@ -54,7 +54,7 @@
   hr,
   ul,
   ol,
-  :not(pre) code,
+  :not(pre) > code,
   pre {
     margin: value.$content-gap 0;
   }
@@ -70,14 +70,12 @@
     letter-spacing: normal;
   }
 
-  :not(pre) code,
+  :not(pre) > code,
   pre {
-    border: solid value.$border-slim-width palette.$code-border-color;
+    border: solid value.$border-slim-width palette.$border-color;
   }
 
-  :not(pre) code {
-    border-radius: value.$border-radius;
-
+  :not(pre) > code {
     padding: 5px 8px;
 
     background-color: palette.$code-background-color;
@@ -85,9 +83,8 @@
   }
 
   pre {
-    border-radius: value.$border-radius;
-
     padding: value.$content-gap 0;
+    padding: (value.$content-gap + 5px);
 
     overflow-x: auto;
 
@@ -95,15 +92,17 @@
     &:global(.shiki) {
       @include palette.shiki-theme();
 
-      code span:global(.line) {
-        display: inline-block;
-        width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-        padding: 0 (value.$content-gap + 5px);
+    code span:global(.line),
+    code:not(:has(span)) {
+      display: inline-block;
+      width: 100%;
 
-        &:global(.highlighted) {
-          background-color: palette.$dark-3-beige;
-        }
+      &:global(.highlighted) {
+        background-color: palette.$dark-3-beige;
       }
     }
   }

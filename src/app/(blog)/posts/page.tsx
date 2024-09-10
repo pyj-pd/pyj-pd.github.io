@@ -1,16 +1,18 @@
 import { postList } from '@/utils/blog/post'
-import Link from 'next/link'
+import styles from './styles.module.scss'
+import PostButton from '@/components/blog/PostButton'
 
 export default async function BlogPostListPage() {
   return (
-    <main>
-      <ul>
+    <main className={styles.container}>
+      <div className={styles['post-list-container']}>
         {postList.map((postData, index) => (
-          <li key={index}>
-            <Link href={`/posts/${postData.slug}`}>{postData.slug}</Link>
-          </li>
+          <PostButton
+            key={index}
+            postData={postData}
+          />
         ))}
-      </ul>
+      </div>
     </main>
   )
 }

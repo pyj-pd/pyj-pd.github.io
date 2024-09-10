@@ -1,5 +1,7 @@
 ---
-title: Linux에서 Firefox Developer Edition 설치하기
+title: 'Linux에서 Firefox Developer Edition 설치하기'
+
+categories: ['computer']
 ---
 
 Windows 환경에서 프로그램을 설치하기란 간단하다. `.msi`나 `.exe`로 끝나는 파일을 실행하여 설치기가 하라는 대로만 따르면 설치가 완료된다.

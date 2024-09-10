@@ -5,8 +5,8 @@ $gray: hsl(35, 8%, 48%);
 $beige: hsl(33, 51%, 82%);
 $dark-beige: color.adjust($beige, $lightness: -30%);
 $black-beige: hsl(30, 14%, 5%);
-$dark-2-beige: color.adjust($dark-beige, $lightness: -20%);
-$dark-3-beige: color.adjust($black-beige, $lightness: 7%);
+$dark-2-beige: color.adjust($black-beige, $lightness: 30%);
+$dark-3-beige: color.adjust($black-beige, $lightness: 12%);
 $dark-4-beige: color.adjust($black-beige, $lightness: -2%);
 
 $mint: hsl(174, 30%, 56%);
@@ -16,14 +16,14 @@ $red: hsl(0, 36%, 56%);
 // Element colors
 $link-color: $mint;
 
+$border-color: $dark-3-beige;
+
 $background-color: $black-beige;
 $text-color: $beige;
 
 // Code syntax highlight
 $code-background-color: $dark-4-beige;
 $code-text-color: $beige;
-
-$code-border-color: $dark-3-beige;
 
 // Shiki
 @mixin shiki-theme {

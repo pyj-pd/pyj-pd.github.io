@@ -6,10 +6,19 @@ $safe-padding: 30px;
 
 $reading-line-spacing: 1.8;
 
-$content-gap: 12px;
+// Gap
+$content-small-gap: 4px;
+$content-gap: 15px;
 
 $blur-intensity: 5px;
 
 $border-slim-width: 1px;
 $border-width: 2px;
-$border-radius: 8px;
+
+// Container
+@mixin fixed-width-container-styles {
+  width: 100%;
+  max-width: $fixed-width;
+
+  padding: $safe-padding;
+}

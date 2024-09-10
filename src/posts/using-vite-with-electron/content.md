@@ -1,5 +1,8 @@
 ---
-title: Electron + Vite (+ React) 사용하기
+title: 'Electron + Vite (+ React) 사용하기'
+description: 'Electron에서 Vite와 React를 함께 이용하는 방법에 대해 알아봅니다.'
+
+categories: ['programming']
 ---
 
 ## electron-vite

@@ -45,7 +45,7 @@ const _getPostList = async (): Promise<PostData[]> => {
       content: parsedData.content,
     }
 
-    postDataList.push(postData)
+    if (!postData.draft) postDataList.push(postData) // Not publishing draft posts
   }
 
   return postDataList

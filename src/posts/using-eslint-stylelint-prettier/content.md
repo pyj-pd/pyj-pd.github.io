@@ -1,5 +1,8 @@
 ---
-title: ESLint, Stylelint, Prettier로 코드 정리하기
+title: 'ESLint, Stylelint, Prettier로 코드 정리하기'
+description: 'JavaScript, CSS 및 기타 파일들의 포맷의 일관성을 지키기 위해 Lint와 Formatter를 이용하는 방법에 대해 알아봅니다.'
+
+categories: ['programming']
 ---
 
 ## ESLint로 코드 정리하기

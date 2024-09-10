@@ -1,5 +1,8 @@
 ---
-title: Test content
+title: 'Test content'
+
+categories: []
+draft: true
 ---
 
 ```mdx

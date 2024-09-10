@@ -1,5 +1,8 @@
 ---
-title: TypeScript에서 as const와 타입 동시에 사용하기
+title: 'TypeScript에서 as const와 타입 체킹 동시에 사용하기'
+description: 'as const를 이용하는 동시에 satisfies 키워드를 통해 타입 체킹을 하는 방법에 대해 알아봅니다.'
+
+categories: ['programming']
 ---
 
 ## 문제 발생

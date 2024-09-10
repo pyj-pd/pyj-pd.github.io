@@ -1,5 +1,8 @@
 ---
-title: openSUSE에서 코덱 설치하기
+title: 'openSUSE에서 코덱 설치하기'
+description: 'openSUSE에서 YouTube를 원활하게 시청하기 위해 코덱을 설치하는 방법에 대해 알아봅니다.'
+
+categories: ['computer']
 ---
 
 openSUSE Tumbleweed를 설치한 후 Firefox 브라우저에서 YouTube 영상을 시청하려고 헀더니 다음과 같은 오류가 뜨면서 영상 시청이 불가하였다.

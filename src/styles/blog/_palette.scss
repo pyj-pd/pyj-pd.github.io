@@ -4,7 +4,7 @@ $gray: hsl(35, 8%, 48%);
 
 $beige: hsl(33, 51%, 82%);
 $dark-beige: color.adjust($beige, $lightness: -30%);
-$black-beige: hsl(30, 14%, 5%);
+$black-beige: hsl(30, 20%, 6%);
 $dark-2-beige: color.adjust($black-beige, $lightness: 30%);
 $dark-3-beige: color.adjust($black-beige, $lightness: 12%);
 $dark-4-beige: color.adjust($black-beige, $lightness: -2%);

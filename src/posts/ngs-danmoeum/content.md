@@ -3,6 +3,7 @@ title: '날개셋 한글 입력기로 PC에서 단모음 자판 사용하기'
 description: 'Windows에서 ㄱ을 두 번 연속으로 누르면 ㄲ이 나오는 등의 방식을 사용하는 방법에 대해 알아봅니다.'
 
 categories: ['computer']
+draft: true
 ---
 
 <Image src="double tap option.png" width="710" height="490" alt="'두 번 탭하여 이중 자음/모음 입력' 옵션" />

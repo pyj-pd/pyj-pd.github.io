@@ -11,32 +11,32 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.8",
+    "@next/mdx": "^14.2.9",
     "@types/mdx": "^2.0.13",
     "classnames": "^2.5.1",
     "framer-motion": "^11.5.4",
-    "next": "14.2.8",
+    "next": "14.2.9",
     "next-mdx-remote": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@shikijs/rehype": "^1.16.2",
-    "@shikijs/transformers": "^1.16.2",
+    "@shikijs/rehype": "^1.16.3",
+    "@shikijs/transformers": "^1.16.3",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.4.0",
-    "@typescript-eslint/parser": "^8.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.8",
+    "eslint-config-next": "14.2.9",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "sass": "^1.78.0",
-    "shiki": "^1.16.2",
-    "typescript": "^5.5.4"
+    "shiki": "^1.16.3",
+    "typescript": "^5.6.2"
   }
 }

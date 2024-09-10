@@ -35,15 +35,22 @@
     margin-top: calc(value.$content-gap * 2.5);
     margin-bottom: value.$content-gap;
 
-    @media screen and (min-width: value.$small-screen-width) {
+    &::before {
+      content: '#';
+
+      position: absolute;
+      left: 0;
+      transform: translateX(calc(-100% - value.$content-gap));
+
+      display: block;
+
+      color: palette.$dark-beige;
+    }
+
+    @media screen and (max-width: value.$small-screen-width) {
       &::before {
-        content: '#';
-
-        position: absolute;
-        left: 0;
-        transform: translateX(calc(-100% - value.$content-gap));
-
-        color: palette.$dark-beige;
+        position: relative;
+        transform: none;
       }
     }
   }
@@ -57,6 +64,15 @@
   :not(pre) > code,
   pre {
     margin: value.$content-gap 0;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+
+  ul {
+    padding-left: value.$content-gap;
   }
 
   // Separator
@@ -80,6 +96,8 @@
 
     background-color: palette.$code-background-color;
     color: palette.$code-text-color;
+
+    font-size: 0.8em;
   }
 
   pre {

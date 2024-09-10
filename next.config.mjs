@@ -4,8 +4,10 @@ import createMDX from '@next/mdx'
 
 const nextConfig = {
   output: 'export',
-  distDir: 'out',
   transpilePackages: ['next-mdx-remote'],
+  images: {
+    unoptimized: true,
+  },
 }
 
 const withMDX = createMDX({})

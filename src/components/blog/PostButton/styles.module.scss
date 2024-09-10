@@ -84,10 +84,10 @@
       display: block;
       transform: rotate(45deg);
 
-      width: 15px;
+      width: 10px;
       aspect-ratio: 1 / 1;
 
-      border: solid value.$border-slim-width palette.$text-color;
+      border: solid value.$border-width palette.$text-color;
       border-left: none;
       border-bottom: none;
     }

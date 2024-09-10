@@ -7,6 +7,7 @@ import type { CompileMDXResult } from 'next-mdx-remote/rsc'
 export type MDXPostMetadata = {
   title: string
   description?: string
+  thumbnailPath?: string
 
   date?: string
   categories: CategoryId[]

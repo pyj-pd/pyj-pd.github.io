@@ -6,7 +6,9 @@ export default function NavigationBar() {
     <div className={styles['navbar-container']}>
       <nav className={styles.container}>
         <ul className={styles['list-container']}>
-          <li>pyj-pd</li>
+          <li>
+            <span className={styles.name}>pyj-pd</span>
+          </li>
           <li>
             <Link href="/posts">블로그</Link>
           </li>

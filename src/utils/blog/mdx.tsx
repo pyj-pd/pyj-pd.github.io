@@ -3,7 +3,7 @@ import type { MDXPostMetadata } from '@/types/post'
 import rehypeShiki from '@shikijs/rehype'
 import { transformerNotationHighlight } from '@shikijs/transformers'
 import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc'
-import { getPostImagePath } from './post'
+import { getPostAssetsPath } from './post'
 import Image from 'next/image'
 import styles from '@/styles/blog/mdx.module.scss'
 import { createCssVariablesTheme } from 'shiki/core'
@@ -46,7 +46,7 @@ export const parsePostMDX = async (
         <div className={styles['image-container']}>
           <Image
             {...props}
-            src={getPostImagePath(slug, props.src)}
+            src={getPostAssetsPath(slug, props.src)}
             width={Number(props.width)}
             height={Number(props.height)}
             alt={props.alt}

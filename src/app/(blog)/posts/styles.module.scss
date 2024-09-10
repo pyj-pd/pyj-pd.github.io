@@ -1,6 +1,8 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
 
+$list-gap: calc(value.$content-gap * 3);
+
 $bottom-gradient-height: 210px;
 
 .container {
@@ -8,9 +10,7 @@ $bottom-gradient-height: 210px;
 
   @include value.fixed-width-container-styles;
 
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: $bottom-gradient-height;
+  padding: $list-gap 0 $bottom-gradient-height 0;
 
   border: solid value.$border-slim-width palette.$border-color;
   border-top: none;
@@ -32,7 +32,7 @@ $bottom-gradient-height: 210px;
 .post-list-container {
   display: flex;
   flex-direction: column;
-  gap: value.$content-gap;
+  gap: $list-gap;
 
   width: 100%;
 }

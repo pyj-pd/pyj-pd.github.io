@@ -5,6 +5,7 @@ import { categoryList } from '@/constants/blog/categories'
 
 type PostButtonProps = { postData: PostData }
 
+/** @todo add thumbnail */
 export default function PostButton({ postData }: PostButtonProps) {
   return (
     <div className={styles.container}>
@@ -30,7 +31,10 @@ export default function PostButton({ postData }: PostButtonProps) {
         tabIndex={-1}
         className={styles['link-wrapper']}
       >
-        <button className={styles['side-button-container']}>
+        <button
+          className={styles['side-button-container']}
+          aria-label="해당 글로 이동"
+        >
           <span className={styles['right-arrow']} />
         </button>
       </Link>

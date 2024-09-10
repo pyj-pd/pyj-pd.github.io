@@ -58,13 +58,13 @@ export const getPostData = (slug: string): PostData | null => {
   return postList.find((post) => post.slug === slug) ?? null
 }
 
-const POST_IMAGE_PATH_PUBLIC = '/assets/blog/posts'
+const POST_ASSETS_PATH_PUBLIC = '/assets/blog/posts'
 
 /**
- * Converts image path in markdown into Next.js-compatiable path(which points to `public`).
+ * Converts path of assets in markdown into Next.js-compatiable path(which points to `public`).
  * @param slug Post slug
- * @param src Raw image path from markdown file
- * @returns Image file path that can be used in HTML
+ * @param src Raw asset path from markdown file
+ * @returns Asset file path that can be used in HTML
  */
-export const getPostImagePath = (slug: string, src: string): string =>
-  `${POST_IMAGE_PATH_PUBLIC}/${slug}/${src}`
+export const getPostAssetsPath = (slug: string, src: string): string =>
+  `${POST_ASSETS_PATH_PUBLIC}/${slug}/${src}`

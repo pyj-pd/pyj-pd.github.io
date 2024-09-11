@@ -68,3 +68,5 @@ const POST_ASSETS_PATH_PUBLIC = '/assets/blog/posts'
  */
 export const getPostAssetsPath = (slug: string, src: string): string =>
   `${POST_ASSETS_PATH_PUBLIC}/${slug}/${src}`
+
+export const getPostURL = (postSlug: string) => `/posts/${postSlug}`

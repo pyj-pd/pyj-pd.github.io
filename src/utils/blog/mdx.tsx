@@ -3,9 +3,7 @@ import type { MDXPostMetadata } from '@/types/post'
 import rehypeShiki from '@shikijs/rehype'
 import { transformerNotationHighlight } from '@shikijs/transformers'
 import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc'
-import { getPostAssetsPath } from './post'
-import Image from 'next/image'
-import styles from '@/styles/blog/mdx.module.scss'
+import Callout from '@/components/blog/mdx/Callout'
 import { createCssVariablesTheme } from 'shiki/core'
 import rehypeSlug from 'rehype-slug'
 import MDXImage from '@/components/blog/mdx/Callout/MDXImage'
@@ -47,8 +45,12 @@ export const parsePostMDX = async (
       },
     },
     components: {
+      Callout,
       Image: (props) => (
-        <MDXImage {...props} slug={slug} />
+        <MDXImage
+          {...props}
+          slug={slug}
+        />
       ),
       code: (props) => (
         <code

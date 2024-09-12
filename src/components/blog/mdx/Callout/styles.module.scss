@@ -1,0 +1,26 @@
+@use '@/styles/blog/value' as value;
+@use '@/styles/blog/palette' as palette;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: value.$content-gap;
+
+  overflow: hidden;
+
+  padding: value.$content-gap;
+
+  background-color: var(--background-color);
+  color: palette.$text-color;
+
+  border-left: solid 7px var(--border-color);
+
+  // Variants
+  &.normal {
+    --background-color: palette.$dark-3-beige;
+    --border-color: palette.$dark-3-beige;
+  }
+}
+
+.title {
+}

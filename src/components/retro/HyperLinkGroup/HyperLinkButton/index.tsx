@@ -22,7 +22,6 @@ export default function HyperLinkButton({
   return (
     <Link
       href={url}
-      target="_blank"
       tabIndex={-1}
     >
       <button className={styles['button-container']}>

@@ -1,5 +1,6 @@
 @use 'sass:color';
 
+// Basic colors
 $gray: hsl(35, 8%, 48%);
 
 $beige: hsl(33, 30%, 75%);
@@ -9,10 +10,14 @@ $dark-2-beige: color.adjust($black-beige, $lightness: 30%);
 $dark-3-beige: color.adjust($black-beige, $lightness: 12%);
 $dark-4-beige: color.adjust($black-beige, $lightness: -2%);
 
+// Colors
+$green: hsl(84, 20%, 49%);
+$blue: rgb(88, 105, 182);
+$yellow: rgb(215, 198, 112);
+$red: hsl(0, 34%, 50%);
+
 $mint: hsl(174, 30%, 56%);
 $light-purple: hsl(270, 38%, 73%);
-$red: hsl(0, 34%, 51%);
-$green: hsl(84, 20%, 49%);
 
 // Element colors
 $link-color: $mint;

@@ -18,8 +18,7 @@ Windows 10에서는 위 이미지와 같이 ㄱ을 두 번 눌러 ㄱㄱ을 ㄲ�
 
 ## 설치
 
-> [!NOTE]
-> 날개셋 한글 입력기는 Windows에서만 사용할 수 있다.
+<Callout type="info">날개셋 한글 입력기는 Windows에서만 사용할 수 있다.</Callout>
 
 [날개셋 한글 입력기 다운로드 페이지](http://moogi.new21.org/ngs_download.htm)에 접속하여 자신의 컴퓨터에 맞는 설치 파일을 내려받아 프로그램을 설치하여 준다.
 

@@ -3,10 +3,11 @@ import type { MDXPostMetadata } from '@/types/post'
 import rehypeShiki from '@shikijs/rehype'
 import { transformerNotationHighlight } from '@shikijs/transformers'
 import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc'
-import Callout from '@/components/blog/mdx/Callout'
+import MDXCallout from '@/components/blog/mdx/MDXCallout'
 import { createCssVariablesTheme } from 'shiki/core'
 import rehypeSlug from 'rehype-slug'
-import MDXImage from '@/components/blog/mdx/Callout/MDXImage'
+import MDXImage from '@/components/blog/mdx/MDXImage'
+import MDXLink from '@/components/blog/mdx/MDXLink'
 
 export const shikiTheme = createCssVariablesTheme({
   name: 'css-variables',
@@ -14,8 +15,6 @@ export const shikiTheme = createCssVariablesTheme({
   variableDefaults: {},
   fontStyle: true,
 })
-
-const HEADING_LINK_PREFIX = '#'
 
 /**
  * Internal. Parses raw MDX file content.
@@ -45,7 +44,7 @@ export const parsePostMDX = async (
       },
     },
     components: {
-      Callout,
+      Callout: MDXCallout,
       Image: (props) => (
         <MDXImage
           {...props}
@@ -58,16 +57,7 @@ export const parsePostMDX = async (
           className={monospaceFont.className}
         />
       ),
-      a: (props) => {
-        const isHeadingLink = props.href?.startsWith(HEADING_LINK_PREFIX)
-
-        return (
-          <a
-            {...props}
-            target={!isHeadingLink ? '_blank' : undefined}
-          />
-        )
-      },
+      a: MDXLink,
     },
   })
 

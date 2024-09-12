@@ -4,6 +4,8 @@
 body {
   background-color: palette.$background-color;
   color: palette.$text-color;
+
+  font-family: var(--f-serif), var(--f-emoji), serif;
 }
 
 a {

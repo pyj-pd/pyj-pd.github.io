@@ -21,8 +21,7 @@ $ pnpm add -D eslint
 
 ### config 작성하기
 
-> [!info]
-> ESLint에서 언급하는 [npm init 방식](https://eslint.org/docs/latest/use/getting-started)으로도 config 파일을 작성할 수 있다. 이 글에서는 수동으로 파일을 생성해서 작성할 것이다.
+<Callout type="info">ESLint에서 언급하는 [npm init 방식](https://eslint.org/docs/latest/use/getting-started)으로도 config 파일을 작성할 수 있다. 이 글에서는 수동으로 파일을 생성해서 작성할 것이다.</Callout>
 
 첫번째로 ESLint의 config 파일을 생성하기 위해 프로젝트 root 폴더에 `eslint.config.js`라는 파일을 생성한다. 해당 파일은 ESLint 버전 v9.0.0 이상부터 사용될 config 방식이며, 기존 `.eslintrc.js`, `.eslintrc.json` 등의 파일을 대체하게 된다. 이 방식은 'Flat Config'라고 불린다.
 

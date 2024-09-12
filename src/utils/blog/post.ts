@@ -45,7 +45,9 @@ const _getPostList = async (): Promise<PostData[]> => {
       content: parsedData.content,
     }
 
-    if (!postData.draft) postDataList.push(postData) // Not publishing draft posts
+    const shouldSkip = postData.draft && process.env.NODE_ENV === 'production'
+
+    if (!shouldSkip) postDataList.push(postData) // Not publishing draft posts
   }
 
   return postDataList

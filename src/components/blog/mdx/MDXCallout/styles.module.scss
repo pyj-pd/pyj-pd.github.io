@@ -1,0 +1,51 @@
+@use '@/styles/blog/value' as value;
+@use '@/styles/blog/palette' as palette;
+
+$border-width: 7px;
+
+.container {
+  display: flex;
+
+  padding-left: $border-width;
+  margin: value.$content-gap 0;
+
+  background-color: var(--border-color);
+
+  // Variants
+  &.normal {
+    --border-color: #{palette.$dark-beige};
+  }
+
+  &.info {
+    --border-color: #{palette.$blue};
+  }
+
+  &.okay {
+    --border-color: #{palette.$green};
+  }
+
+  &.warn {
+    --border-color: #{palette.$yellow};
+  }
+
+  &.error {
+    --border-color: #{palette.$red};
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: value.$content-gap;
+
+  background-color: rgba(palette.$background-color, 0.9);
+  color: var(--text-color, #{palette.$text-color});
+
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: var(--title-color, var(--border-color));
+}

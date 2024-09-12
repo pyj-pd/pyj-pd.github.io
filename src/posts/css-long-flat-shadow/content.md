@@ -52,8 +52,7 @@ Long Shadow를 CSS에서 구현하기 위해서 간단한 검색을 해보기로
 
 ## `clip-path: polygon()`을 이용해서 Long Shadow 만들기
 
-> [!info]
-> 이 문서에서는 [SCSS](https://sass-lang.com/)를 이용한 구현을 설명한다.
+<Callout type="info">이 문서에서는 [SCSS](https://sass-lang.com/)를 이용한 구현을 설명한다.</Callout>
 
 완성된 코드는 아래와 같다.
 

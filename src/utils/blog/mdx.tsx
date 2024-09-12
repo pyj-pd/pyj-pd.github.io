@@ -3,10 +3,11 @@ import type { MDXPostMetadata } from '@/types/post'
 import rehypeShiki from '@shikijs/rehype'
 import { transformerNotationHighlight } from '@shikijs/transformers'
 import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc'
-import { getPostAssetsPath } from './post'
-import Image from 'next/image'
-import styles from '@/styles/blog/mdx.module.scss'
+import MDXCallout from '@/components/blog/mdx/MDXCallout'
 import { createCssVariablesTheme } from 'shiki/core'
+import rehypeSlug from 'rehype-slug'
+import MDXImage from '@/components/blog/mdx/MDXImage'
+import MDXLink from '@/components/blog/mdx/MDXLink'
 
 export const shikiTheme = createCssVariablesTheme({
   name: 'css-variables',
@@ -38,21 +39,17 @@ export const parsePostMDX = async (
               transformers: [transformerNotationHighlight()],
             },
           ],
+          rehypeSlug,
         ],
       },
     },
     components: {
+      Callout: MDXCallout,
       Image: (props) => (
-        <div className={styles['image-container']}>
-          <Image
-            {...props}
-            src={getPostAssetsPath(slug, props.src)}
-            width={Number(props.width)}
-            height={Number(props.height)}
-            alt={props.alt}
-            className={styles.image}
-          />
-        </div>
+        <MDXImage
+          {...props}
+          slug={slug}
+        />
       ),
       code: (props) => (
         <code
@@ -60,12 +57,7 @@ export const parsePostMDX = async (
           className={monospaceFont.className}
         />
       ),
-      a: (props) => (
-        <a
-          {...props}
-          target="_blank"
-        />
-      ),
+      a: MDXLink,
     },
   })
 

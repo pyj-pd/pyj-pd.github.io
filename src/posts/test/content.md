@@ -5,6 +5,12 @@ categories: []
 draft: true
 ---
 
+<Callout type="normal">노말 콜아웃</Callout>
+<Callout type="info">정보입니다.</Callout>
+<Callout type="okay">굿 콜아웃</Callout>
+<Callout type="warn">경고 콜아웃</Callout>
+<Callout type="error">에러났대요</Callout>
+
 ```mdx
 <MyComponent id="123" />
 

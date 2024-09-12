@@ -1,7 +1,7 @@
 import '@/styles/globals.scss'
 import './blog-layout.scss'
 import styles from './layout.module.scss'
-import { serifFont } from '@/styles/fonts'
+import { emojiFont, monospaceFont, serifFont } from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
@@ -22,7 +22,16 @@ export default function BlogRootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={classNames(styles.container, serifFont.className)}>
+      <body
+        className={classNames(
+          styles.container,
+
+          // Fonts
+          serifFont.variable,
+          monospaceFont.variable,
+          emojiFont.variable,
+        )}
+      >
         <NavigationBar />
         {children}
         <BlogFooter />

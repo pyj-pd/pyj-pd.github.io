@@ -35,8 +35,7 @@ pnpm create electron-app@latest my-app --template=vite
 
 이때 `my-app`을 자신이 원하는 프로젝트명으로 바꾸어 주어도 된다.
 
-> [!TIP]
-> TypeScript를 사용하고 싶다면 뒤의 `--template=vite`를 `--template=vite-typescript`로 바꾸어주면 된다.
+<Callout type="info">TypeScript를 사용하고 싶다면 뒤의 `--template=vite`를 `--template=vite-typescript`로 바꾸어주면 된다.</Callout>
 
 설치가 완료된 후 Electron 프로그램을 실행하고 싶다면 다음 명령어를 입력해주면 된다.
 
@@ -62,14 +61,16 @@ npm install --save react react-dom
 pnpm add react react-dom
 ```
 
-> [!TIP]
-> TypeScript 사용 시 다음 명령어도 추가로 입력해주어야 한다.
->
-> ```bash
-> npm install --save-dev @types/react @types/react-dom
-> // 또는
-> pnpm add -D @types/react @types/react-dom
-> ```
+<Callout type="info">
+TypeScript 사용 시 다음 명령어도 추가로 입력해주어야 한다.
+
+```bash
+npm install --save-dev @types/react @types/react-dom
+// 또는
+pnpm add -D @types/react @types/react-dom
+```
+
+</Callout>
 
 패키지를 설치해주었다면 관련 파일들을 추가로 생성해주어야 한다.
 

@@ -7,6 +7,8 @@ import { getPostAssetsPath } from './post'
 import Image from 'next/image'
 import styles from '@/styles/blog/mdx.module.scss'
 import { createCssVariablesTheme } from 'shiki/core'
+import rehypeSlug from 'rehype-slug'
+import MDXImage from '@/components/blog/mdx/Callout/MDXImage'
 
 export const shikiTheme = createCssVariablesTheme({
   name: 'css-variables',
@@ -14,6 +16,8 @@ export const shikiTheme = createCssVariablesTheme({
   variableDefaults: {},
   fontStyle: true,
 })
+
+const HEADING_LINK_PREFIX = '#'
 
 /**
  * Internal. Parses raw MDX file content.
@@ -38,21 +42,13 @@ export const parsePostMDX = async (
               transformers: [transformerNotationHighlight()],
             },
           ],
+          rehypeSlug,
         ],
       },
     },
     components: {
       Image: (props) => (
-        <div className={styles['image-container']}>
-          <Image
-            {...props}
-            src={getPostAssetsPath(slug, props.src)}
-            width={Number(props.width)}
-            height={Number(props.height)}
-            alt={props.alt}
-            className={styles.image}
-          />
-        </div>
+        <MDXImage {...props} slug={slug} />
       ),
       code: (props) => (
         <code
@@ -60,12 +56,16 @@ export const parsePostMDX = async (
           className={monospaceFont.className}
         />
       ),
-      a: (props) => (
-        <a
-          {...props}
-          target="_blank"
-        />
-      ),
+      a: (props) => {
+        const isHeadingLink = props.href?.startsWith(HEADING_LINK_PREFIX)
+
+        return (
+          <a
+            {...props}
+            target={!isHeadingLink ? '_blank' : undefined}
+          />
+        )
+      },
     },
   })
 

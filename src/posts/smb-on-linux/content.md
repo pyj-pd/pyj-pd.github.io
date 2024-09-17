@@ -149,7 +149,7 @@ browseable=yes
 public=no
 ```
 
-`[]` 사이 `smbdrive`는 자신이 원하는 이름으로 설정하여 주면 된다.
+`[]` 사이 `smbdrive`는 자신이 원하는 이름으로 수정하고, `path=` 뒤는 SMB 서버를 통해 공유할 디렉토리 경로로 수정하면 된다.
 
 `smb.conf` 파일에 대한 설명은 [Samba 공식 사이트의 smb.conf 페이지](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)를 참고하면 좋다.
 

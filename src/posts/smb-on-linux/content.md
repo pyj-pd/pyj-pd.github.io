@@ -1,5 +1,5 @@
 ---
-title: 'Raspberry Pi를 이용해 외장 HDD를 SMB 서버로 이용하기'
+title: 'Raspberry Pi와 외장 HDD를 이용해 SMB 서버 구축하기'
 description: '외장 HDD를 이용해 같은 네트워크 내에서 사용할 수 있는 SMB 서버를 구축하는 방법에 대해 알아봅니다.'
 
 categories: ['computer']

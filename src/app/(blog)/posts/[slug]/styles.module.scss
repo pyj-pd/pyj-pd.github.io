@@ -89,6 +89,9 @@
   :not(pre) > code,
   pre {
     border: solid value.$border-slim-width palette.$border-color;
+
+    background-color: palette.$code-background-color;
+    color: palette.$code-text-color;
   }
 
   :not(pre) > code {

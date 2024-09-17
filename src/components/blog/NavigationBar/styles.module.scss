@@ -51,15 +51,4 @@
   gap: value.$content-small-gap;
 
   color: palette.$green;
-
-  &::before {
-    content: '';
-
-    display: block;
-
-    height: 5px;
-    aspect-ratio: 1 / 1;
-
-    background-color: currentColor;
-  }
 }

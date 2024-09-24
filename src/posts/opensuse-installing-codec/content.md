@@ -17,7 +17,7 @@ An error occurred. Please try again later. (Playback ID: ...)
 
 [openSUSE 공식 문서](https://en.opensuse.org/SDB:Installing_codecs_from_Packman_repositories)에서 코덱을 설치하는 방법에 대해 찾을 수 있었다. 해당 문서에서도 코덱이 제대로 설치되지 않은 경우 일어날 수 있는 오류의 예로 멀티미디어 콘텐츠가 재생되지 않는 경우를 들고 있었다.
 
-해당 문서에 따라 [Packman](http://packman.links2linux.org/) 레포지토리를 설치하여 해당하는 코덱들을 설치하고자 하였다. [openSUSE 공식 문서](https://en.opensuse.org/Additional_package_repositories#Packman)에 따르면 openSUSE에서 Packman을 멀티미디어 관련 파일들이나 그 외에 게임 등 다양한 유틸리티를 설치하는 데 사용할 수 있다고 한다.
+해당 문서에 따라 [Packman](http://packman.links2linux.org/) 레포지토리를 설치하여 해당하는 코덱들을 설치하고자 하였다. [openSUSE 공식 문서](https://en.opensuse.org/Additional_package_repositories#Packman)에 따르면 openSUSE에서 Packman을 멀티미디어 관련 파일들이나 그 외에 게임 등 다양한 유틸리티를 설치하는 데 사용할 수 있다고 한다. Packman은 Arch Linux의 [pacman](https://wiki.archlinux.org/title/Pacman)과는 관련이 없다.
 
 문단 가장 상단에서 언급한 공식 문서에서는 크게 세 가지 방법을 통해 코덱을 설치하는 방법을 안내하고 있는데, 이 글에서는 Zypper를 이용하여 설치하는 방법에 대해 서술해 보겠다. 먼저 자신이 사용하는 openSUSE 버전에 맞추어 아래 명령어를 실행시켜 Packman 레포지토리를 추가해주어야 한다.
 

@@ -1,11 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import styles from './styles.module.scss'
 import { navbarRouteList } from '@/constants/urls'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import linkIconGif from '@public/assets/retro/link.gif'
+import MyLink from '@/components/common/MyLink'
 
 export default function NavigationBar() {
   const pathname = usePathname()
@@ -20,7 +20,7 @@ export default function NavigationBar() {
               `[${route.name}]`
             ) : (
               // Other paths
-              <Link
+              <MyLink
                 href={route.path}
                 target={route.openInNewTab ? '_blank' : undefined}
               >
@@ -36,7 +36,7 @@ export default function NavigationBar() {
                   )
                 }
                 ]
-              </Link>
+              </MyLink>
             )}
           </li>
         ))}

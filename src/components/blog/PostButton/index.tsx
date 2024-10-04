@@ -1,8 +1,8 @@
 import type { PostData } from '@/types/post'
-import Link from 'next/link'
 import styles from './styles.module.scss'
 import { categoryList } from '@/constants/blog/categories'
 import { getPostURL } from '@/utils/blog/post'
+import MyLink from '@/components/common/MyLink'
 
 type PostButtonProps = { postData: PostData }
 
@@ -27,7 +27,7 @@ export default function PostButton({ postData }: PostButtonProps) {
           ))}
         </div>
       </div>
-      <Link
+      <MyLink
         href={getPostURL(postData.slug)}
         tabIndex={-1}
         className={styles['link-wrapper']}
@@ -38,7 +38,7 @@ export default function PostButton({ postData }: PostButtonProps) {
         >
           <span className={styles['right-arrow']} />
         </button>
-      </Link>
+      </MyLink>
     </div>
   )
 }

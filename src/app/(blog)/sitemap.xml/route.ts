@@ -9,11 +9,21 @@ export async function GET() {
     ...postList.map((post) => SITE_URL + getPostURL(post.slug)),
   ]
 
-  const sitemapString = sites.join('\n')
+  const xmlLines: string[] = [
+    // Headers
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
 
-  return new Response(sitemapString, {
+    // Links
+    ...sites.map((site) => `<url><loc>${site}</loc></url>`),
+
+    // Last line
+    '</urlset>',
+  ]
+
+  return new Response(xmlLines.join('\n'), {
     headers: {
-      'Content-Type': 'text/plain',
+      'Content-Type': 'text/xml',
     },
   })
 }

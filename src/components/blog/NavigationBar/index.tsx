@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import styles from './styles.module.scss'
+import MyLink from '@/components/common/MyLink'
 
 export default function NavigationBar() {
   return (
@@ -10,10 +10,10 @@ export default function NavigationBar() {
             <span className={styles.name}>pyj-pd</span>
           </li>
           <li>
-            <Link href="/posts">블로그</Link>
+            <MyLink href="/posts">블로그</MyLink>
           </li>
           <li>
-            <Link href="/">About me</Link>
+            <MyLink href="/">About me</MyLink>
           </li>
         </ul>
       </nav>

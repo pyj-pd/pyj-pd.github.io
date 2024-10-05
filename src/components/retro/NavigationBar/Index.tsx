@@ -1,7 +1,11 @@
 'use client'
 
 import styles from './styles.module.scss'
-import { navbarRouteList } from '@/constants/urls'
+import {
+  navbarRouteList,
+  type NavbarRouteData,
+  type NavbarRouteId,
+} from '@/constants/urls'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import linkIconGif from '@public/assets/retro/link.gif'
@@ -13,33 +17,39 @@ export default function NavigationBar() {
   return (
     <nav className={styles.container}>
       <ul className={styles['link-list']}>
-        {navbarRouteList.map((route, index) => (
-          <li key={index}>
-            {pathname === route.path ? (
-              // Current path
-              `[${route.name}]`
-            ) : (
-              // Other paths
-              <MyLink
-                href={route.path}
-                target={route.openInNewTab ? '_blank' : undefined}
-              >
-                [{route.name}
-                {
-                  // External link
-                  route.openInNewTab && (
-                    <Image
-                      src={linkIconGif}
-                      unoptimized
-                      alt="External link"
-                    />
-                  )
-                }
-                ]
-              </MyLink>
-            )}
-          </li>
-        ))}
+        {(Object.keys(navbarRouteList) as NavbarRouteId[]).map(
+          (routeId, index) => {
+            const route = navbarRouteList[routeId] as NavbarRouteData[string]
+
+            return (
+              <li key={index}>
+                {pathname === route.path ? (
+                  // Current path
+                  `[${route.name}]`
+                ) : (
+                  // Other paths
+                  <MyLink
+                    href={route.path}
+                    target={route.openInNewTab ? '_blank' : undefined}
+                  >
+                    [{route.name}
+                    {
+                      // External link
+                      route.openInNewTab && (
+                        <Image
+                          src={linkIconGif}
+                          unoptimized
+                          alt="External link"
+                        />
+                      )
+                    }
+                    ]
+                  </MyLink>
+                )}
+              </li>
+            )
+          },
+        )}
       </ul>
     </nav>
   )

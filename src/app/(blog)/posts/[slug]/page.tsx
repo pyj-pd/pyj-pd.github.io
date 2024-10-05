@@ -1,31 +1,31 @@
 import PostTitle from '@/components/blog/PostTitle'
 import styles from './styles.module.scss'
 
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
 import { getPostData, postSlugList } from '@/utils/blog/post'
 import type { PostMetadata } from '@/types/post'
+import { getCanonicalMetadataFromPath } from '@/utils/metadata'
+import { navbarRouteList } from '@/constants/urls'
 
 type BlogPostPageProps = {
   params: { slug: string }
 }
 
-export async function generateMetadata(
-  { params }: BlogPostPageProps,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const mdxData = getPostData(params.slug)
 
   if (mdxData === null) return {}
 
-  const previousMetadata = await parent,
-    previousOGImages = previousMetadata.openGraph?.images ?? []
+  const canonicalMetadata = getCanonicalMetadataFromPath(
+    `${navbarRouteList.posts.path}/${mdxData.slug}`,
+  )
 
   return {
     title: getPageTitleName(mdxData.title),
-    openGraph: {
-      images: previousOGImages,
-    },
+    ...canonicalMetadata,
   }
 }
 

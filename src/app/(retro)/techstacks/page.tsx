@@ -1,6 +1,12 @@
 import SectionTitle from '@/components/retro/SectionTitle'
 import styles from './styles.module.scss'
 import { techStackList } from '@/constants/techstack'
+import { getCanonicalMetadataFromRouteId } from '@/utils/metadata'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  ...getCanonicalMetadataFromRouteId('techstacks'),
+}
 
 export default function TechStackPage() {
   return (

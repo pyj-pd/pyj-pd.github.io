@@ -6,45 +6,51 @@ export const GITHUB_PROFILE_LINK = 'https://github.com/pyj-pd',
 
 // Navbar
 export type NavbarRouteData = {
-  path: string
-  name: string
-  openInNewTab?: boolean
-} & Partial<Pick<MetadataRoute.Sitemap[number], 'changeFrequency' | 'priority'>>
+  [routeId: string]: {
+    path: string
+    name: string
+    openInNewTab?: boolean
+  } & Partial<
+    Pick<MetadataRoute.Sitemap[number], 'changeFrequency' | 'priority'>
+  >
+}
 
-export const internalRoutesList: NavbarRouteData[] = [
-  {
+export const internalRoutesList = {
+  home: {
     path: '/',
     name: 'Home',
     priority: 0.9,
   },
-  {
+  techstacks: {
     path: '/techstacks',
     name: 'Tech Stacks',
     priority: 0.5,
   },
-  {
+  projects: {
     path: '/projects',
     name: 'Projects',
     priority: 0.5,
   },
-  {
+  posts: {
     path: '/posts',
     name: 'Blog(한국어/Korean)',
 
     priority: 1,
     changeFrequency: 'always',
   },
-]
+} as const satisfies NavbarRouteData
 
-export const externalRoutesList: NavbarRouteData[] = [
-  {
+export const externalRoutesList = {
+  githubProfile: {
     path: GITHUB_PROFILE_LINK,
     name: 'GitHub',
     openInNewTab: true,
   },
-]
+} as const satisfies NavbarRouteData
 
-export const navbarRouteList: NavbarRouteData[] = [
+export const navbarRouteList = {
   ...internalRoutesList,
   ...externalRoutesList,
-]
+} as const satisfies NavbarRouteData
+
+export type NavbarRouteId = keyof typeof navbarRouteList

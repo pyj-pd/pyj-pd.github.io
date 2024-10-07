@@ -8,11 +8,13 @@ const STAR_MARGIN = '10px'
 export default function WelcomeText() {
   return (
     <div className={styles.container}>
-      <Image
-        className={styles['welcome-text-image']}
-        src={welcomeTextImage}
-        alt="Welcome to my homepage"
-      />
+      <h1>
+        <Image
+          className={styles['welcome-text-image']}
+          src={welcomeTextImage}
+          alt="Welcome to my homepage"
+        />
+      </h1>
       <GlowStar style={{ top: STAR_MARGIN, left: STAR_MARGIN }} />
       <GlowStar
         style={{ bottom: STAR_MARGIN, right: STAR_MARGIN }}

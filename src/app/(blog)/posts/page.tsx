@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 export default async function BlogPostListPage() {
   return (
     <main className={styles.container}>
+      <div className={styles['title-container']}>
+        <h1>글 목록</h1>
+      </div>
       <div className={styles['post-list-container']}>
         {postList.map((postData, index) => (
           <PostButton

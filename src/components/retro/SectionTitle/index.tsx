@@ -9,7 +9,7 @@ export default function SectionTitle({ children }: SectionTitleProps) {
   return (
     <div className={classNames(styles.container, comicFont.className)}>
       <RainbowSeparator />
-      <h2 className={styles.text}>{children}</h2>
+      <h1 className={styles.text}>{children}</h1>
       <RainbowSeparator />
     </div>
   )

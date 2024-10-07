@@ -1,12 +1,10 @@
 @use '@/styles/blog/value' as value;
 @use '@/styles/blog/palette' as palette;
 
-$border-width: 7px;
-
 .container {
   display: flex;
 
-  padding-left: $border-width;
+  padding-left: value.$border-width;
   margin: value.$content-gap 0;
 
   background-color: var(--border-color);

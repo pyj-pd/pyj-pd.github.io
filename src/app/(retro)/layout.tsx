@@ -5,11 +5,12 @@ import { serifFont } from '@/styles/fonts'
 import classNames from 'classnames'
 import NavigationBar from '@/components/retro/NavigationBar/Index'
 import type { Metadata } from 'next'
+import { sharedMetadata, TITLE_SEPARATOR_DASH } from '@/constants/metadata'
 
 export const metadata: Metadata = {
-  title: "PYJ's Homepage",
+  ...sharedMetadata,
+  title: `PYJ's Homepage${TITLE_SEPARATOR_DASH}Frontend Developer`,
   description: 'Hello! I am a student learning frontend development.',
-  icons: '/favicon.svg',
 }
 
 export default function RetroRootLayout({

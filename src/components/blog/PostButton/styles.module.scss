@@ -1,6 +1,10 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
 
+.list-container {
+  list-style: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr auto;

@@ -1,5 +1,4 @@
-const BLOG_NAME = 'pyj-pd',
-  TITLE_SEPARATOR = ' | '
+import { BLOG_NAME, TITLE_SEPARATOR } from '@/constants/metadata'
 
 export const getPageTitleName = (title?: string) => {
   if (title === undefined) return BLOG_NAME

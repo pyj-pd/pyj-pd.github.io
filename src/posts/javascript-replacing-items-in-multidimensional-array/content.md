@@ -2,6 +2,8 @@
 title: '다차원 Array의 아이템 교체하기'
 description: '여러 개의 Array가 네스팅되어 있는 Array의 아이템을 안전하게 교체하는 방법에 대해 알아봅니다.'
 
+date: '2024-05-19'
+lastUpdateDate: '2024-05-20'
 categories: ['programming']
 ---
 

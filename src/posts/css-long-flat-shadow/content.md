@@ -2,6 +2,8 @@
 title: 'CSS로 Long Flat Shadow 그리기'
 description: 'clip-path를 이용해 플랫 셰도우를 버튼에 입히는 방법에 대해 알아봅니다.'
 
+date: '2024-05-14'
+lastUpdateDate: '2024-05-18'
 categories: ['programming']
 ---
 

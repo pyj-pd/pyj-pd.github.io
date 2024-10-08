@@ -25,6 +25,7 @@ export async function generateMetadata({
 
   return {
     title: getPageTitleName(mdxData.title),
+
     ...canonicalMetadata,
   }
 }

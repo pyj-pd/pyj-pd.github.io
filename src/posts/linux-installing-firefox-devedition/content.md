@@ -1,6 +1,7 @@
 ---
 title: 'Linux에서 Firefox Developer Edition 설치하기'
 
+date: '2024-08-15'
 categories: ['computer']
 ---
 

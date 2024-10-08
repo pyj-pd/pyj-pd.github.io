@@ -7,27 +7,40 @@
   position: relative;
 
   display: flex;
+  gap: value.$content-gap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  border-bottom: solid value.$border-slim-width palette.$border-color;
+
+  padding: value.$safe-padding;
+}
+
+.title-container {
+  display: flex;
   justify-content: center;
   align-items: center;
 
   width: 100%;
   height: 300px;
 
-  border-bottom: solid value.$border-slim-width palette.$border-color;
-}
-
-.text-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-
-  padding: value.$safe-padding;
-
   text-align: center;
 }
 
+.info-container {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: value.$fixed-width;
+
+  color: palette.$gray;
+}
+
+// Skeleton
 .skeleton {
   display: block;
 

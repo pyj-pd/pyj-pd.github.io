@@ -46,12 +46,18 @@
 
       color: palette.$dark-beige;
     }
+  }
 
-    @media screen and (max-width: value.$small-screen-width) {
-      &::before {
-        position: relative;
-        transform: none;
-      }
+  // Small screen
+  @media screen and (max-width: value.$small-screen-width) {
+    %headings::before {
+      position: relative;
+      transform: none;
+    }
+
+    ul,
+    ol {
+      list-style-position: inside;
     }
   }
 
@@ -63,11 +69,6 @@
   :not(pre) > code,
   pre {
     margin: value.$content-gap 0;
-  }
-
-  ul,
-  ol {
-    list-style-position: inside;
   }
 
   ul {

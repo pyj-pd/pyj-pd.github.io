@@ -2,21 +2,23 @@
 @use '@/styles/blog/skeleton' as skeleton;
 
 .container {
+  transform: translateX(calc(-1 * value.$safe-padding));
+
   display: flex;
   justify-content: center;
 
-  width: 100%;
+  width: calc(100% + 2 * value.$safe-padding);
 
   margin: value.$content-gap 0;
 }
 
 .image-container {
-  margin: 0 calc(-1 * value.$safe-padding);
+  width: 100%;
+  max-width: 550px;
 }
 
 .image {
   width: 100%;
-  max-width: 550px;
   height: auto;
 
   background-color: skeleton.$skeleton-color;

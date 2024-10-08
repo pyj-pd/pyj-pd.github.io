@@ -6,5 +6,4 @@ export const BLOG_NAME = 'pyj-pd',
 
 export const sharedMetadata: Metadata = {
   robots: 'all',
-  icons: '/favicon.svg',
 }

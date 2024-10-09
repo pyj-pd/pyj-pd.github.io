@@ -3,7 +3,7 @@ import styles from './home.module.scss'
 import IntroduceMyself from '@/components/retro/IntroduceMyself'
 import HyperLinkGroup from '@/components/retro/HyperLinkGroup'
 import ThanksBanner from '@/components/retro/ThanksBanner'
-import UnderConstruction from '@/components/retro/UnderConstruction'
+import HaveAGreatTime from '@/components/retro/HaveAGreatTime'
 import type { Metadata } from 'next'
 import { getCanonicalMetadataFromRouteId } from '@/utils/metadata'
 
@@ -16,11 +16,10 @@ export default function Home() {
     <main className={styles['main-container']}>
       <WelcomeText />
       <IntroduceMyself />
-      <UnderConstruction />
+      <HaveAGreatTime />
       <HyperLinkGroup />
       <span className={styles.break} />
       <ThanksBanner />
-      <p>This page was updated on...</p>
     </main>
   )
 }

@@ -1,4 +1,4 @@
-import { SITEMAP_URL } from '@/constants/urls'
+import { SITEMAP_URL } from '@/constants/routes'
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {

@@ -3,7 +3,7 @@ import {
   navbarRouteList,
   SITE_URL,
   type NavbarRouteId,
-} from '@/constants/urls'
+} from '@/constants/routes'
 import { getPostURL, postList } from '@/utils/blog/post'
 
 export const dynamic = 'force-static'

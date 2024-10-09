@@ -26,11 +26,12 @@ export const internalRoutesList = {
     name: 'Tech Stacks',
     priority: 0.5,
   },
-  projects: {
-    path: '/projects',
-    name: 'Projects',
-    priority: 0.5,
-  },
+  // @todo
+  // projects: {
+  //   path: '/projects',
+  //   name: 'Projects',
+  //   priority: 0.5,
+  // },
   posts: {
     path: '/posts',
     name: 'Blog(한국어/Korean)',

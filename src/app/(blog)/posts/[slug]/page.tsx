@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
 import { getPostData, postSlugList } from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
-import { navbarRouteList } from '@/constants/urls'
+import { navbarRouteList } from '@/constants/routes'
 import { categoryList } from '@/constants/blog/categories'
 import { BLOG_NAME, BLOG_POST_TYPE } from '@/constants/metadata'
 

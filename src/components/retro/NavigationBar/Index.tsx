@@ -5,7 +5,7 @@ import {
   navbarRouteList,
   type NavbarRouteData,
   type NavbarRouteId,
-} from '@/constants/urls'
+} from '@/constants/routes'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import linkIconGif from '@public/assets/retro/link.gif'

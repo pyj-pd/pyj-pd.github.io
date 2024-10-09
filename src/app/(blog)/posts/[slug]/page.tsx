@@ -1,12 +1,12 @@
 import PostTitle from '@/components/blog/PostTitle'
 import styles from './styles.module.scss'
-
 import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
 import { getPostData, postSlugList } from '@/utils/blog/post'
-import type { PostMetadata } from '@/types/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import { navbarRouteList } from '@/constants/urls'
+import { categoryList } from '@/constants/blog/categories'
+import { BLOG_NAME } from '@/constants/metadata'
 
 type BlogPostPageProps = {
   params: { slug: string }
@@ -23,9 +23,37 @@ export async function generateMetadata({
     `${navbarRouteList.posts.path}/${mdxData.slug}`,
   )
 
+  // Open graph
+  const publishedTime = mdxData.date
+      ? new Date(mdxData.date).toISOString()
+      : undefined,
+    modifiedTime = mdxData.lastUpdateDate
+      ? new Date(mdxData.lastUpdateDate).toISOString()
+      : publishedTime
+
+  const tags = [
+      ...mdxData.categories,
+      ...mdxData.categories.map((categoryId) => categoryList[categoryId].name),
+    ],
+    section =
+      mdxData.categories.length > 0
+        ? categoryList[mdxData.categories[0]].name
+        : undefined
+
   return {
     title: getPageTitleName(mdxData.title),
+    openGraph: {
+      title: mdxData.title,
+      siteName: BLOG_NAME,
 
+      type: 'article',
+
+      publishedTime,
+      modifiedTime,
+
+      tags,
+      section,
+    },
     ...canonicalMetadata,
   }
 }
@@ -41,17 +69,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   if (mdxData === null) return null
 
-  const postMetadata: PostMetadata = {
-    title: mdxData.title,
-    categories: mdxData.categories,
-    slug: mdxData.slug,
-    date: mdxData.date,
-  }
+  const { content, ...postMetadata } = mdxData
 
   return (
-    <div className={styles.container}>
-      <PostTitle postMetadata={postMetadata} />
-      <main className={styles['content-container']}>{mdxData.content}</main>
+    <div className={styles.wrapper}>
+      <main className={styles.container}>
+        <header>
+          <PostTitle postMetadata={postMetadata} />
+        </header>
+        <section className={styles['content-container']}>{content}</section>
+      </main>
     </div>
   )
 }

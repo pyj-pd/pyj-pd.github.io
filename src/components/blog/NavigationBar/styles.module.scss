@@ -8,24 +8,24 @@
   z-index: 10;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   width: 100%;
 
-  border-bottom: solid value.$border-slim-width palette.$border-color;
-
-  background-color: palette.$black-beige;
-  color: palette.$beige;
+  padding: value.$safe-small-padding;
 }
 
 .container {
   display: flex;
   justify-content: flex-start;
 
-  width: 100%;
-  max-width: value.$fixed-width;
+  padding: 10px 12px;
 
-  padding: value.$content-gap value.$safe-padding;
+  border: solid value.$border-slim-width palette.$border-color;
+  border-radius: value.$border-radius;
+
+  background-color: palette.$background-color;
+  color: palette.$text-color;
 }
 
 .list-container {
@@ -50,5 +50,5 @@
   align-items: center;
   gap: value.$content-small-gap;
 
-  color: palette.$green;
+  color: palette.$accent-color;
 }

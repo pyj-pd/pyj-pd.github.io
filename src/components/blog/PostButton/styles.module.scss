@@ -15,8 +15,7 @@
   color: palette.$text-color;
 
   border: solid value.$border-slim-width palette.$border-color;
-  border-left: none;
-  border-right: none;
+  border-radius: value.$border-radius;
 
   text-align: left;
 }
@@ -58,7 +57,7 @@
 
   width: 100%;
 
-  color: palette.$dark-2-beige;
+  color: palette.$gray;
 
   font-size: 0.9rem;
 }

@@ -1,45 +1,24 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
 
-$list-gap: calc(value.$content-gap * 3);
-
-$bottom-gradient-height: 210px;
-
 .container {
   position: relative;
 
   @include value.fixed-width-container-styles;
-
-  padding: $list-gap 0 $bottom-gradient-height 0;
-
-  border: solid value.$border-slim-width palette.$border-color;
-  border-top: none;
-  border-bottom: none;
-
-  @media screen and (max-width: value.$fixed-width) {
-    border: none;
-  }
-
-  // Border gradient
-  mask-image: linear-gradient(
-    to bottom,
-    black calc(100% - $bottom-gradient-height),
-    transparent 100%
-  );
 }
 
 // Title
 .title-container {
   width: 100%;
 
-  padding: value.$safe-padding;
+  padding: value.$content-large-gap 0;
 }
 
 // Post list
 .post-list-container {
   display: flex;
   flex-direction: column;
-  gap: $list-gap;
+  gap: value.$content-gap;
 
   width: 100%;
 }

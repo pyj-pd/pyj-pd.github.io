@@ -1,19 +1,23 @@
 @use '@/styles/blog/palette' as palette;
 @use '@/styles/blog/value' as value;
-@use '@/styles/blog/skeleton' as skeleton;
 
-.container {
+.wrapper {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
 
   width: 100%;
 }
 
+.container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  @include value.fixed-width-container-styles;
+}
+
 .content-container {
   & {
-    @include value.fixed-width-container-styles;
-
     line-height: value.$reading-line-spacing;
 
     font-size: 1.1rem;
@@ -44,7 +48,7 @@
 
       display: block;
 
-      color: palette.$dark-beige;
+      color: palette.$accent-color;
     }
   }
 
@@ -71,13 +75,9 @@
     margin: value.$content-gap 0;
   }
 
-  ul {
-    padding-left: value.$content-gap;
-  }
-
   // Separator
   hr {
-    color: palette.$dark-3-beige;
+    color: palette.$dark-gray;
   }
 
   // Syntax highlighting
@@ -88,7 +88,8 @@
 
   :not(pre) > code,
   pre {
-    border: solid value.$border-slim-width palette.$border-color;
+    border: solid value.$border-slim-width palette.$code-border-color;
+    border-radius: value.$border-radius;
 
     background-color: palette.$code-background-color;
     color: palette.$code-text-color;
@@ -123,7 +124,7 @@
       width: 100%;
 
       &:global(.highlighted) {
-        background-color: palette.$dark-3-beige;
+        background-color: palette.$gray;
       }
     }
   }

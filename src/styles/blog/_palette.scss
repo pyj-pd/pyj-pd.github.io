@@ -1,20 +1,18 @@
 @use 'sass:color';
 
 // Basic colors
-$gray: hsl(35, 8%, 48%);
-
-$beige: hsl(33, 30%, 75%);
-$dark-beige: color.adjust($beige, $lightness: -30%);
-$black-beige: hsl(30, 20%, 6%);
-$dark-2-beige: color.adjust($black-beige, $lightness: 30%);
-$dark-3-beige: color.adjust($black-beige, $lightness: 12%);
-$dark-4-beige: color.adjust($black-beige, $lightness: -2%);
+$white: hsl(0, 0%, 82%);
+$gray: hsl(0, 0%, 55%);
+$dark-gray: hsl(0, 0%, 15%);
+$darker-gray: hsl(0, 0%, 5%);
+$black: hsl(0, 0%, 0%);
 
 // Colors
 $green: hsl(84, 20%, 49%);
-$blue: rgb(88, 105, 182);
-$yellow: rgb(215, 198, 112);
+$blue: hsl(229, 39%, 53%);
+$yellow: hsl(50, 56%, 64%);
 $red: hsl(0, 34%, 50%);
+$orange: hsl(36, 33%, 56%);
 
 $mint: hsl(174, 30%, 56%);
 $light-purple: hsl(270, 38%, 73%);
@@ -22,14 +20,16 @@ $light-purple: hsl(270, 38%, 73%);
 // Element colors
 $link-color: $mint;
 
-$border-color: $dark-3-beige;
+$border-color: $dark-gray;
 
-$background-color: $black-beige;
-$text-color: $beige;
+$accent-color: $green;
+$background-color: $black;
+$text-color: $white;
 
 // Code syntax highlight
-$code-background-color: $dark-4-beige;
-$code-text-color: $beige;
+$code-background-color: $darker-gray;
+$code-border-color: $border-color;
+$code-text-color: $white;
 
 // Shiki
 @mixin shiki-theme {
@@ -42,6 +42,6 @@ $code-text-color: $beige;
   --shiki-token-parameter: var(--shiki-token-keyword);
   --shiki-token-function: #{$light-purple};
   --shiki-token-string-expression: var(--shiki-token-string);
-  --shiki-token-punctuation: #{$dark-beige};
+  --shiki-token-punctuation: #{$dark-gray};
   --shiki-token-link: #{$link-color};
 }

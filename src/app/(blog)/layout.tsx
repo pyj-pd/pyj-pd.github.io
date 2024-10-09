@@ -5,15 +5,19 @@ import { emojiFont, monospaceFont, serifFont } from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
-import { getPageTitleName } from '@/utils/blog/page'
 import BlogFooter from '@/components/blog/BlogFooter'
-import { sharedMetadata } from '@/constants/metadata'
+import {
+  BLOG_DESCRIPTION,
+  BLOG_NAME,
+  BLOG_TITLE_DESCRIPTION,
+  sharedMetadata,
+  TITLE_SEPARATOR_DASH,
+} from '@/constants/metadata'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
-  title: getPageTitleName(),
-  description:
-    'JavaScript/TypeScript를 다루며, 컴퓨터를 다루며 배우게 된 점, 느끼게 된 점을 나누고 싶습니다.',
+  title: `${BLOG_NAME}${TITLE_SEPARATOR_DASH}${BLOG_TITLE_DESCRIPTION}`,
+  description: BLOG_DESCRIPTION,
 }
 
 export default function BlogRootLayout({

@@ -6,7 +6,7 @@ import { getPostData, postSlugList } from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import { navbarRouteList } from '@/constants/urls'
 import { categoryList } from '@/constants/blog/categories'
-import { BLOG_NAME } from '@/constants/metadata'
+import { BLOG_NAME, BLOG_POST_TYPE } from '@/constants/metadata'
 
 type BlogPostPageProps = {
   params: { slug: string }
@@ -24,6 +24,8 @@ export async function generateMetadata({
   )
 
   // Open graph
+  const description = mdxData.description
+
   const publishedTime = mdxData.date
       ? new Date(mdxData.date).toISOString()
       : undefined,
@@ -42,11 +44,12 @@ export async function generateMetadata({
 
   return {
     title: getPageTitleName(mdxData.title),
+    description,
     openGraph: {
       title: mdxData.title,
       siteName: BLOG_NAME,
 
-      type: 'article',
+      type: BLOG_POST_TYPE,
 
       publishedTime,
       modifiedTime,

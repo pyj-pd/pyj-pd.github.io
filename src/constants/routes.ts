@@ -26,7 +26,7 @@ export const internalRoutesList = {
     name: 'Tech Stacks',
     priority: 0.5,
   },
-  // @todo
+  /** @todo add project page */
   // projects: {
   //   path: '/projects',
   //   name: 'Projects',

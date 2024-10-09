@@ -5,7 +5,7 @@ import { getCanonicalMetadataFromRouteId } from '@/utils/metadata'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromRouteId('projects'),
+  // ...getCanonicalMetadataFromRouteId('projects'),
 }
 
 export default function ProjectPage() {

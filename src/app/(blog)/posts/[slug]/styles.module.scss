@@ -124,6 +124,8 @@
       width: 100%;
 
       &:global(.highlighted) {
+        width: auto;
+
         background-color: palette.$dark-gray;
 
         border-radius: value.$border-radius;

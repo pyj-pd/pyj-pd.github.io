@@ -3,15 +3,20 @@
 
 .container {
   display: flex;
+  flex-direction: column;
 
-  padding-left: value.$border-width;
+  border: solid value.$border-slim-width var(--border-color);
+  border-radius: value.$border-radius;
+
+  overflow: hidden;
+
   margin: value.$content-gap 0;
 
   background-color: var(--border-color);
 
   // Variants
   &.normal {
-    --border-color: #{palette.$dark-gray};
+    --border-color: #{palette.$gray};
   }
 
   &.info {
@@ -37,7 +42,7 @@
 
   padding: value.$content-gap;
 
-  background-color: rgba(palette.$background-color, 0.9);
+  background-color: rgba(palette.$background-color, 0.92);
   color: var(--text-color, #{palette.$text-color});
 
   width: 100%;

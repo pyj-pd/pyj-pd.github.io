@@ -124,7 +124,9 @@
       width: 100%;
 
       &:global(.highlighted) {
-        background-color: palette.$gray;
+        background-color: palette.$dark-gray;
+
+        border-radius: value.$border-radius;
       }
     }
   }

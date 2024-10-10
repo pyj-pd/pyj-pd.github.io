@@ -121,11 +121,8 @@
     code span:global(.line),
     code:not(:has(span)) {
       display: inline-block;
-      width: 100%;
 
       &:global(.highlighted) {
-        width: auto;
-
         background-color: palette.$dark-gray;
 
         border-radius: value.$border-radius;

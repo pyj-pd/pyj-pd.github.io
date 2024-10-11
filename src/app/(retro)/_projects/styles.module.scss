@@ -1,6 +1,0 @@
-@use '@/styles/retro/sections' as sections;
-@use '@/styles/retro/palette' as palette;
-
-.container {
-  @include sections.default-section-style;
-}

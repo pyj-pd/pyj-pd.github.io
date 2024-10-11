@@ -1,9 +1,8 @@
 import styles from './layout.module.scss'
 import './retro-layout.scss'
 import '@/styles/globals.scss'
-import { serifFont } from '@/styles/fonts'
+import { uniFont } from '@/styles/fonts'
 import classNames from 'classnames'
-import NavigationBar from '@/components/retro/NavigationBar/Index'
 import type { Metadata } from 'next'
 import {
   HOMEPAGE_DESCRIPTION,
@@ -26,9 +25,8 @@ export default function RetroRootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={classNames(styles.container, serifFont.className)}>
-        <NavigationBar />
-        <div className={styles['content-container']}>{children}</div>
+      <body className={classNames(styles.container, uniFont.className)}>
+        {children}
       </body>
     </html>
   )

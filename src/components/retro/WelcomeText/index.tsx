@@ -13,6 +13,7 @@ export default function WelcomeText() {
           className={styles['welcome-text-image']}
           src={welcomeTextImage}
           alt="Welcome to my homepage"
+          priority
         />
       </h1>
       <GlowStar style={{ top: STAR_MARGIN, left: STAR_MARGIN }} />

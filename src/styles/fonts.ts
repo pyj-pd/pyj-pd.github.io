@@ -1,14 +1,15 @@
-import {
-  Comic_Neue,
-  Noto_Serif_KR,
-  PT_Mono,
-  Noto_Color_Emoji,
-} from 'next/font/google'
+import { Comic_Neue, Noto_Serif_KR, PT_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 
 // Retro
 export const comicFont = Comic_Neue({
   weight: '700',
   subsets: ['latin'],
+})
+
+export const uniFont = localFont({
+  weight: '400',
+  src: '../assets/fonts/Unifont-latin-hangul.woff2',
 })
 
 // Blog
@@ -23,10 +24,4 @@ export const monospaceFont = PT_Mono({
   subsets: ['latin'],
   weight: '400',
   variable: '--f-mono',
-})
-
-export const emojiFont = Noto_Color_Emoji({
-  subsets: ['emoji'],
-  weight: '400',
-  variable: '--f-emoji',
 })

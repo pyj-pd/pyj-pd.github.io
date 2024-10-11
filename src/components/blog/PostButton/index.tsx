@@ -1,4 +1,4 @@
-import type { PostData, PostDate } from '@/types/post'
+import type { PostData } from '@/types/post'
 import styles from './styles.module.scss'
 import { categoryList } from '@/constants/blog/categories'
 import { getPostURL } from '@/utils/blog/post'

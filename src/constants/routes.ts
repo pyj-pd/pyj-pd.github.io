@@ -21,17 +21,6 @@ export const internalRoutesList = {
     name: 'Home',
     priority: 0.9,
   },
-  techstacks: {
-    path: '/techstacks',
-    name: 'Tech Stacks',
-    priority: 0.5,
-  },
-  /** @todo add project page */
-  // projects: {
-  //   path: '/projects',
-  //   name: 'Projects',
-  //   priority: 0.5,
-  // },
   posts: {
     path: '/posts',
     name: 'Blog(한국어/Korean)',

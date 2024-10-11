@@ -6,6 +6,8 @@ body {
   color: palette.$text-color;
 
   font-family: var(--f-serif), var(--f-emoji), serif;
+  font-size: 12pt;
+  letter-spacing: -0.02em;
 }
 
 a {

@@ -10,9 +10,10 @@ export default function IntroduceMyself() {
         unoptimized
         alt="A student lying on the floor while studying with a book. There is also a textbook which 'math' is written on the side next to him."
       />
-      <div className={styles['text-container']}>
-        <p>Welcome to my website!</p>
+      <div>
         <p>
+          Welcome to my website!
+          <br />
           Let me introduce myself to you.
           <br />I am a student focusing on frontend development, enrolled in
           high school.

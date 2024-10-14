@@ -7,9 +7,6 @@
   gap: value.$content-gap;
 
   width: 100%;
-}
 
-.break {
-  display: block;
-  margin: 15px 0;
+  padding: value.$view-padding 0;
 }

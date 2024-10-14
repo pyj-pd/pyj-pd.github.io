@@ -52,7 +52,10 @@ export default function MDXCallout({
     titleString = title ?? defaultTitleData.title
 
   return (
-    <div className={classNames(styles.container, styles[type])}>
+    <div
+      className={classNames(styles.container, styles[type])}
+      role="note"
+    >
       <div className={styles['content-container']}>
         <h4 className={styles.title}>
           {titleEmoji} {titleString}

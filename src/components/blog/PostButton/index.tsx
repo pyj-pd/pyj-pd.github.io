@@ -11,10 +11,14 @@ type PostButtonProps = { postData: PostData }
 export default function PostButton({ postData }: PostButtonProps) {
   return (
     <li className={styles['list-container']}>
-      <article className={styles.container}>
-        <div className={styles['content-container']}>
+      <MyLink
+        href={getPostURL(postData.slug)}
+        tabIndex={-1}
+        className={styles['link-wrapper']}
+      >
+        <article className={styles.container}>
           <div className={styles['title-container']}>
-            <h3>{postData.title}</h3>
+            <h3 className={styles.title}>{postData.title}</h3>
             {postData.description && <p>{postData.description}</p>}
           </div>
           <div className={styles['info-container']}>
@@ -37,20 +41,8 @@ export default function PostButton({ postData }: PostButtonProps) {
               ))}
             </div>
           </div>
-        </div>
-        <MyLink
-          href={getPostURL(postData.slug)}
-          tabIndex={-1}
-          className={styles['link-wrapper']}
-        >
-          <button
-            className={styles['side-button-container']}
-            aria-label="해당 글로 이동"
-          >
-            <span className={styles['right-arrow']} />
-          </button>
-        </MyLink>
-      </article>
+        </article>
+      </MyLink>
     </li>
   )
 }

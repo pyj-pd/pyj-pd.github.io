@@ -2,7 +2,7 @@ import { Vast_Shadow, Noto_Serif_KR, PT_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
 // Retro
-export const comicFont = Vast_Shadow({
+export const titleThickFont = Vast_Shadow({
   weight: '400',
   subsets: ['latin'],
 })

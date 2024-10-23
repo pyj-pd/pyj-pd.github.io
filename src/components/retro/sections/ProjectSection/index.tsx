@@ -33,12 +33,28 @@ export default function ProjectSection() {
                   </p>
                 </div>
                 <div>
-                  <MyLink
-                    href={project.url}
-                    target="_blank"
-                  >
-                    Link to the project
-                  </MyLink>
+                  <ul className={styles['project-url-container']}>
+                    {project.projectUrl && (
+                      <li>
+                        <MyLink
+                          href={project.projectUrl}
+                          target="_blank"
+                        >
+                          Project
+                        </MyLink>
+                      </li>
+                    )}
+                    {project.githubUrl && (
+                      <li>
+                        <MyLink
+                          href={project.githubUrl}
+                          target="_blank"
+                        >
+                          GitHub repository
+                        </MyLink>
+                      </li>
+                    )}
+                  </ul>
                 </div>
               </figcaption>
             </figure>

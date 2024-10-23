@@ -11,7 +11,8 @@ export type ProjectData = {
   description: string
   techStacks: TechStackName[]
 
-  url: string
+  githubUrl?: string
+  projectUrl?: string
 }
 
 export const projectList: ProjectData[] = [
@@ -23,7 +24,8 @@ export const projectList: ProjectData[] = [
       'A web app for generating random seats for schools, offices, etc.',
     techStacks: ['Vue', 'Vite', 'Pinia', 'TypeScript', 'Sass(SCSS)'],
 
-    url: 'https://github.com/pyj-pd/random-seat',
+    githubUrl: 'https://github.com/pyj-pd/random-seat',
+    projectUrl: 'https://seat.pyj-pd.dev/',
   },
   {
     image: lottoGeneratorScreenshot,
@@ -33,6 +35,7 @@ export const projectList: ProjectData[] = [
       'A simple website for generating random lotto numbers. I wrote it to be extremely lightweight, using vanilla JS only with GitHub Actions combined to minify the files.',
     techStacks: ['GitHub Actions'],
 
-    url: 'https://github.com/pyj-pd/lotto-generator',
+    githubUrl: 'https://github.com/pyj-pd/lotto-generator',
+    projectUrl: 'https://pyj-pd.dev/lotto-generator/',
   },
 ]

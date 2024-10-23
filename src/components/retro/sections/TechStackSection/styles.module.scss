@@ -11,8 +11,7 @@
 
   list-style-position: inside;
 
-  ul,
-  li {
+  ul {
     padding: revert;
     margin: revert;
   }
@@ -20,6 +19,8 @@
 
 .tech-stack-item {
   list-style-position: outside;
+
+  margin: value.$content-gap 0;
 
   h3 {
     font-size: 1em;

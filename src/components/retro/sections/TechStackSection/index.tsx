@@ -5,7 +5,7 @@ import { techStackList } from '@/constants/retro/techstack'
 export default function TechStackSection() {
   return (
     <section className={styles.container}>
-      <SectionTitle>Tech stacks</SectionTitle>
+      <SectionTitle>Tech Stacks</SectionTitle>
       <ul className={styles['list-container']}>
         {techStackList.map((techStackCategory, categoryIndex) => (
           <li key={categoryIndex}>

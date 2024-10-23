@@ -42,3 +42,10 @@
 .project-techstacks {
   font-style: oblique;
 }
+
+.project-url-container {
+  display: flex;
+  gap: value.$content-gap;
+
+  list-style: none;
+}

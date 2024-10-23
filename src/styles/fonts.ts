@@ -14,7 +14,7 @@ export const uniFont = localFont({
 
 // Blog
 export const serifFont = Noto_Serif_KR({
-  weight: ['600', '900'],
+  weight: ['500', '900'],
   subsets: ['latin'],
   preload: true,
   variable: '--f-serif',

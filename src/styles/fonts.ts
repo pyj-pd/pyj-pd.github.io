@@ -1,9 +1,9 @@
-import { Comic_Neue, Noto_Serif_KR, PT_Mono } from 'next/font/google'
+import { Vast_Shadow, Noto_Serif_KR, PT_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
 // Retro
-export const comicFont = Comic_Neue({
-  weight: '700',
+export const comicFont = Vast_Shadow({
+  weight: '400',
   subsets: ['latin'],
 })
 

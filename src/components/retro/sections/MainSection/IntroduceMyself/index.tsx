@@ -17,7 +17,6 @@ export default function IntroduceMyself() {
           Let me introduce myself to you.
           <br />I am a student focusing on frontend development, enrolled in
           high school.
-          <br />I am born and living in South Korea.
         </p>
       </div>
     </div>

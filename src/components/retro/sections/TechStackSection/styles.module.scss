@@ -1,0 +1,5 @@
+@use '@/styles/retro/sections' as sections;
+
+.container {
+  @include sections.default-section-style;
+}

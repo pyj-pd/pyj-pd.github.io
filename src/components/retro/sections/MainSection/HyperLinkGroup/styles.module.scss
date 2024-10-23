@@ -21,19 +21,6 @@
 
   font-size: 1.2rem;
   font-weight: 900;
-
-  @media screen and (prefers-reduced-motion: no-preference) {
-    animation: rainbow 3s infinite steps(20);
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
 }
 
 .button-label {

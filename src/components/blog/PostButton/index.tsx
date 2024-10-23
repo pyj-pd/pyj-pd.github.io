@@ -13,7 +13,6 @@ export default function PostButton({ postData }: PostButtonProps) {
     <li className={styles['list-container']}>
       <MyLink
         href={getPostURL(postData.slug)}
-        tabIndex={-1}
         className={styles['link-wrapper']}
       >
         <article className={styles.container}>

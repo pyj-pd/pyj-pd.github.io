@@ -23,9 +23,6 @@ importers:
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
-      next:
-        specifier: 15.0.1
-        version: 15.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.80.3)
       next-mdx-remote:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@18.3.12)(acorn@8.13.0)(react@18.3.1)
@@ -87,6 +84,9 @@ importers:
       eslint-plugin-prettier:
         specifier: ^5.2.1
         version: 5.2.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@9.13.0))(eslint@9.13.0)(prettier@3.3.3)
+      next:
+        specifier: 15.0.1
+        version: 15.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.80.3)
       prettier:
         specifier: ^3.3.3
         version: 3.3.3

@@ -12,11 +12,10 @@ export default function IntroduceMyself() {
       />
       <div>
         <p>
-          Welcome to my website!
+          Welcome to my website! I am PYJ.
+          <br />I am a student focusing on frontend development,
           <br />
-          Let me introduce myself to you.
-          <br />I am a student focusing on frontend development, enrolled in
-          high school.
+          enrolled in high school.
         </p>
       </div>
     </div>

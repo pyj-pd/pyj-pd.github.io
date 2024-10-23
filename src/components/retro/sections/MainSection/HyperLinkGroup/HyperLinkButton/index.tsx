@@ -11,6 +11,8 @@ type HyperLinkButtonProps = {
 
   url: string
   children: string
+
+  openInNewTab?: boolean
 }
 
 export default function HyperLinkButton({
@@ -18,13 +20,16 @@ export default function HyperLinkButton({
 
   url,
   children,
+
+  openInNewTab,
 }: HyperLinkButtonProps) {
   return (
     <Link
       href={url}
       tabIndex={-1}
+      target={openInNewTab ? '_blank' : undefined}
     >
-      <button className={styles['button-container']}>
+      <button className={styles.button}>
         <span className={styles['button-label']}>{children}</span>
         <Image
           src={ovalButtonImage}

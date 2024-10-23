@@ -3,11 +3,15 @@
 
 .container {
   display: flex;
-  gap: 3px;
+  gap: value.$content-gap;
+
+  @media screen and (max-width: value.$small-screen-width) {
+    flex-direction: column;
+  }
 }
 
 // Button
-.button-container {
+.button {
   position: relative;
 
   display: flex;
@@ -32,5 +36,10 @@
   color: palette.$white;
   text-shadow: $shadow-offset $shadow-offset 0 palette.$black;
 
-  text-decoration: underline;
+  text-decoration: none;
+  word-break: normal;
+
+  .button:hover & {
+    text-decoration: underline;
+  }
 }

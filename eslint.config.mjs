@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 })
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
+const config = [
   ...compat.extends(
     'next/core-web-vitals',
     'prettier',
@@ -38,3 +38,5 @@ export default [
     },
   },
 ]
+
+export default config

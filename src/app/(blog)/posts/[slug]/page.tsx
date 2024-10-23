@@ -9,13 +9,14 @@ import { categoryList } from '@/constants/blog/categories'
 import { BLOG_NAME, BLOG_POST_TYPE } from '@/constants/metadata'
 
 type BlogPostPageProps = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({
-  params,
+  params: paramsPromise,
 }: BlogPostPageProps): Promise<Metadata> {
-  const mdxData = getPostData(params.slug)
+  const params = await paramsPromise,
+    mdxData = getPostData(params.slug)
 
   if (mdxData === null) return {}
 
@@ -67,8 +68,11 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const mdxData = getPostData(params.slug)
+export default async function BlogPostPage({
+  params: paramsPromise,
+}: BlogPostPageProps) {
+  const params = await paramsPromise,
+    mdxData = getPostData(params.slug)
 
   if (mdxData === null) return null
 

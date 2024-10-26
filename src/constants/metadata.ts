@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-
-export const sharedMetadata: Metadata = {
-  robots: 'all',
-}
+import { SITE_URL } from './routes'
 
 // Blog
 export const BLOG_NAME = 'pyj-pd',
@@ -16,3 +13,15 @@ export const BLOG_NAME = 'pyj-pd',
 export const HOMEPAGE_TITLE = "PYJ's Homepage",
   HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
   HOMEPAGE_DESCRIPTION = 'Hello! I am a student learning frontend development.'
+
+export const sharedOpenGraph = {
+    siteName: BLOG_NAME,
+
+    type: BLOG_POST_TYPE,
+
+    images: [`${SITE_URL}/apple-icon.png`],
+  } satisfies Metadata['openGraph'],
+  sharedMetadata = {
+    robots: 'all',
+    openGraph: sharedOpenGraph,
+  } satisfies Metadata

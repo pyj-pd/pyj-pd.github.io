@@ -6,7 +6,7 @@ import { getPostData, postSlugList } from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import { navbarRouteList } from '@/constants/routes'
 import { categoryList } from '@/constants/blog/categories'
-import { BLOG_NAME, BLOG_POST_TYPE } from '@/constants/metadata'
+import { sharedOpenGraph } from '@/constants/metadata'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -47,10 +47,9 @@ export async function generateMetadata({
     title: getPageTitleName(mdxData.title),
     description,
     openGraph: {
-      title: mdxData.title,
-      siteName: BLOG_NAME,
+      ...sharedOpenGraph,
 
-      type: BLOG_POST_TYPE,
+      title: mdxData.title,
 
       publishedTime,
       modifiedTime,

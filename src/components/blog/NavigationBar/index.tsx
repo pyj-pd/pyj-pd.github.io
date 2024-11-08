@@ -1,3 +1,4 @@
+import LogoSvg from '@/components/common/LogoSvg'
 import styles from './styles.module.scss'
 import MyLink from '@/components/common/MyLink'
 
@@ -7,7 +8,7 @@ export default function NavigationBar() {
       <nav className={styles.container}>
         <ul className={styles['list-container']}>
           <li>
-            <span className={styles.name}>pyj-pd</span>
+            <LogoSvg className={styles['logo-svg']} />
           </li>
           <li>
             <MyLink href="/posts">글 목록</MyLink>

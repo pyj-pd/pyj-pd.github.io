@@ -2,8 +2,8 @@ export const dynamic = 'force-static'
 
 const robotsData: { [key: string]: string }[] = [
   {
-    'User-Agent': '*',
-    Allow: '/',
+    'User-agent': '*',
+    Disallow: '',
   },
   {
     Sitemap: 'https://pyj-pd.dev/sitemap.xml',

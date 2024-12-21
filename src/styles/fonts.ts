@@ -1,9 +1,4 @@
-import {
-  Vast_Shadow,
-  Noto_Serif_KR,
-  PT_Mono,
-  Gothic_A1,
-} from 'next/font/google'
+import { Vast_Shadow, PT_Mono, Gothic_A1 } from 'next/font/google'
 import localFont from 'next/font/local'
 
 // Retro
@@ -18,13 +13,6 @@ export const uniFont = localFont({
 })
 
 // Blog
-export const serifFont = Noto_Serif_KR({
-  weight: ['500', '900'],
-  subsets: ['latin'],
-  preload: true,
-  variable: '--f-serif',
-})
-
 export const monospaceFont = PT_Mono({
   subsets: ['latin'],
   weight: '400',

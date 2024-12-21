@@ -1,7 +1,7 @@
 import '@/styles/globals.scss'
 import './blog-layout.scss'
 import styles from './layout.module.scss'
-import { monospaceFont, serifFont } from '@/styles/fonts'
+import { monospaceFont, sansSerifFont } from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
@@ -32,7 +32,7 @@ export default function BlogRootLayout({
           styles.container,
 
           // Fonts
-          serifFont.variable,
+          sansSerifFont.variable,
           monospaceFont.variable,
         )}
       >

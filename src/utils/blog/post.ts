@@ -50,6 +50,12 @@ const _getPostList = async (): Promise<PostData[]> => {
     if (!shouldSkip) postDataList.push(postData) // Not publishing draft posts
   }
 
+  postDataList.sort(
+    (a, b) =>
+      Number(new Date(b.lastUpdateDate ?? b.date ?? 0)) -
+      Number(new Date(a.lastUpdateDate ?? a.date ?? 0)),
+  )
+
   return postDataList
 }
 

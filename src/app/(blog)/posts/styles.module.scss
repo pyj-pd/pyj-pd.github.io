@@ -1,24 +1,25 @@
-@use '@/styles/blog/palette' as palette;
-@use '@/styles/blog/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/mixin' as mixin;
+@use '@/styles/value' as value;
 
 .container {
   position: relative;
 
-  @include value.fixed-width-container-styles;
+  @include mixin.fixed-width-container-styles;
 }
 
 // Title
 .title-container {
   width: 100%;
 
-  padding: value.$content-large-gap 0;
+  padding: value.$large-margin 0;
 }
 
 // Post list
 .post-list-container {
   display: flex;
   flex-direction: column;
-  gap: value.$content-gap;
+  gap: value.$large-margin;
 
   width: 100%;
 }

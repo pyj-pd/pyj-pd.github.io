@@ -1,54 +1,59 @@
-@use '@/styles/blog/value' as value;
-@use '@/styles/blog/palette' as palette;
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
 
 .navbar-container {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  // position: sticky;
+  // top: 0;
+  // left: 0;
+  // z-index: 10;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 
   width: 100%;
 
-  padding: value.$safe-padding;
+  padding: value.$large-margin;
 }
 
 .container {
   display: flex;
   justify-content: flex-start;
 
-  padding: 10px 12px;
+  width: value.$fixed-width;
 
-  border: solid value.$border-slim-width palette.$border-color;
-  border-radius: value.$border-radius;
-
-  background-color: palette.$background-color;
   color: palette.$text-color;
 }
 
+// Route list
 .list-container {
   list-style: none;
 
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: value.$normal-margin;
 
   & > li {
     display: block;
 
     > a {
-      text-decoration: underline;
+      text-decoration: none;
 
       color: currentColor;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
-.name {
-  display: flex;
-  align-items: center;
-  gap: value.$content-small-gap;
+.separator {
+  display: block;
 
-  color: palette.$accent-color;
+  width: 3px;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 100%;
+
+  background-color: currentColor;
 }

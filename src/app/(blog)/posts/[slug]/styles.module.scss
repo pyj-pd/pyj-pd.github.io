@@ -1,5 +1,6 @@
-@use '@/styles/blog/palette' as palette;
-@use '@/styles/blog/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/mixin' as mixin;
+@use '@/styles/value' as value;
 
 .wrapper {
   display: flex;
@@ -13,17 +14,15 @@
   align-items: stretch;
   flex-direction: column;
 
-  @include value.fixed-width-container-styles;
+  @include mixin.fixed-width-container-styles;
 }
 
 .content-container {
   & {
-    line-height: value.$reading-line-spacing;
+    line-height: value.$content-line-spacing;
 
-    font-size: 1.1rem;
+    padding: value.$large-margin value.$content-padding;
   }
-
-  // @todo organize these classes.. omg
 
   // Headings
   > h1,
@@ -36,32 +35,15 @@
 
     position: relative;
 
-    margin-top: calc(value.$content-gap * 2.5);
-    margin-bottom: value.$content-gap;
-
-    &::before {
-      content: '#';
-
-      position: absolute;
-      left: 0;
-      transform: translateX(calc(-100% - value.$content-gap));
-
-      display: block;
-
-      color: palette.$accent-color;
-    }
+    margin-top: value.$large-margin;
+    margin-bottom: value.$normal-margin;
   }
 
   // Small screen
   @media screen and (max-width: value.$small-screen-width) {
-    %headings::before {
-      position: relative;
-      transform: none;
-    }
-
     ul,
     ol {
-      list-style-position: inside;
+      padding-left: value.$large-margin;
     }
   }
 
@@ -72,12 +54,15 @@
   ol,
   :not(pre) > code,
   pre {
-    margin: value.$content-gap 0;
+    margin: value.$large-margin 0;
   }
 
   // Separator
   hr {
-    color: palette.$dark-gray;
+    color: palette.$gray;
+
+    margin: value.$large-margin 0;
+    border-style: dashed;
   }
 
   // Syntax highlighting
@@ -88,7 +73,6 @@
 
   :not(pre) > code,
   pre {
-    border: solid value.$border-slim-width palette.$code-border-color;
     border-radius: value.$border-radius;
 
     background-color: palette.$code-background-color;
@@ -96,7 +80,7 @@
   }
 
   :not(pre) > code {
-    padding: 5px 8px;
+    padding: 0.5em 0.7em;
 
     background-color: palette.$code-background-color;
     color: palette.$code-text-color;
@@ -105,8 +89,8 @@
   }
 
   pre {
-    padding: value.$content-gap 0;
-    padding: (value.$content-gap + 5px);
+    padding: value.$large-margin;
+    margin: value.$large-margin 0;
 
     overflow-x: auto;
 
@@ -123,12 +107,10 @@
       display: inline-block;
 
       &:global(.highlighted) {
-        background-color: palette.$dark-gray;
+        background-color: rgba(palette.$gray, 20%);
 
         border-radius: value.$border-radius;
       }
     }
   }
-
-  // Blockquote
 }

@@ -1,22 +1,28 @@
 @use 'sass:color';
-@use '@/styles/blog/palette' as palette;
-@use '@/styles/blog/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
 
 .container {
   position: relative;
 
   display: flex;
-  gap: value.$content-gap;
+  gap: value.$normal-margin;
   flex-direction: column;
   align-items: flex-start;
 
   width: 100%;
 
-  border-bottom: solid value.$border-slim-width palette.$border-color;
+  padding: value.$large-margin;
+  padding-top: 200px;
 
-  padding: value.$safe-padding 0;
-  margin-top: value.$large-padding;
-  margin-bottom: value.$content-large-gap;
+  background-color: palette.$black;
+  color: palette.$white;
+
+  border-radius: value.$large-border-radius;
+
+  @media screen and (max-width: value.$fixed-width) {
+    border-radius: 0;
+  }
 }
 
 .title-container {
@@ -32,8 +38,6 @@
 
   width: 100%;
   max-width: value.$fixed-width;
-
-  color: palette.$gray;
 
   > ul {
     list-style-type: none;

@@ -38,7 +38,7 @@ void printArr(int v[], int len);
 int main()
 {
 	int i;
-	int v[ARR_LEN] = { 4, 3, 1, 7, 9, 6, 2 };
+	int v[ARR_LEN] = { 4, 3, 1, 7, 9, 6, 2 }; // [!code highlight]
 	printArr(v, ARR_LEN);
 	qsort(v, 0, ARR_LEN-1);
 	printArr(v, ARR_LEN);

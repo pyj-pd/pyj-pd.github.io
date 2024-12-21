@@ -22,9 +22,9 @@ export default function PostButton({ postData }: PostButtonProps) {
           </div>
           <div className={styles['info-container']}>
             <div className={styles['time-container']}>
-              {postData.date && (
-                <time dateTime={postData.date}>
-                  {getPostDateString(postData.date)}
+              {postData.lastUpdateDate && (
+                <time dateTime={postData.lastUpdateDate}>
+                  {getPostDateString(postData.lastUpdateDate)}
                 </time>
               )}
             </div>

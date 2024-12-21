@@ -1,38 +1,38 @@
-@use '@/styles/blog/value' as value;
-@use '@/styles/blog/palette' as palette;
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
 
 .container {
   display: flex;
   flex-direction: column;
 
-  border: solid value.$border-slim-width var(--border-color);
   border-radius: value.$border-radius;
 
   overflow: hidden;
 
-  margin: value.$content-gap 0;
+  margin: value.$large-margin 0;
 
-  background-color: var(--border-color);
+  background-color: var(--background-color);
 
   // Variants
   &.normal {
-    --border-color: #{palette.$gray};
+    --background-color: #{palette.$gray};
   }
 
   &.info {
-    --border-color: #{palette.$blue};
+    --background-color: #{palette.$blue};
   }
 
   &.okay {
-    --border-color: #{palette.$green};
+    --background-color: #{palette.$green};
   }
 
   &.warn {
-    --border-color: #{palette.$yellow};
+    --title-color: #{palette.$orange};
+    --background-color: #{palette.$yellow};
   }
 
   &.error {
-    --border-color: #{palette.$red};
+    --background-color: #{palette.$red};
   }
 }
 
@@ -40,9 +40,9 @@
   display: flex;
   flex-direction: column;
 
-  padding: value.$content-gap;
+  padding: value.$large-margin;
 
-  background-color: rgba(palette.$background-color, 0.92);
+  background-color: rgba(palette.$background-color, 0.85);
   color: var(--text-color, #{palette.$text-color});
 
   width: 100%;
@@ -50,5 +50,5 @@
 }
 
 .title {
-  color: var(--title-color, var(--border-color));
+  color: var(--title-color, var(--background-color));
 }

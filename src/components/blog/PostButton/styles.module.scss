@@ -1,5 +1,5 @@
-@use '@/styles/blog/palette' as palette;
-@use '@/styles/blog/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
 
 .list-container {
   list-style: none;
@@ -14,17 +14,15 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  gap: value.$content-gap;
+  gap: value.$large-margin;
 
   width: 100%;
 
-  background-color: transparent;
-  color: palette.$text-color;
-
-  border: solid value.$border-slim-width palette.$border-color;
+  padding: value.$large-margin;
   border-radius: value.$border-radius;
 
-  padding: value.$safe-padding;
+  background-color: palette.$light-gray;
+  color: palette.$text-color;
 
   text-align: left;
 }
@@ -32,7 +30,7 @@
 .title-container {
   display: flex;
   flex-direction: column;
-  gap: value.$content-small-gap;
+  gap: value.$small-margin;
 
   width: 100%;
 }
@@ -48,7 +46,7 @@
 // Post information
 .info-container {
   display: flex;
-  gap: value.$content-small-gap;
+  gap: value.$small-margin;
   justify-content: space-between;
   align-items: center;
 
@@ -67,10 +65,10 @@
 
 .category-container {
   display: flex;
-  gap: value.$content-small-gap;
+  gap: value.$small-margin;
 
   .category {
     display: inline-flex;
-    gap: value.$content-small-gap;
+    gap: value.$small-margin;
   }
 }

@@ -1,0 +1,6 @@
+@use '@/styles/value' as value;
+
+@mixin fixed-width-container-styles {
+  width: 100%;
+  max-width: value.$fixed-width;
+}

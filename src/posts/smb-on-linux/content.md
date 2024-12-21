@@ -1,13 +1,13 @@
 ---
-title: 'Raspberry Pi와 외장 HDD를 이용해 SMB 서버 구축하기'
+title: 'Raspberry Pi와 외장 HDD를 이용해 디스크 암호화하고 SMB 서버 구축하기'
 description: '외장 HDD를 이용해 같은 네트워크 내에서 사용할 수 있는 SMB 서버를 구축하는 방법에 대해 알아봅니다.'
 
 date: '2024-09-17'
-lastUpdateDate: '2024-09-18'
+lastUpdateDate: '2024-12-22'
 categories: ['computer']
 ---
 
-쓰지 않는 1GB RAM의 Raspberry Pi 3B+ 모델 하나와 1TB 용량의 외장 HDD가 있어 이 둘을 이용해 내부 네트워크용 SMB를 구축해보기로 하였다.
+쓰지 않는 1GB RAM의 Raspberry Pi 3B+ 모델 하나와 1TB 용량의 외장 HDD가 있어 이 둘을 이용해 내부 네트워크용 SMB를 구축해보기로 하였다. 이때 HDD는 암호화(Disk encryption)하기로 하였다.
 
 ## 외장 HDD 포맷
 

@@ -18,15 +18,22 @@ export type NavbarRouteData = {
 export const internalRoutesList = {
   home: {
     path: '/',
-    name: 'Home',
+    name: '홈',
     priority: 0.9,
   },
   posts: {
     path: '/posts',
-    name: 'Blog(한국어/Korean)',
+    name: '글 목록',
 
     priority: 1,
     changeFrequency: 'always',
+  },
+  /** @todo */
+  projects: {
+    path: '/projects',
+    name: '프로젝트',
+
+    priority: 0.5,
   },
 } as const satisfies NavbarRouteData
 

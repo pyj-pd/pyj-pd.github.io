@@ -1,5 +1,5 @@
-@use '@/styles/blog/palette' as palette;
-@use '@/styles/blog/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
 
 .container {
   display: flex;
@@ -7,7 +7,7 @@
 
   width: 100%;
 
-  margin: value.$content-gap 0;
+  margin: value.$normal-margin 0;
 }
 
 .image-container {
@@ -19,7 +19,7 @@
   width: 100%;
   height: auto;
 
-  background-color: palette.$dark-gray;
+  background-color: palette.$light-gray;
 
   border-radius: value.$border-radius;
 }

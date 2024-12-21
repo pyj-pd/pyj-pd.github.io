@@ -35,8 +35,7 @@
 
     position: relative;
 
-    margin-top: value.$large-margin;
-    margin-bottom: value.$normal-margin;
+    margin: value.$large-margin 0;
   }
 
   // Small screen

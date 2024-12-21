@@ -1,11 +1,10 @@
 @use '@/styles/palette' as palette;
-@use '@/styles/blog/value' as value;
 
 body {
   background-color: palette.$background-color;
   color: palette.$text-color;
 
-  font-family: var(--f-sans-serif), serif;
+  font-family: var(--f-sans-serif), sans-serif;
   font-size: 12pt;
 }
 

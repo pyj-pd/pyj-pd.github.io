@@ -6,7 +6,12 @@
 }
 
 .link-wrapper {
+  display: flex;
+
   text-decoration: none;
+
+  border-radius: value.$border-radius;
+  overflow: hidden;
 }
 
 .container {
@@ -19,7 +24,6 @@
   width: 100%;
 
   padding: value.$large-margin;
-  border-radius: value.$border-radius;
 
   background-color: palette.$light-gray;
   color: palette.$text-color;
@@ -27,6 +31,7 @@
   text-align: left;
 }
 
+// Title
 .title-container {
   display: flex;
   flex-direction: column;

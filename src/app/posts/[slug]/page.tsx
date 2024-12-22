@@ -1,5 +1,5 @@
 import PostTitle from '@/components/blog/PostTitle'
-import styles from './styles.module.scss'
+import styles from './page.module.scss'
 import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
 import { getPostData, postSlugList } from '@/utils/blog/post'

@@ -1,0 +1,9 @@
+@use '@/styles/value' as value;
+
+.container {
+  margin-top: value.$large-margin * 2;
+}
+
+.text {
+  transform: rotate(3deg);
+}

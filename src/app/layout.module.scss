@@ -1,0 +1,5 @@
+@use '@/styles/value' as value;
+
+.container {
+  min-height: value.$minimum-height;
+}

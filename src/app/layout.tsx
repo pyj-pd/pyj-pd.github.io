@@ -14,6 +14,7 @@ import {
 } from '@/constants/metadata'
 import { getPageTitleName } from '@/utils/blog/page'
 import PageFooter from '@/components/common/PageFooter'
+import styles from './layout.module.scss'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
@@ -37,7 +38,7 @@ export default function BlogRootLayout({
         )}
       >
         <NavigationBar />
-        {children}
+        <div className={styles.container}>{children}</div>
         <PageFooter />
       </body>
     </html>

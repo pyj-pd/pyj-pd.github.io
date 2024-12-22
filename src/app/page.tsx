@@ -1,6 +1,6 @@
 import { getCanonicalMetadataFromRouteId } from '@/utils/metadata'
 import type { Metadata } from 'next'
-import styles from './styles.module.scss'
+import styles from './page.module.scss'
 
 export const metadata: Metadata = {
   ...getCanonicalMetadataFromRouteId('posts'),

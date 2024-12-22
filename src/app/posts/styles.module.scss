@@ -6,14 +6,13 @@
   position: relative;
 
   @include mixin.fixed-width-container-styles;
+
+  display: flex;
+  flex-direction: column;
+  gap: value.$large-margin;
 }
 
 // Title
-.title-container {
-  width: 100%;
-
-  padding: value.$large-margin 0;
-}
 
 // Post list
 .post-list-container {

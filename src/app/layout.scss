@@ -1,0 +1,41 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+* {
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+
+  word-break: keep-all;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: value.$large-margin;
+
+  max-width: 100vw;
+  min-height: 100vh;
+
+  line-height: 1.4;
+
+  background-color: palette.$background-color;
+  color: palette.$text-color;
+
+  font-family: var(--f-sans-serif), sans-serif;
+  font-size: 12pt;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: underline;
+  color: palette.$link-color;
+}

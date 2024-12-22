@@ -1,6 +1,6 @@
-import { BLOG_NAME, TITLE_SEPARATOR_DASH } from '@/constants/metadata'
+import { SITE_NAME, TITLE_SEPARATOR_DASH } from '@/constants/metadata'
 
 export const getPageTitleName = (title?: string) => {
-  if (title === undefined) return BLOG_NAME
-  else return `${title}${TITLE_SEPARATOR_DASH}${BLOG_NAME}`
+  if (title === undefined) return SITE_NAME
+  else return `${SITE_NAME}${TITLE_SEPARATOR_DASH}${title}`
 }

@@ -12,7 +12,7 @@
 
   width: 100%;
 
-  padding: value.$large-margin;
+  padding: value.$content-padding;
   padding-top: 200px;
 
   background-color: palette.$black;
@@ -38,6 +38,8 @@
 
   width: 100%;
   max-width: value.$fixed-width;
+
+  color: palette.$gray;
 
   > ul {
     list-style-type: none;

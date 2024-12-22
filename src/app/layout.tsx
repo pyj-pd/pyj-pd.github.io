@@ -1,5 +1,9 @@
 import './layout.scss'
-import { monospaceFont, sansSerifFont } from '@/styles/fonts'
+import {
+  englishSansSerifFont,
+  monospaceFont,
+  sansSerifFont,
+} from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/blog/NavigationBar'
 import classNames from 'classnames'
@@ -9,6 +13,7 @@ import {
   sharedMetadata,
 } from '@/constants/metadata'
 import { getPageTitleName } from '@/utils/blog/page'
+import PageFooter from '@/components/common/PageFooter'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
@@ -26,13 +31,14 @@ export default function BlogRootLayout({
       <body
         className={classNames(
           // Fonts
+          englishSansSerifFont.variable,
           sansSerifFont.variable,
           monospaceFont.variable,
         )}
       >
         <NavigationBar />
         {children}
-        {/* <BlogFooter /> */}
+        <PageFooter />
       </body>
     </html>
   )

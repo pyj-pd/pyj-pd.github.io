@@ -22,6 +22,8 @@
     line-height: value.$content-line-spacing;
 
     padding: value.$large-margin value.$content-padding;
+
+    font-size: value.$content-font-size;
   }
 
   // Headings
@@ -66,7 +68,7 @@
 
   // Syntax highlighting
   code {
-    font-size: 0.9rem;
+    font-size: value.$content-small-font-size;
     letter-spacing: normal;
   }
 

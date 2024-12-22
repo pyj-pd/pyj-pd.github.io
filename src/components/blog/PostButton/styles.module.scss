@@ -1,8 +1,11 @@
 @use '@/styles/palette' as palette;
+@use '@/styles/mixin' as mixin;
 @use '@/styles/value' as value;
 
 .list-container {
   list-style: none;
+
+  width: 100%;
 }
 
 .link-wrapper {
@@ -10,19 +13,11 @@
 
   text-decoration: none;
 
+  @include mixin.pointer-feedback-animation;
+
   border-radius: value.$border-radius;
 
-  opacity: 1;
-  transform: scale(1);
-
-  transition-property: opacity, transform;
-  transition-timing-function: cubic-bezier(0, 0.25, 0.32, 0.95);
-  transition-duration: 0.1s;
-
-  &:active {
-    opacity: 0.7;
-    transform: scale(0.98);
-  }
+  width: 100%;
 }
 
 .container {
@@ -34,7 +29,7 @@
 
   width: 100%;
 
-  padding: value.$large-margin;
+  padding: value.$content-padding;
 
   background-color: palette.$light-gray;
   color: palette.$text-color;
@@ -54,11 +49,9 @@
 }
 
 .title {
-  font-size: 1.2em;
+  font-size: value.$second-title-font-size;
 
-  .link-wrapper:hover & {
-    text-decoration: underline;
-  }
+  text-decoration: none;
 }
 
 // Post information
@@ -72,7 +65,7 @@
 
   color: palette.$gray;
 
-  font-size: 0.9rem;
+  font-size: value.$content-small-font-size;
 
   @media screen and (max-width: 500px) {
     flex-direction: column;

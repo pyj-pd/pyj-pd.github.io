@@ -7,7 +7,7 @@ $large-margin: 25px;
 $normal-margin: 10px;
 $small-margin: 5px;
 
-$content-padding: 18px;
+$content-padding: $large-margin;
 
 // Border
 $border-radius: 13px;
@@ -15,3 +15,9 @@ $large-border-radius: 20px;
 
 // Text
 $content-line-spacing: 2;
+
+$first-title-font-size: 2rem;
+$second-title-font-size: 1.2rem;
+$content-font-size: 1rem;
+$content-small-font-size: 0.9rem;
+$small-font-size: 0.7rem;

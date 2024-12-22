@@ -4,3 +4,22 @@
   width: 100%;
   max-width: value.$fixed-width;
 }
+
+@mixin pointer-feedback-animation {
+  opacity: 1;
+  transform: scale(1);
+  filter: brightness(100%);
+
+  transition-property: filter, transform;
+  transition-timing-function: cubic-bezier(0, 0.25, 0.32, 0.95);
+  transition-duration: 0.1s;
+
+  &:hover,
+  &:active {
+    filter: brightness(95%);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

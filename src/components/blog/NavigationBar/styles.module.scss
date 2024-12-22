@@ -2,17 +2,10 @@
 @use '@/styles/palette' as palette;
 
 .navbar-container {
-  // position: sticky;
-  // top: 0;
-  // left: 0;
-  // z-index: 10;
-
   display: flex;
   justify-content: center;
 
   width: 100%;
-
-  padding: value.$large-margin;
 }
 
 .container {
@@ -20,6 +13,8 @@
   justify-content: flex-start;
 
   width: value.$fixed-width;
+
+  padding: value.$large-margin value.$content-padding;
 
   color: palette.$text-color;
 }

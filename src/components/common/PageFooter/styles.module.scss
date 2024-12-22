@@ -1,0 +1,22 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: value.$small-margin;
+
+  width: 100%;
+
+  padding: value.$large-margin * 2 0;
+
+  text-transform: uppercase;
+  font-size: value.$small-font-size;
+
+  color: palette.$gray;
+}
+
+.go-to-top {
+  color: inherit;
+}

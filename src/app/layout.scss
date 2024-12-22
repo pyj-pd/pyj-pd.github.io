@@ -24,7 +24,7 @@ body {
   background-color: palette.$background-color;
   color: palette.$text-color;
 
-  font-family: var(--f-sans-serif), sans-serif;
+  font-family: var(--f-eng-sans-serif), var(--f-sans-serif), sans-serif;
   font-size: 12pt;
 }
 

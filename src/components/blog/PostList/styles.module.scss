@@ -1,0 +1,17 @@
+@use '@/styles/value' as value;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  &.small {
+    gap: value.$normal-margin;
+  }
+
+  &.normal {
+    gap: value.$large-margin;
+  }
+}

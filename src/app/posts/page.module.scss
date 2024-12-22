@@ -9,20 +9,10 @@
 
   display: flex;
   flex-direction: column;
-  gap: value.$large-margin;
+  gap: value.$item-gap;
 }
 
 // Title
-.title-container {
+.title {
   padding: value.$content-padding;
-}
-
-// Post list
-.post-list-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: value.$large-margin;
-
-  width: 100%;
 }

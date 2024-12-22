@@ -1,5 +1,6 @@
 @use '@/styles/value' as value;
 
 .container {
+  max-width: 100%;
   min-height: value.$minimum-height;
 }

@@ -5,10 +5,14 @@ $small-screen-width: $fixed-width + 100px;
 
 // Margin
 $large-margin: 25px;
+$big-margin: 19px;
 $normal-margin: 10px;
 $small-margin: 5px;
 
-$content-padding: $large-margin;
+$content-padding: 30px;
+
+// Flex
+$item-gap: $large-margin;
 
 // Border
 $border-radius: 13px;

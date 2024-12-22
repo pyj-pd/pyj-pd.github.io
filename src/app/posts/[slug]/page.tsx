@@ -2,7 +2,11 @@ import PostTitle from '@/components/blog/PostTitle'
 import styles from './page.module.scss'
 import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
-import { getPostData, postSlugList } from '@/utils/blog/post'
+import {
+  getPostData,
+  retrieveNearbyPostSlugs,
+  postSlugList,
+} from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import { navbarRouteList } from '@/constants/routes'
 import { categoryList } from '@/constants/blog/categories'
@@ -11,6 +15,9 @@ import {
   BLOG_POST_TYPE,
   sharedOpenGraph,
 } from '@/constants/metadata'
+import PostList from '@/components/blog/PostList'
+import PostTopBar from '@/components/blog/PostContentWrapper/PostTopBar'
+import PostContentWrapper from '@/components/blog/PostContentWrapper'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -83,13 +90,24 @@ export default async function BlogPostPage({
 
   const { content, ...postMetadata } = mdxData
 
+  const nearbyPosts = retrieveNearbyPostSlugs(postMetadata.slug)
+
   return (
     <div className={styles.wrapper}>
       <main className={styles.container}>
         <header>
           <PostTitle postMetadata={postMetadata} />
         </header>
-        <section className={styles['content-container']}>{content}</section>
+        <PostContentWrapper postMetadata={postMetadata}>
+          <section className={styles['content-container']}>{content}</section>
+        </PostContentWrapper>
+        <section className={styles['more-posts-container']}>
+          <h2 className={styles.title}>다른 글도 읽어보세요</h2>
+          <PostList
+            postDataList={nearbyPosts}
+            gap="small"
+          />
+        </section>
       </main>
     </div>
   )

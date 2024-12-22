@@ -78,3 +78,38 @@ export const getPostAssetsPath = (slug: string, src: string): string =>
   `${POST_ASSETS_PATH_PUBLIC}/${slug}/${src}`
 
 export const getPostURL = (postSlug: string) => `/posts/${postSlug}`
+
+/**
+ * Retrieves a list of post slugs surrounding a specified post, excluding the current post.
+ * @param targetSlug The slug of the reference post.
+ * @param range The number of slugs to retrieve around the current post. This defines the total number of posts returned (excluding the current post).
+ * @returns An array of post data objects representing the slugs of the surrounding posts.
+ */
+
+export const retrieveNearbyPostSlugs = (
+  targetSlug: string,
+  range: number = 4,
+): PostData[] => {
+  const targetPostIndex = postList.findIndex((post) => post.slug === targetSlug)
+
+  if (targetPostIndex < 0) throw new Error("Can't find the given post.")
+
+  let firstPostIndex = Math.max(targetPostIndex - range / 2, 0),
+    endPostIndex = Math.min(targetPostIndex + range / 2, postList.length - 1)
+
+  if (postList.length > range + 1) {
+    // Check if it satisfies the range
+    const postLackCount = range - (endPostIndex - firstPostIndex)
+
+    if (targetPostIndex <= range / 2 - 1) endPostIndex += postLackCount
+    else if (targetPostIndex >= postList.length - range / 2)
+      firstPostIndex -= postLackCount
+  }
+
+  const postsWithinTheRange = postList.slice(firstPostIndex, endPostIndex + 1)
+
+  // Remove current post from the list of posts
+  postsWithinTheRange.splice(targetPostIndex - firstPostIndex, 1)
+
+  return postsWithinTheRange
+}

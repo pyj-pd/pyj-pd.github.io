@@ -14,8 +14,7 @@
   text-decoration: none;
 
   @include mixin.pointer-feedback-animation;
-
-  border-radius: value.$border-radius;
+  @include mixin.button-style;
 
   width: 100%;
 }
@@ -25,18 +24,13 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  gap: value.$large-margin;
+  gap: value.$item-gap;
 
   width: 100%;
 
   padding: value.$content-padding;
 
-  background-color: palette.$light-gray;
-  color: palette.$text-color;
-
   text-align: left;
-
-  border-radius: inherit;
 }
 
 // Title

@@ -1,3 +1,4 @@
+@use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
 
 @mixin fixed-width-container-styles {
@@ -14,12 +15,20 @@
   transition-timing-function: cubic-bezier(0, 0.25, 0.32, 0.95);
   transition-duration: 0.1s;
 
-  &:hover,
-  &:active {
+  &:hover {
     filter: brightness(95%);
   }
 
   &:active {
+    filter: brightness(90%);
     transform: scale(0.97);
   }
+}
+
+// Buttons
+@mixin button-style {
+  border-radius: value.$border-radius;
+
+  background-color: palette.$light-gray;
+  color: palette.$text-color;
 }

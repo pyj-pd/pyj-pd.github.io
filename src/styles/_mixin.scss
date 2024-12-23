@@ -29,6 +29,8 @@
 @mixin button-style {
   border-radius: value.$border-radius;
 
+  -webkit-tap-highlight-color: trasparent;
+
   background-color: palette.$light-gray;
   color: palette.$text-color;
 }

@@ -37,8 +37,10 @@ export default function BlogRootLayout({
           monospaceFont.variable,
         )}
       >
-        <NavigationBar />
-        <div className={styles.container}>{children}</div>
+        <div className={styles['body-container']}>
+          <NavigationBar />
+          <div className={styles['main-container']}>{children}</div>
+        </div>
         <PageFooter />
       </body>
     </html>

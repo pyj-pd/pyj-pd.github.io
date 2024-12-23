@@ -1,6 +1,16 @@
 @use '@/styles/value' as value;
 
-.container {
+.body-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: value.$item-gap;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-container {
   max-width: 100%;
   min-height: value.$minimum-height;
 }

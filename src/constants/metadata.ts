@@ -7,7 +7,7 @@ export const BLOG_POST_TYPE = 'article',
     'JavaScript/TypeScript를 다루며, 컴퓨터를 다루며 배우게 된 점, 느끼게 된 점을 나눕니다.'
 
 // Home
-export const HOMEPAGE_TITLE_DESCRIPTION = '프론트엔드 개발자',
+export const HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
   HOMEPAGE_DESCRIPTION =
     '안녕하세요. 저는 프론트엔드 개발에 집중 중인 개발자입니다.'
 

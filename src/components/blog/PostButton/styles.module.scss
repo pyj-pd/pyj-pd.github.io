@@ -48,6 +48,11 @@
   text-decoration: none;
 }
 
+// Description
+.description {
+  color: palette.$dark-gray;
+}
+
 // Post information
 .info-container {
   display: flex;

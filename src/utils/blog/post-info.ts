@@ -1,5 +1,8 @@
 import type { PostDate } from '@/types/post'
 
+const ZERO_PAD_STRING = '0',
+  ZERO_PAD_LENGTH = 2
+
 /**
  * Gets human-readable date string from post date.
  * @param date Post date
@@ -8,5 +11,5 @@ import type { PostDate } from '@/types/post'
 export const getPostDateString = (date: PostDate) => {
   const dateObject = new Date(date)
 
-  return `${dateObject.getFullYear()}년 ${dateObject.getMonth() + 1}월 ${dateObject.getDate()}일`
+  return `${dateObject.getFullYear()}. ${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}. ${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}.`
 }

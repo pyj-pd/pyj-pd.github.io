@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import PostTopBar from './PostTopBar'
 import type { PostMetadata } from '@/types/post'
 import { useScroll } from 'motion/react'
@@ -17,17 +17,23 @@ export default function PostContentWrapper({
   const ref = useRef<HTMLDivElement>(null),
     { scrollYProgress } = useScroll({
       target: ref,
-      offset: ['start start', 'end center'],
+      offset: ['start start', 'end start'],
     })
+
+  const [shouldTopBarRender, setShouldTopBarRender] = useState<boolean>(false)
+
+  useEffect(() => {
+    setShouldTopBarRender(true)
+  }, [])
 
   return (
     <>
-      {
+      {shouldTopBarRender && (
         <PostTopBar
           postTitle={postMetadata.title}
           progress={scrollYProgress}
         />
-      }
+      )}
       <div ref={ref}>{children}</div>
     </>
   )

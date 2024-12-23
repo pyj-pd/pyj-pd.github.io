@@ -18,7 +18,9 @@ export default function PostButton({ postData }: PostButtonProps) {
         <article className={styles.container}>
           <div className={styles['title-container']}>
             <h2 className={styles.title}>{postData.title}</h2>
-            {postData.description && <p className={styles.description}>{postData.description}</p>}
+            {postData.description && (
+              <p className={styles.description}>{postData.description}</p>
+            )}
           </div>
           <div className={styles['info-container']}>
             <div className={styles['time-container']}>

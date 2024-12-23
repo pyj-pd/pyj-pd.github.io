@@ -17,7 +17,7 @@ export default function PostContentWrapper({
   const ref = useRef<HTMLDivElement>(null),
     { scrollYProgress } = useScroll({
       target: ref,
-      offset: ['start start', 'end start'],
+      offset: ['start start', 'end center'],
     })
 
   const [shouldTopBarRender, setShouldTopBarRender] = useState<boolean>(false)

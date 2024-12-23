@@ -1,6 +1,9 @@
+@use '@/styles/mixin' as mixin;
 @use '@/styles/value' as value;
 
 .container {
+  justify-self: center;
+
   margin-top: value.$large-margin * 2;
 }
 

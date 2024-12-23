@@ -35,17 +35,22 @@ export default function PostTopBar({ postTitle, progress }: PostTopBar) {
   })
 
   return (
-    <motion.div
-      initial="hidden"
-      animate={isVisible ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={normalTransition}
-      className={styles['fixed-container']}
-    >
-      <div className={styles.container}>{postTitle}</div>
-      <div className={styles['progress-bar']}>
-        <motion.span style={{ width }} />
-      </div>
-    </motion.div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={variants}
+          transition={normalTransition}
+          className={styles['fixed-container']}
+        >
+          <div className={styles.container}>{postTitle}</div>
+          <div className={styles['progress-bar']}>
+            <motion.span style={{ width }} />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

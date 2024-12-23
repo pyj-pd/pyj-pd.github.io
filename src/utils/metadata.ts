@@ -1,8 +1,5 @@
-import {
-  navbarRouteList,
-  SITE_URL,
-  type NavbarRouteId,
-} from '@/constants/routes'
+import { SITE_URL } from '@/constants/project'
+import { navbarRouteList, type NavbarRouteId } from '@/constants/routes'
 import type { Metadata } from 'next'
 
 type CanonicalMetadata = Pick<Metadata, 'alternates'>

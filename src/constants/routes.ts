@@ -1,8 +1,5 @@
 import type { MetadataRoute } from 'next'
-
-export const GITHUB_PROFILE_LINK = 'https://github.com/pyj-pd',
-  SITE_URL = 'https://pyj-pd.dev',
-  SITEMAP_URL = `${SITE_URL}/sitemap.xml`
+import { GITHUB_PROFILE_LINK } from './project'
 
 // Navbar
 export type NavbarRouteData = {
@@ -29,12 +26,12 @@ export const internalRoutesList = {
     changeFrequency: 'always',
   },
   /** @todo */
-  projects: {
-    path: '/projects',
-    name: '프로젝트',
+  // projects: {
+  //   path: '/projects',
+  //   name: '프로젝트',
 
-    priority: 0.5,
-  },
+  //   priority: 0.5,
+  // },
 } as const satisfies NavbarRouteData
 
 export const externalRoutesList = {

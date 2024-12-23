@@ -1,7 +1,7 @@
+import { SITE_URL } from '@/constants/project'
 import {
   internalRoutesList,
   navbarRouteList,
-  SITE_URL,
   type NavbarRouteId,
 } from '@/constants/routes'
 import { getPostURL, postList } from '@/utils/blog/post'

@@ -5,7 +5,7 @@ import {
   sansSerifFont,
 } from '@/styles/fonts'
 import type { Metadata } from 'next'
-import NavigationBar from '@/components/blog/NavigationBar'
+import NavigationBar from '@/components/common/NavigationBar'
 import classNames from 'classnames'
 import {
   HOMEPAGE_DESCRIPTION,

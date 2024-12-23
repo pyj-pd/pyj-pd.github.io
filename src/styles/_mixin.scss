@@ -4,6 +4,8 @@
 @mixin fixed-width-container-styles {
   width: 100%;
   max-width: value.$fixed-width;
+
+  justify-self: center;
 }
 
 @mixin pointer-feedback-animation {
@@ -36,8 +38,8 @@
 }
 
 // Animation
-@mixin slide-appear-animation($duration: 2s, $delay: 1s) {
-  animation: appear ease-in-out $duration $delay both;
+@mixin slide-appear-animation($duration: 1s, $delay: 0.3s) {
+  animation: appear cubic-bezier(0.1, 0.2, 0.45, 1) $duration $delay both;
 
   @keyframes appear {
     0% {

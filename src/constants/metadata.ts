@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SITE_URL } from './project'
 
 // Blog
 export const BLOG_POST_TYPE = 'article',
@@ -9,14 +10,17 @@ export const BLOG_POST_TYPE = 'article',
 // Home
 export const HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
   HOMEPAGE_DESCRIPTION =
-    '반갑습니다. 이 블로그에서는 제가 프론트엔드 개발을 하며, 또 컴퓨터를 다루며 배웠던 점들을 기록하려고 합니다.'
+    '반갑습니다. 이곳은 프론트엔드 분야를 탐구하는 학생으로서의 발자취를 기록하는 공간입니다. 저의 글 하나가 여러분들에게 조금이나마 도움이 되었으면 합니다.'
 
 // Shared
 export const SITE_NAME = 'pyj-pd',
   TITLE_SEPARATOR_DASH = ' — '
 
+export const SITE_LOGO_PATH = `${SITE_URL}/apple-icon.png`
+
 export const sharedOpenGraph: Metadata['openGraph'] = {
     siteName: SITE_NAME,
+    images: [SITE_LOGO_PATH],
   },
   sharedMetadata: Metadata = {
     robots: 'all',

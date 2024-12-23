@@ -2,6 +2,7 @@ import GitHubIcon from '@/components/icons/GitHubIcon'
 import styles from './styles.module.scss'
 import MyLink from '@/components/common/MyLink'
 import { GITHUB_PROFILE_LINK } from '@/constants/project'
+import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
 
 export default function LandingSection() {
   return (
@@ -28,11 +29,7 @@ export default function LandingSection() {
       <div className={styles['content-container']}>
         <div className={styles['text-container']}>
           <h1>pyj-pd</h1>
-          <p>
-            반갑습니다.
-            <br />이 블로그에서는 제가 프론트엔드 개발을 하며, 또 컴퓨터를
-            다루며 배웠던 점들을 기록하려고 합니다.
-          </p>
+          <p>{HOMEPAGE_DESCRIPTION}</p>
         </div>
         <div className={styles['link-container']}>
           <MyLink

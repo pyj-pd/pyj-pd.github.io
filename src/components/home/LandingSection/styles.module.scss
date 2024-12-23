@@ -4,38 +4,42 @@
 
 .container {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 
-  @include mixin.fixed-width-container-styles;
-
-  padding: value.$content-padding;
+  width: 100%;
+  max-width: value.$fixed-width;
+  height: 100%;
 }
 
 // Video background
 .video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 
   display: flex;
   align-items: flex-end;
   justify-content: center;
 
   width: 100%;
-  height: 100%;
+  height: 400px;
 
-  pointer-events: none;
+  border-radius: value.$border-radius;
 
-  padding: value.$content-padding 0;
+  @media screen and (max-width: #{value.$fixed-width}) {
+    border-radius: 0;
+  }
+
+  overflow: hidden;
 }
 
 .video {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 
   object-fit: cover;
+
+  pointer-events: none;
 
   width: 100%;
   height: 100%;
@@ -44,13 +48,9 @@
 .video-credit-container {
   width: 100%;
   max-width: value.$fixed-width;
-
-  padding: value.$content-padding;
 }
 
 .video-credit-container > p {
-  pointer-events: auto;
-
   color: palette.$white;
   font-size: value.$content-small-font-size;
 
@@ -72,19 +72,20 @@
 .content-container {
   display: flex;
   flex-direction: column;
-
   gap: value.$large-margin;
+
+  padding: value.$content-padding;
+
+  width: 100%;
 }
 
 .text-container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: value.$small-margin;
+  gap: value.$normal-margin;
 
-  line-height: value.$content-line-spacing;
-
-  font-size: value.$content-font-size;
+  font-size: value.$content-small-font-size;
 
   h1 {
     font-size: value.$second-title-font-size;

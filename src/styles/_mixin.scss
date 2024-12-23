@@ -13,9 +13,7 @@
   transform: scale(1);
   filter: brightness(100%);
 
-  transition-property: filter, transform;
-  transition-timing-function: cubic-bezier(0, 0.25, 0.32, 0.95);
-  transition-duration: 0.3s;
+  transition: all 0.3s value.$ease-out;
 
   &:hover {
     filter: brightness(95%);
@@ -28,13 +26,19 @@
 }
 
 // Buttons
-@mixin button-style {
+@mixin button-style(
+  $background-color: palette.$light-gray,
+  $text-color: palette.$text-color
+) {
+  border: none;
   border-radius: value.$border-radius;
 
   -webkit-tap-highlight-color: trasparent;
 
-  background-color: palette.$light-gray;
-  color: palette.$text-color;
+  cursor: pointer;
+
+  background-color: $background-color;
+  color: $text-color;
 }
 
 // Animation

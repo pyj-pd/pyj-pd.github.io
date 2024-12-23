@@ -1,3 +1,4 @@
+@use '@/styles/mixin' as mixin;
 @use '@/styles/value' as value;
 @use '@/styles/palette' as palette;
 
@@ -26,19 +27,25 @@
   display: flex;
   align-items: center;
   gap: value.$normal-margin;
+}
 
-  & > li {
-    display: block;
+.route-button > a {
+  display: block;
 
-    > a {
-      text-decoration: none;
+  color: currentColor;
+  text-decoration: none;
 
-      color: currentColor;
+  border-radius: value.$border-radius;
+}
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+.route-button > a > button {
+  padding: value.$normal-margin;
+
+  @include mixin.button-style($background-color: transparent);
+  @include mixin.pointer-feedback-animation;
+
+  &:hover {
+    background-color: palette.$light-gray;
   }
 }
 

@@ -16,8 +16,8 @@ import {
   sharedOpenGraph,
 } from '@/constants/metadata'
 import PostList from '@/components/blog/PostList'
-import PostTopBar from '@/components/blog/PostContentWrapper/PostTopBar'
 import PostContentWrapper from '@/components/blog/PostContentWrapper'
+import PostListTitle from '@/components/blog/PostListTitle'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -102,7 +102,12 @@ export default async function BlogPostPage({
           <section className={styles['content-container']}>{content}</section>
         </PostContentWrapper>
         <section className={styles['more-posts-container']}>
-          <h2 className={styles.title}>다른 글도 읽어보세요</h2>
+          <PostListTitle
+            type="h2"
+            showViewAllButton
+          >
+            다른 글도 읽어보세요
+          </PostListTitle>
           <PostList
             postDataList={nearbyPosts}
             gap="small"

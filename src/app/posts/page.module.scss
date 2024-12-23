@@ -14,5 +14,5 @@
 
 // Title
 .title {
-  padding: value.$content-padding;
+  @include mixin.title-styles;
 }

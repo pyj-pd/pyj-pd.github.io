@@ -9,6 +9,8 @@ type PostButtonProps = { postData: PostData }
 
 /** @todo add thumbnail */
 export default function PostButton({ postData }: PostButtonProps) {
+  const postLatestDate = postData.lastUpdateDate ?? postData.date ?? null
+
   return (
     <li className={styles['list-container']}>
       <MyLink
@@ -24,9 +26,9 @@ export default function PostButton({ postData }: PostButtonProps) {
           </div>
           <div className={styles['info-container']}>
             <div className={styles['time-container']}>
-              {postData.lastUpdateDate && (
-                <time dateTime={postData.lastUpdateDate}>
-                  {getPostDateString(postData.lastUpdateDate)}
+              {postLatestDate && (
+                <time dateTime={postLatestDate}>
+                  {getPostDateString(postLatestDate)}
                 </time>
               )}
             </div>

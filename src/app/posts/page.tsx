@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { BLOG_TITLE_DESCRIPTION, BLOG_DESCRIPTION } from '@/constants/metadata'
 import { getPageTitleName } from '@/utils/blog/page'
 import PostList from '@/components/blog/PostList'
+import PostListTitle from '@/components/blog/PostListTitle'
 
 export const metadata: Metadata = {
   ...getCanonicalMetadataFromRouteId('posts'),
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 export default async function BlogPostListPage() {
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>글 목록</h1>
+      <PostListTitle type="h1">글 목록</PostListTitle>
       <PostList postDataList={postList} />
     </main>
   )

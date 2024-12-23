@@ -56,3 +56,10 @@
     }
   }
 }
+
+// Title
+@mixin title-styles {
+  font-weight: bold;
+
+  padding: value.$content-padding;
+}

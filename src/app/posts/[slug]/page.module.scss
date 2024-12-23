@@ -120,13 +120,12 @@
 .more-posts-container {
   display: flex;
   flex-direction: column;
-  gap: value.$item-gap;
 
   margin-top: 300px;
 
   width: 100%;
 
   .title {
-    margin: value.$normal-margin value.$content-padding;
+    @include mixin.title-styles;
   }
 }

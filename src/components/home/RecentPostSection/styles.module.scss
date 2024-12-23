@@ -4,8 +4,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: value.$large-margin;
 
-  @include mixin.fixed-width-container-styles;
+  width: 100%;
 }

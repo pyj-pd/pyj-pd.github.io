@@ -1,0 +1,28 @@
+@use '@/styles/mixin' as mixin;
+@use '@/styles/value' as value;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  font-weight: bold;
+
+  padding: value.$content-padding;
+
+  &.h1 {
+    font-size: value.$first-title-font-size;
+
+    padding-bottom: value.$normal-margin;
+  }
+
+  &.h2 {
+    font-size: value.$second-title-font-size;
+  }
+
+  * {
+    color: currentColor;
+    font-size: inherit;
+  }
+}

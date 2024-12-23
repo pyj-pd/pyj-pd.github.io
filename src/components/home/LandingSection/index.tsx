@@ -17,6 +17,8 @@ export default function LandingSection() {
           controls={false}
           disablePictureInPicture
           tabIndex={-1}
+          preload="none"
+          playsInline
           muted
         >
           <source

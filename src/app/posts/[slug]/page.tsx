@@ -108,10 +108,7 @@ export default async function BlogPostPage({
           >
             다른 글도 읽어보세요
           </PostListTitle>
-          <PostList
-            postDataList={nearbyPosts}
-            gap="small"
-          />
+          <PostList postDataList={nearbyPosts} />
         </section>
       </main>
     </div>

@@ -1,19 +1,14 @@
 import type { PostData } from '@/types/post'
 import PostButton from '../PostButton'
 import styles from './styles.module.scss'
-import classNames from 'classnames'
 
 type MorePostsProps = {
   postDataList: PostData[]
-  gap?: 'small' | 'normal'
 }
 
-export default function PostList({
-  postDataList,
-  gap = 'normal',
-}: MorePostsProps) {
+export default function PostList({ postDataList }: MorePostsProps) {
   return (
-    <ol className={classNames(styles.container, styles[gap])}>
+    <ol className={styles.container}>
       {postDataList.map((postData, index) => (
         <PostButton
           key={index}

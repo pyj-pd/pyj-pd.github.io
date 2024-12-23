@@ -16,10 +16,7 @@ export default function RecentPostSection() {
       >
         최신 글
       </PostListTitle>
-      <PostList
-        postDataList={recentPostList}
-        gap="small"
-      />
+      <PostList postDataList={recentPostList} />
     </section>
   )
 }

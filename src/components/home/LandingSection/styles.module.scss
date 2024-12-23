@@ -25,6 +25,8 @@
 
   border-radius: value.$border-radius;
 
+  background-image: linear-gradient(to bottom, #7991a6, #667186);
+
   overflow: hidden;
 
   @media screen and (max-width: #{value.$fixed-width}) {

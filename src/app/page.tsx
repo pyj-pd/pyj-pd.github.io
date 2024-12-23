@@ -9,9 +9,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div>
-      {/* <h1 className={styles.title}></h1> */}
+    <main className={styles.container}>
       <LandingSection />
-    </div>
+    </main>
   )
 }

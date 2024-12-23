@@ -1,3 +1,4 @@
+@use '@/styles/mixin' as mixin;
 @use '@/styles/value' as value;
 
 .container {
@@ -8,11 +9,13 @@
 
   padding: value.$content-padding 0;
 
-  width: 100vw;
-
   font-size: value.$content-font-size;
 }
 
 .title {
+  display: block;
+
   font-size: value.$first-title-font-size;
+
+  @include mixin.slide-appear-animation;
 }

@@ -4,8 +4,6 @@
 @mixin fixed-width-container-styles {
   width: 100%;
   max-width: value.$fixed-width;
-
-  justify-self: center;
 }
 
 @mixin pointer-feedback-animation {

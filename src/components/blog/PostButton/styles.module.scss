@@ -2,10 +2,14 @@
 @use '@/styles/mixin' as mixin;
 @use '@/styles/value' as value;
 
+$safe-padding: value.$small-margin;
+
 .list-container {
   list-style: none;
 
   width: 100%;
+
+  padding: 0 $safe-padding;
 }
 
 .link-wrapper {
@@ -28,7 +32,7 @@
 
   width: 100%;
 
-  padding: value.$content-padding;
+  padding: value.$content-padding (value.$content-padding - $safe-padding);
 
   text-align: left;
 }

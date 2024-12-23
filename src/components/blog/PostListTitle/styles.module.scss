@@ -4,12 +4,18 @@
 .container {
   display: flex;
   justify-content: space-between;
+  gap: value.$small-margin;
 
   width: 100%;
 
   font-weight: bold;
 
   padding: value.$content-padding;
+
+  @media screen and (max-width: #{value.$small-screen-width}) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
   &.h1 {
     font-size: value.$first-title-font-size;

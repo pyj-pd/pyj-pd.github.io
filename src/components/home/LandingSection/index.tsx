@@ -9,15 +9,14 @@ export default function LandingSection() {
     <section className={styles.container}>
       <div className={styles['video-container']}>
         <video
+          className={styles.video}
           width="1920"
           height="1080"
           autoPlay
           loop
-          className={styles.video}
           controls={false}
           disablePictureInPicture
           tabIndex={-1}
-          preload="none"
           playsInline
           muted
         >

@@ -3,29 +3,20 @@ import styles from './styles.module.scss'
 import MyLink from '@/components/common/MyLink'
 import { GITHUB_PROFILE_LINK } from '@/constants/project'
 import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
+import Image from 'next/image'
+import waveImage from '@public/assets/home/wave.webp'
 
 export default function LandingSection() {
   return (
     <section className={styles.container}>
-      <div className={styles['video-container']}>
-        <video
-          className={styles.video}
-          width="1920"
-          height="1080"
-          autoPlay
-          loop
-          controls={false}
-          disablePictureInPicture
-          tabIndex={-1}
-          playsInline
-          muted
-        >
-          <source
-            src="/assets/home/wave.mp4"
-            type="video/mp4"
+      <div className={styles['image-container']}>
+        <div className={styles.image}>
+          <Image
+            src={waveImage}
+            alt="눈이 쌓인 산이 보이고 그 아래 물이 잔잔하게 흐른다."
+            fill
           />
-          눈이 쌓인 산이 보이고 그 아래 물이 잔잔하게 흐른다.
-        </video>
+        </div>
       </div>
       <div className={styles['content-container']}>
         <div className={styles['text-container']}>

@@ -18,8 +18,11 @@ export default function NavigationBar() {
             return (
               <Fragment key={index}>
                 <li className={styles['route-button']}>
-                  <MyLink href={route.path}>
-                    <button tabIndex={-1}>{route.name}</button>
+                  <MyLink
+                    tabIndex={-1}
+                    href={route.path}
+                  >
+                    <button>{route.name}</button>
                   </MyLink>
                 </li>
                 {index < routeIds.length - 1 && (

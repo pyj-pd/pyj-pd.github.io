@@ -2,10 +2,12 @@
 @use '@/styles/value' as value;
 @use '@/styles/palette' as palette;
 
+$distance-from-edge: value.$content-padding;
+
 .container {
   position: fixed;
-  bottom: value.$large-margin;
-  right: value.$large-margin;
+  bottom: $distance-from-edge;
+  right: $distance-from-edge;
   z-index: 10;
 
   display: flex;

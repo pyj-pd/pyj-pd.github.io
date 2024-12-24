@@ -14,7 +14,7 @@ export default function PostContentWrapper({
   const ref = useRef<HTMLDivElement>(null),
     { scrollYProgress } = useScroll({
       target: ref,
-      offset: ['start start', 'end center'],
+      offset: ['start start', 'end end'],
     })
 
   return (

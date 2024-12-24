@@ -25,6 +25,7 @@ const variants: Variants = {
   hidden: { translateY: '-100%' },
 }
 
+/** @deprecated */
 export default function PostTopBar({ postTitle, progress }: PostTopBar) {
   const width = useTransform(progress, [0, 1], ['0%', '100%'])
   const [isVisible, setIsVisible] = useState<boolean>(false)

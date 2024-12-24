@@ -13,60 +13,70 @@ const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)
  * Reads directory that contains posts and gets post slugs.
  * @returns Array that contains post slugs
  */
-export const getPostSlugList = memoize(async (): Promise<string[]> => {
-  console.log('post slug')
-  const postSlugList = await readdir(POST_FILE_DIRECTORY)
+export const getPostSlugList = memoize(
+  async (): Promise<string[]> => {
+    const postSlugList = await readdir(POST_FILE_DIRECTORY)
 
-  return postSlugList
-})
+    return postSlugList
+  },
+  {
+    promise: true,
+  },
+)
 
 /**
  * Reads directory that contains posts and the posts data.
  * @returns Array of objects that contain post data including its content
  */
-export const getPostList = memoize(async (): Promise<PostData[]> => {
-  console.log('post list')
-  const postDataList: PostData[] = []
+export const getPostList = memoize(
+  async (): Promise<PostData[]> => {
+    const postDataList: PostData[] = []
 
-  const postSlugList = await getPostSlugList()
-  for (const postSlug of postSlugList) {
-    const postPath = path.join(
-      POST_FILE_DIRECTORY,
-      postSlug,
-      POST_CONTENT_FILENAME,
-    )
+    const postSlugList = await getPostSlugList()
+    for (const postSlug of postSlugList) {
+      const postPath = path.join(
+        POST_FILE_DIRECTORY,
+        postSlug,
+        POST_CONTENT_FILENAME,
+      )
 
-    const rawContent = await readFile(postPath, 'utf-8')
+      const rawContent = await readFile(postPath, 'utf-8')
 
-    const parsedData = await parsePostMDX(postSlug, rawContent)
+      const parsedData = await parsePostMDX(postSlug, rawContent)
 
-    const postData: PostData = {
-      ...parsedData.frontmatter,
-      slug: postSlug,
-      content: parsedData.content,
+      const postData: PostData = {
+        ...parsedData.frontmatter,
+        slug: postSlug,
+        content: parsedData.content,
+      }
+
+      const shouldSkip = postData.draft && process.env.NODE_ENV === 'production'
+
+      if (!shouldSkip) postDataList.push(postData) // Not publishing draft posts
     }
 
-    const shouldSkip = postData.draft && process.env.NODE_ENV === 'production'
+    postDataList.sort(
+      (a, b) =>
+        Number(new Date(b.lastUpdateDate ?? b.date ?? 0)) -
+        Number(new Date(a.lastUpdateDate ?? a.date ?? 0)),
+    )
 
-    if (!shouldSkip) postDataList.push(postData) // Not publishing draft posts
-  }
-
-  postDataList.sort(
-    (a, b) =>
-      Number(new Date(b.lastUpdateDate ?? b.date ?? 0)) -
-      Number(new Date(a.lastUpdateDate ?? a.date ?? 0)),
-  )
-
-  return postDataList
-})
+    return postDataList
+  },
+  {
+    promise: true,
+  },
+)
 
 export const getPostData = memoize(
   async (slug: string): Promise<PostData | null> => {
-    console.log('post data')
     const postList = await getPostList()
 
     if (!POST_SLUG_REGEX.test(slug)) return null
     return postList.find((post) => post.slug === slug) ?? null
+  },
+  {
+    promise: true,
   },
 )
 

@@ -42,7 +42,7 @@
 
   padding: value.$large-margin;
 
-  background-color: rgba(palette.$background-color, 0.85);
+  background-color: rgba(palette.$background-color, 0.8);
   color: var(--text-color, #{palette.$text-color});
 
   width: 100%;
@@ -50,5 +50,5 @@
 }
 
 .title {
-  color: var(--title-color, var(--background-color));
+  font-size: value.$content-font-size;
 }

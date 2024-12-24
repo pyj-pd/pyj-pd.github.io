@@ -1,18 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
-import PostTopBar from './PostTopBar'
-import type { PostMetadata } from '@/types/post'
+import { useRef, type ReactNode } from 'react'
 import { useScroll } from 'motion/react'
+import ScrollToTopButton from './ScrollToTopButton'
 
 type PostContentWrapperProps = {
   children: ReactNode
-  postMetadata: PostMetadata
 }
 
 export default function PostContentWrapper({
   children,
-  postMetadata,
 }: PostContentWrapperProps) {
   const ref = useRef<HTMLDivElement>(null),
     { scrollYProgress } = useScroll({
@@ -20,20 +17,9 @@ export default function PostContentWrapper({
       offset: ['start start', 'end center'],
     })
 
-  const [shouldTopBarRender, setShouldTopBarRender] = useState<boolean>(false)
-
-  useEffect(() => {
-    setShouldTopBarRender(true)
-  }, [])
-
   return (
     <>
-      {shouldTopBarRender && (
-        <PostTopBar
-          postTitle={postMetadata.title}
-          progress={scrollYProgress}
-        />
-      )}
+      <ScrollToTopButton progress={scrollYProgress} />
       <div ref={ref}>{children}</div>
     </>
   )

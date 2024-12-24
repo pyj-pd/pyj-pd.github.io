@@ -14,11 +14,11 @@
   transition: all 0.3s value.$ease-out;
 
   &:hover {
-    filter: brightness(95%);
+    filter: brightness(93%);
   }
 
   &:active {
-    filter: brightness(90%);
+    filter: brightness(85%);
     transform: scale(0.97);
   }
 }
@@ -26,10 +26,15 @@
 // Buttons
 @mixin button-style(
   $background-color: palette.$light-gray,
-  $text-color: palette.$text-color
+  $text-color: palette.$text-color,
+  $border-radius: value.$border-radius
 ) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   border: none;
-  border-radius: value.$border-radius;
+  border-radius: $border-radius;
 
   -webkit-tap-highlight-color: trasparent;
 

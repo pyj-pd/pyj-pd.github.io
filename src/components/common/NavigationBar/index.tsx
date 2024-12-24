@@ -24,10 +24,10 @@ export default function NavigationBar() {
                   >
                     <button>{route.name}</button>
                   </MyLink>
+                  {index < routeIds.length - 1 && (
+                    <span className={styles.separator} />
+                  )}
                 </li>
-                {index < routeIds.length - 1 && (
-                  <span className={styles.separator} />
-                )}
               </Fragment>
             )
           })}

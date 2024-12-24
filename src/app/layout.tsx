@@ -15,7 +15,6 @@ import {
 import { getPageTitleName } from '@/utils/blog/page'
 import PageFooter from '@/components/common/PageFooter'
 import styles from './layout.module.scss'
-import ScrollToTopButton from '@/components/common/ScrollToTopButton'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
@@ -40,7 +39,6 @@ export default function BlogRootLayout({
       >
         <div className={styles['body-container']}>
           <NavigationBar />
-          <ScrollToTopButton />
           <div className={styles['main-container']}>{children}</div>
         </div>
         <PageFooter />

@@ -108,7 +108,7 @@
       display: inline-block;
 
       &:global(.highlighted) {
-        background-color: rgba(palette.$gray, 20%);
+        background-color: rgba(palette.$gray, 12%);
 
         border-radius: value.$border-radius;
       }

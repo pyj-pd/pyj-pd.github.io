@@ -100,7 +100,7 @@ export default async function BlogPostPage({
         <header>
           <PostTitle postMetadata={postMetadata} />
         </header>
-        <PostContentWrapper postMetadata={postMetadata}>
+        <PostContentWrapper>
           <section className={styles['content-container']}>{content}</section>
         </PostContentWrapper>
         <section className={styles['more-posts-container']}>

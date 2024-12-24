@@ -25,6 +25,11 @@ body {
   font-size: 12pt;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 input,
 textarea,
 select,

@@ -25,8 +25,14 @@
   list-style: none;
 
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: value.$normal-margin;
+}
+
+.route-button {
+  display: flex;
+  align-items: center;
+  gap: inherit;
 }
 
 .route-button > a {

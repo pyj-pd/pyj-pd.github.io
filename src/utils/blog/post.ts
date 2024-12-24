@@ -2,6 +2,7 @@ import type { PostData } from '@/types/post'
 import { readdir, readFile } from 'fs/promises'
 import path from 'path'
 import { parsePostMDX } from './mdx'
+import memoize from 'memoizee'
 
 const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
   POST_CONTENT_FILENAME = 'content.md'
@@ -12,19 +13,19 @@ const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)
  * Reads directory that contains posts and gets post slugs.
  * @returns Array that contains post slugs
  */
-export const getPostSlugList = async (): Promise<string[]> => {
-  'use cache'
+export const getPostSlugList = memoize(async (): Promise<string[]> => {
+  console.log('post slug')
   const postSlugList = await readdir(POST_FILE_DIRECTORY)
 
   return postSlugList
-}
+})
 
 /**
  * Reads directory that contains posts and the posts data.
  * @returns Array of objects that contain post data including its content
  */
-export const getPostList = async (): Promise<PostData[]> => {
-  'use cache'
+export const getPostList = memoize(async (): Promise<PostData[]> => {
+  console.log('post list')
   const postDataList: PostData[] = []
 
   const postSlugList = await getPostSlugList()
@@ -57,14 +58,17 @@ export const getPostList = async (): Promise<PostData[]> => {
   )
 
   return postDataList
-}
+})
 
-export const getPostData = async (slug: string): Promise<PostData | null> => {
-  const postList = await getPostList()
+export const getPostData = memoize(
+  async (slug: string): Promise<PostData | null> => {
+    console.log('post data')
+    const postList = await getPostList()
 
-  if (!POST_SLUG_REGEX.test(slug)) return null
-  return postList.find((post) => post.slug === slug) ?? null
-}
+    if (!POST_SLUG_REGEX.test(slug)) return null
+    return postList.find((post) => post.slug === slug) ?? null
+  },
+)
 
 const POST_ASSETS_PATH_PUBLIC = '/assets/blog/posts'
 

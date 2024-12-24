@@ -5,7 +5,7 @@ import { getPageTitleName } from '@/utils/blog/page'
 import {
   getPostData,
   retrieveNearbyPostSlugs,
-  postSlugList,
+  getPostSlugList,
 } from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import { navbarRouteList } from '@/constants/routes'
@@ -27,7 +27,7 @@ export async function generateMetadata({
   params: paramsPromise,
 }: BlogPostPageProps): Promise<Metadata> {
   const params = await paramsPromise,
-    mdxData = getPostData(params.slug)
+    mdxData = await getPostData(params.slug)
 
   if (mdxData === null) return {}
 
@@ -75,6 +75,8 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
+  const postSlugList = await getPostSlugList()
+
   return postSlugList.map((postSlug) => ({
     slug: postSlug,
   }))
@@ -84,13 +86,13 @@ export default async function BlogPostPage({
   params: paramsPromise,
 }: BlogPostPageProps) {
   const params = await paramsPromise,
-    mdxData = getPostData(params.slug)
+    mdxData = await getPostData(params.slug)
 
   if (mdxData === null) return null
 
   const { content, ...postMetadata } = mdxData
 
-  const nearbyPosts = retrieveNearbyPostSlugs(postMetadata.slug)
+  const nearbyPosts = await retrieveNearbyPostSlugs(postMetadata.slug)
 
   return (
     <div className={styles.wrapper}>

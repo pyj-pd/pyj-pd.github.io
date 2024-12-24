@@ -12,22 +12,22 @@ const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)
  * Reads directory that contains posts and gets post slugs.
  * @returns Array that contains post slugs
  */
-const _getPostSlugList = async (): Promise<string[]> => {
+export const getPostSlugList = async (): Promise<string[]> => {
+  'use cache'
   const postSlugList = await readdir(POST_FILE_DIRECTORY)
 
   return postSlugList
 }
 
-export const postSlugList =
-  await _getPostSlugList() /** @todo Is this really the right way? */
-
 /**
  * Reads directory that contains posts and the posts data.
  * @returns Array of objects that contain post data including its content
  */
-const _getPostList = async (): Promise<PostData[]> => {
+export const getPostList = async (): Promise<PostData[]> => {
+  'use cache'
   const postDataList: PostData[] = []
 
+  const postSlugList = await getPostSlugList()
   for (const postSlug of postSlugList) {
     const postPath = path.join(
       POST_FILE_DIRECTORY,
@@ -59,9 +59,9 @@ const _getPostList = async (): Promise<PostData[]> => {
   return postDataList
 }
 
-export const postList = await _getPostList()
+export const getPostData = async (slug: string): Promise<PostData | null> => {
+  const postList = await getPostList()
 
-export const getPostData = (slug: string): PostData | null => {
   if (!POST_SLUG_REGEX.test(slug)) return null
   return postList.find((post) => post.slug === slug) ?? null
 }
@@ -86,10 +86,11 @@ export const getPostURL = (postSlug: string) => `/posts/${postSlug}`
  * @returns An array of post data objects representing the slugs of the surrounding posts.
  */
 
-export const retrieveNearbyPostSlugs = (
+export const retrieveNearbyPostSlugs = async (
   targetSlug: string,
   range: number = 4,
-): PostData[] => {
+): Promise<PostData[]> => {
+  const postList = await getPostList()
   const targetPostIndex = postList.findIndex((post) => post.slug === targetSlug)
 
   if (targetPostIndex < 0) throw new Error("Can't find the given post.")

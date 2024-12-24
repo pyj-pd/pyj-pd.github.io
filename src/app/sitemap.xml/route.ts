@@ -4,11 +4,13 @@ import {
   navbarRouteList,
   type NavbarRouteId,
 } from '@/constants/routes'
-import { getPostURL, postList } from '@/utils/blog/post'
+import { getPostURL, getPostList } from '@/utils/blog/post'
 
 export const dynamic = 'force-static'
 
 export async function GET() {
+const postList = await getPostList()
+  
   const sites: string[] = [
     ...(Object.keys(internalRoutesList) as NavbarRouteId[]).map(
       (routeId) => SITE_URL + navbarRouteList[routeId].path,

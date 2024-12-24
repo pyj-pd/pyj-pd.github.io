@@ -49,6 +49,8 @@ $border-width: 4px;
 
   width: calc(100% - $border-width);
   height: calc(100% - $border-width);
+
+  border-radius: inherit;
 }
 
 .button {
@@ -62,14 +64,14 @@ $border-width: 4px;
   @include mixin.button-style(
     $background-color: transparent,
     $text-color: currentColor,
-    $border-radius: 100%
+    $border-radius: inherit
   );
 
   .border-visible & {
     @include mixin.button-style(
       $background-color: palette.$white,
       $text-color: currentColor,
-      $border-radius: 100%
+      $border-radius: inherit
     );
   }
 

@@ -4,16 +4,15 @@ $gray: hsl(0, 0%, 40%);
 $dark-gray: hsl(0, 0%, 25%);
 $black: hsl(0, 0%, 4%);
 
-$green: hsl(84, 20%, 49%);
-$blue: hsl(229, 39%, 53%);
 $red: hsl(0, 42%, 36%);
 $orange: hsl(36, 28%, 47%);
 $yellow: hsl(50, 53%, 60%);
-$mint: hsl(143, 42%, 44%);
+$mint: hsl(143, 34%, 33%);
 $green: hsl(141, 62%, 24%);
+$blue: hsl(229, 47%, 38%);
 $light-purple: hsl(266, 33%, 45%);
 
-$accent-color: $green;
+$accent-color: $blue;
 
 // For purposes
 $background-color: $white;
@@ -29,11 +28,11 @@ $code-text-color: $black;
   --shiki-foreground: #{$code-text-color};
   --shiki-background: #{$code-background-color};
   --shiki-token-constant: #{$code-text-color};
-  --shiki-token-string: #{$green};
+  --shiki-token-string: #{$blue};
   --shiki-token-comment: #{$gray};
-  --shiki-token-keyword: #{$red};
+  --shiki-token-keyword: #{$blue};
   --shiki-token-parameter: var(--shiki-token-keyword);
-  --shiki-token-function: #{$light-purple};
+  --shiki-token-function: #{$black};
   --shiki-token-string-expression: var(--shiki-token-string);
   --shiki-token-punctuation: #{$dark-gray};
   --shiki-token-link: #{$link-color};

@@ -20,11 +20,11 @@ export default function PostButton({ postData }: PostButtonProps) {
         <article className={styles.container}>
           <div className={styles['title-container']}>
             <h2 className={styles.title}>{postData.title}</h2>
-            {postData.descriptionFromContent && (
-              <p className={styles.description}>
-                {postData.descriptionFromContent}
-              </p>
-            )}
+            <p className={styles.description}>
+              {postData.description
+                ? postData.description
+                : postData.descriptionFromContent}
+            </p>
           </div>
           <div className={styles['info-container']}>
             <div className={styles['date-container']}>

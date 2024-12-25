@@ -25,7 +25,7 @@ export const getPostSlugList = memoize(
   },
 )
 
-const DESCRIPTION_CONTENT_MAX_LENGTH = 200,
+const DESCRIPTION_CONTENT_MAX_LENGTH = 100,
   DESCRIPTION_ELLIPSIS = '...'
 
 /**

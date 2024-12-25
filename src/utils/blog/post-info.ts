@@ -11,7 +11,7 @@ const ZERO_PAD_STRING = '0',
 export const getPostDateString = (date: PostDate) => {
   const dateObject = new Date(date)
 
-  return `${dateObject.getFullYear()}. ${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}. ${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}.`
+  return `${dateObject.getFullYear()}년 ${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}월 ${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}일`
 }
 
 export const getPostReadingTimeString = (minutes: number): string => {

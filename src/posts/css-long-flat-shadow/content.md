@@ -3,7 +3,7 @@ title: 'CSS로 Long Flat Shadow 그리기'
 description: 'clip-path를 이용해 플랫 셰도우를 버튼에 입히는 방법에 대해 알아봅니다.'
 
 date: '2024-05-14'
-lastUpdateDate: '2024-05-18'
+lastUpdateDate: '2024-12-25'
 categories: ['programming']
 ---
 
@@ -31,7 +31,7 @@ Long Shadow를 CSS에서 구현하기 위해서 간단한 검색을 해보기로
 
 ## `clip-path`? `polygon()`?
 
-`clip-path` 문법([MDN 문서 - clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path))은 간단히 말하자면 CSS를 통해 요소를 '가위처럼' 자를 수 있게 해주는 문법이다. 이떄 사용할 수 있는 모양은 아래와 같다.
+`clip-path` 문법([MDN 문서 - clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path))은 간단히 말하자면 CSS를 통해 요소를 '가위처럼' 자를 수 있게 해주는 문법이다. 이때 사용할 수 있는 모양은 아래와 같다.
 
 - 원 모양의 `circle()`
 - 타원 모양의 `ellipse()`

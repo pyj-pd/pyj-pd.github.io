@@ -20,12 +20,14 @@ export default function PostButton({ postData }: PostButtonProps) {
         <article className={styles.container}>
           <div className={styles['title-container']}>
             <h2 className={styles.title}>{postData.title}</h2>
-            {postData.description && (
-              <p className={styles.description}>{postData.description}</p>
+            {postData.descriptionFromContent && (
+              <p className={styles.description}>
+                {postData.descriptionFromContent}
+              </p>
             )}
           </div>
           <div className={styles['info-container']}>
-            <div className={styles['time-container']}>
+            <div className={styles['date-container']}>
               {postLatestDate && (
                 <time dateTime={postLatestDate}>
                   {getPostDateString(postLatestDate)}
@@ -33,7 +35,6 @@ export default function PostButton({ postData }: PostButtonProps) {
               )}
             </div>
             <div className={styles['category-container']}>
-              {/** @todo support multiple categories in style */}
               {postData.categories.map((categoryId, index) => (
                 <span
                   className={styles.category}

@@ -1,8 +1,9 @@
 import type { PostData } from '@/types/post'
 import { readdir, readFile } from 'fs/promises'
 import path from 'path'
-import { parsePostMDX } from './mdx'
+import { extractTextFromMDX, parsePostMDX } from './mdx'
 import memoize from 'memoizee'
+import getReadingTime from 'reading-time'
 
 const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
   POST_CONTENT_FILENAME = 'content.md'
@@ -24,6 +25,9 @@ export const getPostSlugList = memoize(
   },
 )
 
+const DESCRIPTION_CONTENT_MAX_LENGTH = 200,
+  DESCRIPTION_ELLIPSIS = '...'
+
 /**
  * Reads directory that contains posts and the posts data.
  * @returns Array of objects that contain post data including its content
@@ -42,11 +46,22 @@ export const getPostList = memoize(
 
       const rawContent = await readFile(postPath, 'utf-8')
 
-      const parsedData = await parsePostMDX(postSlug, rawContent)
+      const parsedData = await parsePostMDX(postSlug, rawContent),
+        plainText = await extractTextFromMDX(rawContent)
+
+      const readingTime = getReadingTime(plainText).minutes
+
+      const descriptionFromContent =
+        plainText.slice(0, DESCRIPTION_CONTENT_MAX_LENGTH) +
+        (plainText.length > DESCRIPTION_CONTENT_MAX_LENGTH
+          ? DESCRIPTION_ELLIPSIS
+          : '')
 
       const postData: PostData = {
         ...parsedData.frontmatter,
+        descriptionFromContent,
         slug: postSlug,
+        readingTime,
         content: parsedData.content,
       }
 

@@ -20,9 +20,12 @@ export type MDXPostMetadata = {
 }
 
 export type PostMetadata = MDXPostMetadata & {
+  /** Reading time in minutes */
+  readingTime: number
   slug: string
 }
 
 export type PostData = PostMetadata & {
+  descriptionFromContent: string
   content: CompileMDXResult['content']
 }

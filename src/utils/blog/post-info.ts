@@ -13,3 +13,11 @@ export const getPostDateString = (date: PostDate) => {
 
   return `${dateObject.getFullYear()}. ${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}. ${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}.`
 }
+
+export const getPostReadingTimeString = (minutes: number): string => {
+  const ceiledMinutes = Math.ceil(minutes),
+    flooredMinutes = ceiledMinutes - 1
+
+  if (flooredMinutes < 1) return `${ceiledMinutes}분`
+  else return `${flooredMinutes}~${ceiledMinutes}분`
+}

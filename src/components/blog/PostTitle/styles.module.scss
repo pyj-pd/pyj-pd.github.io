@@ -42,6 +42,6 @@
   color: color.adjust(palette.$gray, $lightness: 20%);
 
   > ul {
-    list-style-type: none;
+    padding-left: value.$content-padding;
   }
 }

@@ -1,6 +1,9 @@
 import type { PostMetadata } from '@/types/post'
 import styles from './styles.module.scss'
-import { getPostDateString } from '@/utils/blog/post-info'
+import {
+  getPostDateString,
+  getPostReadingTimeString,
+} from '@/utils/blog/post-info'
 
 type PostTitleProps = { postMetadata: PostMetadata }
 
@@ -26,6 +29,12 @@ export default function PostTitle({ postMetadata }: PostTitleProps) {
                 {getPostDateString(postMetadata.lastUpdateDate)}
               </time>
               에 마지막 수정
+            </li>
+          )}
+          {postMetadata.readingTime && (
+            <li>
+              읽는 데 약 {getPostReadingTimeString(postMetadata.readingTime)}{' '}
+              정도 걸려요
             </li>
           )}
         </ul>

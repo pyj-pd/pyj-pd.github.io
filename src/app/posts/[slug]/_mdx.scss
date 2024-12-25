@@ -1,0 +1,93 @@
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
+
+@mixin mdx-elements {
+  // Headings
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    @extend %headings !optional;
+
+    position: relative;
+
+    margin: value.$large-margin 0;
+  }
+
+  // Small screen
+  @media screen and (max-width: value.$small-screen-width) {
+    ul,
+    ol {
+      padding-left: value.$large-margin;
+    }
+  }
+
+  // Element margins
+  p,
+  hr,
+  ul,
+  ol,
+  :not(pre) > code,
+  pre {
+    margin: value.$large-margin 0;
+  }
+
+  // Separator
+  hr {
+    color: palette.$gray;
+
+    margin: value.$large-margin 0;
+    border-style: dashed;
+  }
+
+  // Syntax highlighting
+  code {
+    font-size: value.$content-small-font-size;
+    letter-spacing: normal;
+  }
+
+  :not(pre) > code,
+  pre {
+    border-radius: value.$border-radius;
+
+    background-color: palette.$code-background-color;
+    color: palette.$code-text-color;
+  }
+
+  :not(pre) > code {
+    padding: 0.5em 0.7em;
+
+    background-color: palette.$code-background-color;
+    color: palette.$code-text-color;
+
+    font-size: 0.8em;
+  }
+
+  pre {
+    padding: value.$large-margin;
+    margin: value.$large-margin 0;
+
+    overflow-x: auto;
+
+    // Shiki highlighter
+    &:global(.shiki) {
+      @include palette.shiki-theme();
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    code span:global(.line),
+    code:not(:has(span)) {
+      display: inline-block;
+
+      &:global(.highlighted) {
+        background-color: rgba(palette.$gray, 12%);
+
+        border-radius: value.$border-radius;
+      }
+    }
+  }
+}

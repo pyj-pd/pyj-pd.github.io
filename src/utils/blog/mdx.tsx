@@ -8,6 +8,10 @@ import { createCssVariablesTheme } from 'shiki/core'
 import rehypeSlug from 'rehype-slug'
 import MDXImage from '@/components/blog/mdx/MDXImage'
 import MDXLink from '@/components/blog/mdx/MDXLink'
+import { remark } from 'remark'
+import stripMarkdown, {
+  type Options as StripMarkdownOptions,
+} from 'strip-markdown'
 
 export const shikiTheme = createCssVariablesTheme({
   name: 'css-variables',
@@ -62,4 +66,25 @@ export const parsePostMDX = async (
   })
 
   return mdxSource
+}
+
+const remarkProcessor = remark().use(stripMarkdown, {
+  remove: ['table'],
+} as StripMarkdownOptions)
+
+const FRONTMATTER_SEPARATOR_STRING = '---',
+  FRONTMATTER_SEPARATOR_NUMBER = 2
+
+export const extractTextFromMDX = async (
+  rawContent: string,
+): Promise<string> => {
+  const rawContentWithoutFrontmatter = rawContent
+    .split(FRONTMATTER_SEPARATOR_STRING)
+    .slice(FRONTMATTER_SEPARATOR_NUMBER)
+    .join(FRONTMATTER_SEPARATOR_STRING)
+
+  const file = await remarkProcessor.process(rawContentWithoutFrontmatter),
+    content = String(file)
+
+  return content
 }

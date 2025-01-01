@@ -18,7 +18,7 @@ import {
 import PostList from '@/components/blog/PostList'
 import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
-import { generateJSONLD } from '@/utils/seo'
+import { generatePostJSONLD } from '@/utils/seo'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -95,7 +95,7 @@ export default async function BlogPostPage({
 
   const nearbyPosts = await retrieveNearbyPostSlugs(postMetadata.slug)
 
-  const jsonLD = generateJSONLD(mdxData)
+  const jsonLD = generatePostJSONLD(mdxData)
 
   return (
     <div className={styles.wrapper}>

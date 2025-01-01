@@ -58,7 +58,7 @@ const convertToISO8601Date = (dateString: PostDate): string => {
  * @param postData Post data
  * @returns JSON-LD data in object
  */
-export const generateJSONLD = (
+export const generatePostJSONLD = (
   postData: PostData,
 ): WithContext<TechArticle> => {
   return {

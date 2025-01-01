@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SITE_URL } from './project'
+import type { TechArticle } from 'schema-dts'
 
 // Blog
 export const BLOG_POST_TYPE = 'article',
@@ -15,6 +16,15 @@ export const HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
 // Shared
 export const SITE_NAME = 'pyj-pd',
   TITLE_SEPARATOR_DASH = ' — '
+
+// JSON-LD
+export const BLOG_AUTHORS: TechArticle['author'] = [
+  {
+    '@type': 'Person',
+    name: 'PYJ',
+    url: SITE_URL,
+  },
+]
 
 export const SITE_LOGO_PATH = `${SITE_URL}/apple-icon.png`
 

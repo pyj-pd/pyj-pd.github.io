@@ -5,7 +5,7 @@ import LandingSection from '@/components/home/LandingSection'
 import RecentPostSection from '@/components/home/RecentPostSection'
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromRouteId('posts'),
+  ...getCanonicalMetadataFromRouteId('home'),
 }
 
 export default function HomePage() {

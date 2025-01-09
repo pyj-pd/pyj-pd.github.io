@@ -1,6 +1,6 @@
 ---
 title: '다차원 Array의 아이템 교체하기'
-description: '여러 개의 Array가 네스팅되어 있는 Array의 아이템을 안전하게 교체하는 방법에 대해 알아봅니다.'
+description: '여러 개의 Array가 네스팅되어 있는 Array의 아이템을 안전하게 교체하는 방법에 대해 알아봅니다. Array.fill 메소드를 통해 채운 Array를 수정할 때 발생하는 문제점에 대해 알아보고, 더 나은 방법을 탐색해봅니다.'
 
 date: '2024-05-19'
 lastUpdateDate: '2024-05-20'

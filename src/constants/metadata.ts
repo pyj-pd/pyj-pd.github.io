@@ -31,6 +31,7 @@ export const SITE_LOGO_PATH = `${SITE_URL}/apple-icon.png`
 export const sharedOpenGraph: Metadata['openGraph'] = {
     siteName: SITE_NAME,
     images: [SITE_LOGO_PATH],
+    type: 'website',
   },
   sharedMetadata: Metadata = {
     robots: 'all',

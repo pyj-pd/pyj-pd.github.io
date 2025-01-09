@@ -1,6 +1,6 @@
 ---
 title: 'openSUSE에서 코덱 설치하기'
-description: 'openSUSE에서 YouTube를 원활하게 시청하기 위해 코덱을 설치하는 방법에 대해 알아봅니다.'
+description: 'openSUSE에서 YouTube를 원활하게 시청하기 위해 코덱을 설치하는 방법에 대해 알아봅니다. 코덱이 원활히 설치되지 않았을 때 YouTube Playback 오류가 발생하는 상황을 해결하는 방법을 알아봅니다.'
 
 date: '2024-08-26'
 lastUpdateDate: '2024-12-24'

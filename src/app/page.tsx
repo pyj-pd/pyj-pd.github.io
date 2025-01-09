@@ -1,11 +1,12 @@
-import { getCanonicalMetadataFromRouteId } from '@/utils/metadata'
+import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import type { Metadata } from 'next'
 import styles from './page.module.scss'
 import LandingSection from '@/components/home/LandingSection'
 import RecentPostSection from '@/components/home/RecentPostSection'
+import { navbarRouteList } from '@/constants/routes'
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromRouteId('home'),
+  ...getCanonicalMetadataFromPath(navbarRouteList['home'].path),
 }
 
 export default function HomePage() {

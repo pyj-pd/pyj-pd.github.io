@@ -1,5 +1,6 @@
 ---
 title: 'Linux에서 Firefox Developer Edition 설치하기'
+description: 'Firefox Developer Edition을 설치하는 두 가지 방법, apt를 통해 설치하는 방법과 압축 파일 자체로 설치하는 방법을 알아봅니다.'
 
 date: '2024-08-15'
 categories: ['computer']

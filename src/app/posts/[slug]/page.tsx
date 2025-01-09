@@ -32,10 +32,6 @@ export async function generateMetadata({
 
   if (mdxData === null) return {}
 
-  const canonicalMetadata = getCanonicalMetadataFromPath(
-    `${navbarRouteList.posts.path}/${mdxData.slug}`,
-  )
-
   // Open graph
   const description = mdxData.description
 
@@ -55,11 +51,9 @@ export async function generateMetadata({
         ? categoryList[mdxData.categories[0]].name
         : undefined
 
-  return {
-    title: getPageTitleName(mdxData.title),
-    description,
-    openGraph: {
-      ...sharedOpenGraph,
+  const canonicalMetadata = getCanonicalMetadataFromPath(
+    `${navbarRouteList.posts.path}/${mdxData.slug}`,
+    {
       title: mdxData.title,
       siteName: SITE_NAME,
 
@@ -71,6 +65,11 @@ export async function generateMetadata({
       tags,
       section,
     },
+  )
+
+  return {
+    title: getPageTitleName(mdxData.title),
+    description,
     ...canonicalMetadata,
   }
 }

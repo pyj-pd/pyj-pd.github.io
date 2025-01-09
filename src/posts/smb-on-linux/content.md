@@ -1,6 +1,6 @@
 ---
 title: 'Raspberry Pi와 외장 HDD를 이용해 디스크 암호화하고 SMB 서버 구축하기'
-description: '외장 HDD를 이용해 같은 네트워크 내에서 사용할 수 있는 SMB 서버를 구축하는 방법에 대해 알아봅니다.'
+description: '외장 HDD를 이용해 같은 네트워크 내에서 사용할 수 있는 SMB 서버를 구축하는 방법에 대해 알아봅니다. 보안을 위해 하드 디스크를 cryptsetup을 통해 암호화하는 방법도 알아봅니다.'
 
 date: '2024-09-17'
 lastUpdateDate: '2024-12-22'

@@ -1,28 +1,28 @@
+import { sharedOpenGraph } from '@/constants/metadata'
 import { SITE_URL } from '@/constants/project'
-import { navbarRouteList, type NavbarRouteId } from '@/constants/routes'
 import type { Metadata } from 'next'
-
-type CanonicalMetadata = Pick<Metadata, 'alternates'>
-
-/**
- * Gets canonical metadata object from route id.
- * @param routeId Route id
- * @returns An metadata object with canonical links data. It can be merged directly into Next.js' `metadata` object.
- */
-export const getCanonicalMetadataFromRouteId = (
-  routeId: NavbarRouteId,
-): CanonicalMetadata =>
-  getCanonicalMetadataFromPath(navbarRouteList[routeId].path)
+import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types'
 
 /**
  * Gets canonical metadata object from path.
  * @param path Page path. For example, `/posts`.
- * @returns An metadata object with canonical links data. It can be merged directly into Next.js' `metadata` object.
+ * @param openGraph Optional open graph content that you'd want to inherit. It contains shared open graph data initially.
+ * @returns An metadata object with canonical links data and open graph metadata. It can be merged directly into Next.js' `metadata` object.
  */
 export const getCanonicalMetadataFromPath = (
   path: string,
-): CanonicalMetadata => ({
-  alternates: {
-    canonical: `${SITE_URL}${path}`,
-  },
-})
+  openGraph?: OpenGraph,
+): Metadata => {
+  const canonical = `${SITE_URL}${path}`
+
+  return {
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      ...sharedOpenGraph,
+      ...(openGraph ?? {}),
+      url: canonical,
+    },
+  }
+}

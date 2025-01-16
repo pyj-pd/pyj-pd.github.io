@@ -15,6 +15,9 @@ export const categoryList = {
     description:
       '저와 같은 삽질을 하지 마시길 바라며, 또는 한 번쯤 읽어볼 만한 주제들을 다룹니다.',
   },
+  server: {
+    name: '서버',
+  },
 } as const satisfies PostCategoryList
 
 export type CategoryId = keyof typeof categoryList

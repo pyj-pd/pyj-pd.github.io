@@ -1,4 +1,4 @@
-import './layout.scss'
+import '@/styles/globals.scss'
 import {
   englishSansSerifFont,
   monospaceFont,

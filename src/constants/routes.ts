@@ -20,18 +20,17 @@ export const internalRoutesList = {
   },
   posts: {
     path: '/posts',
-    name: '글 목록',
+    name: '블로그',
 
     priority: 1,
     changeFrequency: 'always',
   },
-  /** @todo */
-  // projects: {
-  //   path: '/projects',
-  //   name: '프로젝트',
+  projects: {
+    path: '/projects',
+    name: '프로젝트',
 
-  //   priority: 0.5,
-  // },
+    priority: 0.5,
+  },
 } as const satisfies NavbarRouteData
 
 export const externalRoutesList = {

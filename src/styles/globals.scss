@@ -41,3 +41,16 @@ a {
   text-decoration: underline;
   color: palette.$link-color;
 }
+
+// Title
+h1 {
+  font-size: value.$first-title-font-size;
+}
+
+h2 {
+  font-size: value.$second-title-font-size;
+}
+
+h3 {
+  font-size: value.$third-title-font-size;
+}

@@ -1,0 +1,5 @@
+@use '@/styles/value' as value;
+
+.title {
+  padding: value.$content-padding;
+}

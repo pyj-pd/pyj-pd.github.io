@@ -1,12 +1,17 @@
 @use '@/styles/value' as value;
 
+$body-margin: value.$normal-margin;
+
 .body-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: $body-margin;
 
   width: 100%;
   min-height: 100vh;
+
+  margin: $body-margin 0;
 }
 
 .main-container {

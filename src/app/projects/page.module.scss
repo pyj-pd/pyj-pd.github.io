@@ -1,0 +1,5 @@
+@use '@/styles/mixin' as mixin;
+
+.container {
+  @include mixin.fixed-width-container-styles;
+}

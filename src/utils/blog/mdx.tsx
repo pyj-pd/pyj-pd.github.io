@@ -40,7 +40,11 @@ export const parsePostMDX = async (
             rehypeShiki,
             {
               theme: shikiTheme,
-              transformers: [transformerNotationHighlight()],
+              transformers: [
+                transformerNotationHighlight({
+                  matchAlgorithm: 'v3',
+                }),
+              ],
             },
           ],
           rehypeSlug,

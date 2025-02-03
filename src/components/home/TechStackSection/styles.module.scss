@@ -1,0 +1,34 @@
+@use '@/styles/palette' as palette;
+@use '@/styles/value' as value;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+// List
+.list-container,
+.category-container {
+  display: flex;
+
+  list-style-type: none;
+}
+
+.list-container {
+  flex-direction: column;
+}
+
+.techstack-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 value.$content-padding;
+  border-radius: value.$border-radius;
+
+  font-weight: 600;
+
+  height: 48px;
+}

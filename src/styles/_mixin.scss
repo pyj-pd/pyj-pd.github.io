@@ -24,7 +24,7 @@
 }
 
 // Buttons
-@mixin button-style(
+@mixin button-styles(
   $background-color: palette.$light-gray,
   $text-color: palette.$text-color,
   $border-radius: value.$border-radius

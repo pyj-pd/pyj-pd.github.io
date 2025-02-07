@@ -1,6 +1,9 @@
+'use client'
+
 import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
 import { techStackList } from '@/constants/home/techstack'
+import type { CSSProperties } from 'react'
 
 export default function TechStackSection() {
   return (
@@ -14,10 +17,12 @@ export default function TechStackSection() {
                 <li
                   className={styles['techstack-item']}
                   key={techStackIndex}
-                  style={{
-                    backgroundColor: techStack.backgroundColor,
-                    color: techStack.textColor,
-                  }}
+                  style={
+                    {
+                      '--background-color': techStack.backgroundColor,
+                      '--text-color': techStack.textColor,
+                    } as CSSProperties
+                  }
                 >
                   {techStack.name}
                 </li>

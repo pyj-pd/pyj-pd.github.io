@@ -1,0 +1,16 @@
+@use '@/styles/value' as value;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.text-container {
+  p {
+    line-height: value.$content-small-line-spacing;
+
+    margin-bottom: value.$normal-margin;
+  }
+}

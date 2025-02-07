@@ -18,7 +18,7 @@ export const techStackList = [
         description:
           'Splitting into components felt like a renovation when I first learned React. No need for document.querySelector() thanks to JSX blew my mind back then.\nFor now, I am using React as my main stack.',
 
-        backgroundColor: '#58c4dc',
+        backgroundColor: '#77c7d9',
         textColor: '#000000',
       },
       {
@@ -34,7 +34,7 @@ export const techStackList = [
         description:
           'It has so much difference compared to React. It really feels like web components but more compact and advanced.',
 
-        backgroundColor: '#42b782',
+        backgroundColor: '#5cb38b',
         textColor: '#000000',
       },
     ],
@@ -47,7 +47,7 @@ export const techStackList = [
         description:
           'I mainly use SCSS on module CSS for styling. Nesting styles, variables, and a lot of functions make styling in web so much easier.',
 
-        backgroundColor: '#cf649a',
+        backgroundColor: '#ae6288',
         textColor: '#ffffff',
       },
       {
@@ -56,19 +56,15 @@ export const techStackList = [
           'Dynamic styles through JavaScript was awesome, but I felt it kind of hard to organize code with it.',
 
         backgroundColor: '#000000',
-        textColor: '#be4f73',
+        textColor: '#cb7b94',
       },
-    ],
-  },
-  {
-    categoryTitle: 'Animation',
-    items: [
+
       {
         name: 'Motion',
         description:
           'A lot of good features for animations, but pretty hard to deal with.',
 
-        backgroundColor: '#f4e915',
+        backgroundColor: '#f2ea59',
         textColor: '#000000',
       },
     ],
@@ -81,7 +77,7 @@ export const techStackList = [
         description:
           'JavaScript no longer is painful! (Well, still stressful.)',
 
-        backgroundColor: '#3177c5',
+        backgroundColor: '#4a7bb4',
         textColor: '#ffffff',
       },
       // {
@@ -104,7 +100,7 @@ export const techStackList = [
         name: 'Vite',
         description: 'Wow, that is really fast.',
 
-        backgroundColor: '#bd34fe',
+        backgroundColor: '#b861b8',
         textColor: '#ffffff',
       },
       {

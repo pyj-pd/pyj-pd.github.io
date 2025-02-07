@@ -47,7 +47,7 @@
 .route-button > a > button {
   padding: value.$normal-margin;
 
-  @include mixin.button-style($background-color: transparent);
+  @include mixin.button-styles($background-color: transparent);
   @include mixin.pointer-feedback-animation;
 
   &:hover {

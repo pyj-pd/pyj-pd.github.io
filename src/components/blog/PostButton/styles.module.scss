@@ -14,7 +14,7 @@
   text-decoration: none;
 
   @include mixin.pointer-feedback-animation;
-  @include mixin.button-style;
+  @include mixin.button-styles;
 
   width: 100%;
 }

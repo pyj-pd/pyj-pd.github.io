@@ -53,7 +53,9 @@ export async function generateMetadata({
 
   const canonicalMetadata = getCanonicalMetadataFromPath(
     `${navbarRouteList.posts.path}/${mdxData.slug}`,
+    // Open graph data
     {
+      ...sharedOpenGraph,
       title: mdxData.title,
       siteName: SITE_NAME,
 

@@ -3,10 +3,15 @@ import type { TechStackName } from './techstack'
 
 import randomSeatScreenshot from '@public/assets/projects/thumbnail/random-seat.webp'
 import lottoGeneratorScreenshot from '@public/assets/projects/thumbnail/lotto-generator.webp'
+import daySummaryScreenshot from '@public/assets/projects/thumbnail/day-summarry.webp'
 
 export type ProjectData = {
   image: StaticImageData
 
+  /**
+   * Used for projects page linking.
+   */
+  id: string
   title: string
   description: string
   techStacks: TechStackName[]
@@ -19,6 +24,7 @@ export const projectList: ProjectData[] = [
   {
     image: randomSeatScreenshot,
 
+    id: 'random-seat',
     title: '무작위 자리 뽑기',
     description: `
 사용자 지정 크기의 자리 배치에서 무작위로 자리를 지정하는 웹 앱입니다.
@@ -32,6 +38,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
   {
     image: lottoGeneratorScreenshot,
 
+    id: 'lotto-generator',
     title: '로또 번호 생성기',
     description: `
 버튼 클릭 한 번으로 간편하게 로또 번호를 생성할 수 있는 웹 앱입니다.
@@ -42,5 +49,24 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
 
     githubUrl: 'https://github.com/pyj-pd/lotto-generator',
     projectUrl: 'https://pyj-pd.dev/lotto-generator/',
+  },
+  {
+    image: daySummaryScreenshot,
+
+    id: 'day-summary',
+    title: '시간표 이미지 생성기',
+    description: `
+손쉽게 학교 시간표 이미지를 생성하여 공유할 수 있도록 하는 웹 앱입니다.
+SVG 이미지에 동적으로 글자를 변경한 후 PNG 이미지로 변환하는 과정을 통해 이미지를 생성하는 알고리즘을 구축하였습니다.
+`.trim(),
+    techStacks: [
+      'React',
+      'Next.js',
+      'styled-components',
+      'TypeScript',
+      'Motion',
+    ],
+
+    projectUrl: 'https://day-summary.vercel.app/',
   },
 ]

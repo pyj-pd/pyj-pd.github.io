@@ -1,12 +1,16 @@
+export type TechStackColorData = {
+  backgroundColor: string
+  textColor: string
+}
+
+export type TechStackItemData = {
+  name: string
+  description?: string
+} & TechStackColorData
+
 export type TechStackData = {
   categoryTitle: string
-  items: {
-    name: string
-    description?: string
-
-    backgroundColor: string
-    textColor: string
-  }[]
+  items: TechStackItemData[]
 }
 
 export const techStackList = [
@@ -47,7 +51,7 @@ export const techStackList = [
         description:
           'I mainly use SCSS on module CSS for styling. Nesting styles, variables, and a lot of functions make styling in web so much easier.',
 
-        backgroundColor: '#ae6288',
+        backgroundColor: '#bc6490',
         textColor: '#ffffff',
       },
       {
@@ -117,3 +121,23 @@ export const techStackList = [
 
 export type TechStackName =
   (typeof techStackList)[number]['items'][number]['name']
+
+const _getTechStackColors = () => {
+  const techStackColorDataList: {
+    [key: string]: TechStackColorData
+  } = {}
+
+  for (const category of techStackList) {
+    for (const { name, backgroundColor, textColor } of category.items)
+      techStackColorDataList[name] = {
+        backgroundColor,
+        textColor,
+      } as TechStackColorData
+  }
+
+  return techStackColorDataList as {
+    [key in TechStackName]: TechStackColorData
+  }
+}
+
+export const techStackColors = _getTechStackColors()

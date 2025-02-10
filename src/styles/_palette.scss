@@ -1,5 +1,5 @@
 $white: hsl(0, 0%, 98%);
-$light-gray: hsl(0, 0%, 93%);
+$light-gray: hsl(0, 0%, 90%);
 $gray: hsl(0, 0%, 40%);
 $dark-gray: hsl(0, 0%, 25%);
 $black: hsl(0, 0%, 4%);
@@ -12,7 +12,7 @@ $green: hsl(141, 62%, 24%);
 $blue: hsl(229, 47%, 38%);
 $light-purple: hsl(266, 33%, 45%);
 
-$accent-color: $green;
+$accent-color: hsl(150, 40%, 33%);
 
 // For purposes
 $background-color: $white;

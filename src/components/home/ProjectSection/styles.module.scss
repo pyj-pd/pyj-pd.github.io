@@ -1,6 +1,30 @@
+@use '@/styles/value' as value;
+
 .container {
   display: flex;
   flex-direction: column;
 
   width: 100%;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 100%;
+
+  list-style: none;
+
+  margin-top: value.$item-gap;
+}
+
+.project-image-link {
+  display: flex;
+
+  border-radius: value.$border-radius;
+
+  img {
+    border-radius: inherit;
+  }
 }

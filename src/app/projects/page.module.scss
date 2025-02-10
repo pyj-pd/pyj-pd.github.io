@@ -1,0 +1,98 @@
+@use '@/styles/value' as value;
+@use '@/styles/palette' as palette;
+@use '@/styles/mixin' as mixin;
+
+.container {
+  @include mixin.fixed-width-container-styles;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: value.$item-gap * 5;
+
+  width: 100%;
+
+  list-style: none;
+}
+
+.project-item {
+  display: flex;
+  gap: value.$item-gap;
+
+  @media screen and (max-width: (value.$fixed-width + value.$content-padding)) {
+    flex-direction: column;
+
+    padding: value.$content-padding;
+  }
+}
+
+.project-image-link {
+  display: flex;
+
+  border-radius: value.$border-radius;
+
+  img {
+    border-radius: inherit;
+
+    @media screen and (max-width: (value.$fixed-width + value.$content-padding)) {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// Image container
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: value.$small-margin;
+}
+
+.link-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: value.$small-margin;
+
+  width: 100%;
+
+  button {
+    padding: value.$normal-margin;
+
+    @include mixin.button-styles;
+    @include mixin.pointer-feedback-animation;
+  }
+}
+
+// Info container
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: value.$small-margin;
+
+  line-height: value.$content-small-line-spacing;
+}
+
+.techstack-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+
+  margin-top: value.$normal-margin;
+}
+
+.techstack-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  font-weight: 500;
+  font-size: 0.8rem;
+
+  border-radius: value.$border-radius;
+  padding: value.$small-margin value.$small-margin * 3;
+}

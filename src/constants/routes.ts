@@ -25,6 +25,12 @@ export const internalRoutesList = {
     priority: 1,
     changeFrequency: 'always',
   },
+  projects: {
+    path: '/projects',
+    name: '프로젝트',
+
+    priority: 0.8,
+  },
 } as const satisfies NavbarRouteData
 
 export const externalRoutesList = {

@@ -23,6 +23,13 @@
   }
 }
 
+@mixin full-width-with-padding {
+  margin: auto;
+
+  width: 100%;
+  max-width: calc(100vw - 2 * value.$content-padding);
+}
+
 // Buttons
 @mixin button-styles(
   $background-color: palette.$light-gray,

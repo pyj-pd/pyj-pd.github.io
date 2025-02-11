@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: value.$item-gap;
 
-  max-width: calc(100vw - 2 * value.$content-padding);
+  @include mixin.full-width-with-padding;
 }
 
 .project-image-link {

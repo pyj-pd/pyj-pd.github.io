@@ -1,6 +1,5 @@
 import '@/styles/globals.scss'
 import {
-  englishSansSerifFont,
   monospaceFont,
   sansSerifFont,
 } from '@/styles/fonts'
@@ -32,7 +31,6 @@ export default function BlogRootLayout({
       <body
         className={classNames(
           // Fonts
-          englishSansSerifFont.variable,
           sansSerifFont.variable,
           monospaceFont.variable,
         )}

@@ -5,7 +5,6 @@ import LandingSection from '@/components/home/LandingSection'
 import RecentPostSection from '@/components/home/RecentPostSection'
 import { navbarRouteList } from '@/constants/routes'
 import TechStackSection from '@/components/home/TechStackSection'
-import ProjectSection from '@/components/home/ProjectSection'
 import AboutMeSection from '@/components/home/AboutMeSection'
 
 export const metadata: Metadata = {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <LandingSection />
       <AboutMeSection />
       <TechStackSection />
-      <ProjectSection />
       <RecentPostSection />
     </main>
   )

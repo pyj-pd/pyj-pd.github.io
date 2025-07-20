@@ -1,4 +1,4 @@
-import { PT_Mono, Gothic_A1, Archivo } from 'next/font/google'
+import { PT_Mono, Asta_Sans } from 'next/font/google'
 
 export const monospaceFont = PT_Mono({
   subsets: ['latin'],
@@ -6,14 +6,8 @@ export const monospaceFont = PT_Mono({
   variable: '--f-mono',
 })
 
-export const sansSerifFont = Gothic_A1({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--f-sans-serif',
-})
-
-export const englishSansSerifFont = Archivo({
+export const sansSerifFont = Asta_Sans({
   weight: 'variable',
   subsets: ['latin'],
-  variable: '--f-eng-sans-serif',
+  variable: '--f-sans-serif',
 })

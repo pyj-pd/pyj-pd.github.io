@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/constants/project"
+
 export const dynamic = 'force-static'
 
 const robotsData: { [key: string]: string }[] = [
@@ -6,7 +8,7 @@ const robotsData: { [key: string]: string }[] = [
     Disallow: '',
   },
   {
-    Sitemap: 'https://pyj-pd.dev/sitemap.xml',
+    Sitemap: `${SITE_URL}/sitemap.xml`,
   },
 ]
 

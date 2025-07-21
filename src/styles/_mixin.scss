@@ -34,7 +34,8 @@
 @mixin button-styles(
   $background-color: palette.$light-gray,
   $text-color: palette.$text-color,
-  $border-radius: value.$border-radius
+  $border-radius: value.$border-radius,
+  $cursor: pointer
 ) {
   display: inline-flex;
   justify-content: center;
@@ -45,7 +46,9 @@
 
   -webkit-tap-highlight-color: trasparent;
 
-  cursor: pointer;
+  cursor: $cursor;
+
+  font-size: value.$button-font-size;
 
   background-color: $background-color;
   color: $text-color;

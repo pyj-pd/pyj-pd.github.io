@@ -14,6 +14,7 @@ $content-padding: 30px;
 $item-gap: $large-margin;
 
 // Border
+$small-border-radius: 9px;
 $border-radius: 13px;
 $large-border-radius: 20px;
 
@@ -26,9 +27,13 @@ $content-small-line-spacing: 1.8;
 $first-title-font-size: 1.7rem;
 $second-title-font-size: 1.4rem;
 $third-title-font-size: 1.2rem;
+
 $content-font-size: 1rem;
 $content-small-font-size: 0.9rem;
+
 $small-font-size: 0.7rem;
+
+$button-font-size: 0.9rem;
 
 // Animation
 $ease-out: cubic-bezier(0, 0.25, 0.32, 0.95);

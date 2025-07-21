@@ -50,16 +50,13 @@
   color: currentColor;
   text-decoration: none;
 
-  border-radius: value.$border-radius;
-}
-
-.route-button > a > button {
   padding: value.$normal-margin;
 
   @include mixin.button-styles($background-color: transparent);
   @include mixin.pointer-feedback-animation;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: palette.$light-gray;
   }
 }

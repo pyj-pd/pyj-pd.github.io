@@ -44,6 +44,7 @@
 .image-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: value.$small-margin;
 }
 
@@ -54,11 +55,13 @@
 
   width: 100%;
 
-  button {
+  a {
     padding: value.$normal-margin;
 
     @include mixin.button-styles;
     @include mixin.pointer-feedback-animation;
+
+    text-decoration: none;
   }
 }
 
@@ -74,6 +77,7 @@
 .techstack-container {
   display: flex;
   flex-wrap: wrap;
+  gap: value.$small-margin;
 
   list-style: none;
 
@@ -91,6 +95,6 @@
   font-weight: 500;
   font-size: 0.8rem;
 
-  border-radius: value.$border-radius;
+  border-radius: value.$small-border-radius;
   padding: value.$small-margin value.$small-margin * 3;
 }

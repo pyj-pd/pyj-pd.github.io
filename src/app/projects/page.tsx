@@ -41,19 +41,17 @@ export default function ProjectsPage() {
                 {projectItem.githubUrl && (
                   <MyLink
                     href={projectItem.githubUrl}
-                    tabIndex={-1}
                     target="_blank"
                   >
-                    <button>GitHub 레포지토리</button>
+                    GitHub 레포지토리
                   </MyLink>
                 )}
                 {projectItem.projectUrl && (
                   <MyLink
                     href={projectItem.projectUrl}
-                    tabIndex={-1}
                     target="_blank"
                   >
-                    <button>프로젝트 사이트</button>
+                    프로젝트 사이트
                   </MyLink>
                 )}
               </div>

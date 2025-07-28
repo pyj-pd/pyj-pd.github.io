@@ -21,25 +21,28 @@ export const generateSitemapXML = async (): Promise<string> => {
     // Headers
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-
-    // Internal links
-    ...(Object.keys(internalRoutesList) as NavbarRouteId[])
-      .map((routeId) => SITE_URL + navbarRouteList[routeId].path)
-      .map((site) => `<url><loc>${site}</loc></url>`),
-
-    // Blog posts
-    ...postList.map((post) => {
-      const locString = `<loc>${SITE_URL + getPostURL(post.slug)}</loc>`
-
-      const lastModDate = post.lastUpdateDate ?? post.date ?? null,
-        lastModString = lastModDate ? `<lastmod>${lastModDate}</lastmod>` : ''
-
-      return `<url>${locString}${lastModString}</url>`
-    }),
-
-    // Last line
-    '</urlset>',
   ]
+
+  // Internal links
+  for (const [id, routeData] of Object.entries(internalRoutesList)) {
+    if ('includeInSitemap' in routeData && !routeData.includeInSitemap) continue // Don't include in sitemap
+
+    const url = SITE_URL + routeData.path
+    xmlLines.push(`<url><loc>${url}</loc></url>`)
+  }
+
+  // Blog posts
+  for (const post of postList) {
+    const locString = `<loc>${SITE_URL + getPostURL(post.slug)}</loc>`
+
+    const lastModDate = post.lastUpdateDate ?? post.date ?? null,
+      lastModString = lastModDate ? `<lastmod>${lastModDate}</lastmod>` : ''
+
+    xmlLines.push(`<url>${locString}${lastModString}</url>`)
+  }
+
+  // Last line
+  xmlLines.push('</urlset>')
 
   return xmlLines.join('\n')
 }

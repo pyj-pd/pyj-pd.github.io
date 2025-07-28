@@ -2,7 +2,7 @@ import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import type { Metadata } from 'next'
 import styles from './page.module.scss'
 import LandingSection from '@/components/home/LandingSection'
-import RecentPostSection from '@/components/home/RecentPostSection'
+import PostListSection from '@/components/home/PostListSection'
 import { navbarRouteList } from '@/constants/routes'
 import TechStackSection from '@/components/home/TechStackSection'
 import AboutMeSection from '@/components/home/AboutMeSection'
@@ -17,7 +17,7 @@ export default function HomePage() {
       <LandingSection />
       <AboutMeSection />
       <TechStackSection />
-      <RecentPostSection />
+      <PostListSection />
     </main>
   )
 }

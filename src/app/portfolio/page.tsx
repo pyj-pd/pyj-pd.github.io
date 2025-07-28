@@ -11,14 +11,14 @@ import type { CSSProperties } from 'react'
 import { techStackColors } from '@/constants/home/techstack'
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromPath(navbarRouteList['projects'].path),
-  title: getPageTitleName('프로젝트 목록'),
+  ...getCanonicalMetadataFromPath(navbarRouteList['portfolio'].path),
+  title: getPageTitleName('포트폴리오'),
 }
 
-export default function ProjectsPage() {
+export default function PortfolioPage() {
   return (
     <main className={styles.container}>
-      <PageTitle>프로젝트</PageTitle>
+      <PageTitle>포트폴리오</PageTitle>
       <ul className={styles['project-container']}>
         {projectList.map((projectItem, index) => (
           <li

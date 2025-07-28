@@ -10,6 +10,10 @@
   word-break: keep-all;
 }
 
+html {
+  scroll-padding-top: value.$navbar-height;
+}
+
 body {
   display: flex;
   flex-direction: column;

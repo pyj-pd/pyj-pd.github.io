@@ -6,6 +6,8 @@ export type NavbarRouteData = {
   [routeId: string]: {
     path: string
     name: string
+    /** @default true */
+    includeInSitemap?: boolean
     openInNewTab?: boolean
   } & Partial<
     Pick<MetadataRoute.Sitemap[number], 'changeFrequency' | 'priority'>
@@ -19,15 +21,16 @@ export const internalRoutesList = {
     priority: 0.9,
   },
   posts: {
-    path: '/posts',
+    path: '/#posts',
     name: '블로그',
+    includeInSitemap: false,
 
     priority: 1,
     changeFrequency: 'always',
   },
-  projects: {
-    path: '/projects',
-    name: '프로젝트',
+  portfolio: {
+    path: '/portfolio',
+    name: '포트폴리오',
 
     priority: 0.8,
   },

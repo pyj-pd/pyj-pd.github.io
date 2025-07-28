@@ -21,6 +21,10 @@ export const internalRoutesList = {
     priority: 0.9,
   },
   posts: {
+    /**
+     * This URL should be only used for blog post list page.
+     * To get URL of each blog post, use `getPostURL` function instead.
+     */
     path: '/#posts',
     name: '블로그',
     includeInSitemap: false,
@@ -35,8 +39,6 @@ export const internalRoutesList = {
     priority: 0.8,
   },
 } as const satisfies NavbarRouteData
-
-export const blogPostsUrl = '/posts'
 
 export const externalRoutesList = {
   githubProfile: {

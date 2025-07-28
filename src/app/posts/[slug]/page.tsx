@@ -6,9 +6,9 @@ import {
   getPostData,
   retrieveNearbyPostSlugs,
   getPostSlugList,
+  getPostURL,
 } from '@/utils/blog/post'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
-import { blogPostsUrl, navbarRouteList } from '@/constants/routes'
 import { categoryList } from '@/constants/blog/categories'
 import {
   SITE_NAME,
@@ -52,7 +52,7 @@ export async function generateMetadata({
         : undefined
 
   const canonicalMetadata = getCanonicalMetadataFromPath(
-    `${blogPostsUrl}/${mdxData.slug}`,
+    getPostURL(mdxData.slug),
     // Open graph data
     {
       ...sharedOpenGraph,

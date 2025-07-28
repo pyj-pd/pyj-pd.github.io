@@ -20,6 +20,8 @@ $distance-from-edge: value.$content-padding;
 
   width: 40px;
   height: 40px;
+
+  @include mixin.pointer-feedback-animation;
 }
 
 $border-width: 4px;

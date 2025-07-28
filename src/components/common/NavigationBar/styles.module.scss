@@ -25,7 +25,7 @@
 
   width: value.$fixed-width;
 
-  padding: value.$normal-margin value.$content-padding;
+  padding: 0 value.$content-padding;
 
   color: palette.$text-color;
 }

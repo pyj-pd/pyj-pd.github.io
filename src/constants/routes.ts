@@ -36,6 +36,8 @@ export const internalRoutesList = {
   },
 } as const satisfies NavbarRouteData
 
+export const blogPostsUrl = '/posts'
+
 export const externalRoutesList = {
   githubProfile: {
     path: GITHUB_PROFILE_LINK,

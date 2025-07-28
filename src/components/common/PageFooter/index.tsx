@@ -20,6 +20,7 @@ export default function PageFooter() {
             <a
               key={routeId}
               href={routeData.path}
+              target="_blank"
             >
               {routeData.name}
             </a>

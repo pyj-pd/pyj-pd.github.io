@@ -3,22 +3,27 @@
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: value.$small-margin;
+  gap: value.$normal-margin;
+  flex-direction: column;
 
   width: 100%;
 
   padding: value.$content-padding * 2 0;
 
-  text-transform: uppercase;
   font-size: value.$small-font-size;
 
   color: palette.$gray;
-}
 
-.go-to-top {
-  color: inherit;
+  > div {
+    display: flex;
+    justify-content: center;
+    gap: value.$small-margin;
+  }
 
-  cursor: pointer;
+  a {
+    color: inherit;
+
+    cursor: pointer;
+  }
 }

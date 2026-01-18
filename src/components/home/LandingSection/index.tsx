@@ -4,6 +4,7 @@ import MyLink from '@/components/common/MyLink'
 import { GITHUB_PROFILE_LINK } from '@/constants/project'
 import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
 import Image from 'next/image'
+// @ts-expect-error Ignore import error for image file
 import waveImage from '@public/assets/home/wave.webp'
 
 export default function LandingSection() {

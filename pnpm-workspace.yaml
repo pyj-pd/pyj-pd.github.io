@@ -1,3 +1,5 @@
 onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - es5-ext
   - sharp
   - unrs-resolver

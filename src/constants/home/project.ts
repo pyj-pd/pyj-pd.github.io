@@ -1,11 +1,8 @@
 import type { StaticImageData } from 'next/image'
 import type { TechStackName } from './techstack'
 
-// @ts-expect-error Ignore import error for image file
 import randomSeatScreenshot from '@public/assets/projects/thumbnail/random-seat.webp'
-// @ts-expect-error Ignore import error for image file
 import lottoGeneratorScreenshot from '@public/assets/projects/thumbnail/lotto-generator.webp'
-// @ts-expect-error Ignore import error for image file
 import daySummaryScreenshot from '@public/assets/projects/thumbnail/day-summarry.webp'
 
 export type ProjectData = {

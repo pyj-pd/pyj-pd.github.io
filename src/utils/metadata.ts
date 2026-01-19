@@ -2,6 +2,7 @@ import { sharedOpenGraph } from '@/constants/metadata'
 import { SITE_URL } from '@/constants/project'
 import type { Metadata } from 'next'
 import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types'
+import { addTrailingSlash } from './seo'
 
 /**
  * Gets canonical metadata object from path.
@@ -13,7 +14,7 @@ export const getCanonicalMetadataFromPath = (
   path: string,
   openGraph?: OpenGraph,
 ): Metadata => {
-  const canonical = `${SITE_URL}${path}`
+  const canonical = addTrailingSlash(`${SITE_URL}${path}`)
 
   return {
     alternates: {

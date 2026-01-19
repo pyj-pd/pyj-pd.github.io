@@ -10,6 +10,10 @@ import type { PostData, PostDate } from '@/types/post'
 import { BLOG_AUTHORS } from '@/constants/metadata'
 import { categoryList } from '@/constants/blog/categories'
 
+export const addTrailingSlash = (url: string): string => {
+  return url.endsWith('/') ? url : url + '/'
+}
+
 /**
  * Generates content for `sitemap.xml` file.
  * @returns Content for `sitemap.xml` file with all pages and posts included, with `lastmod` property for posts too.
@@ -27,13 +31,13 @@ export const generateSitemapXML = async (): Promise<string> => {
   for (const [id, routeData] of Object.entries(internalRoutesList)) {
     if ('includeInSitemap' in routeData && !routeData.includeInSitemap) continue // Don't include in sitemap
 
-    const url = SITE_URL + routeData.path
+    const url = addTrailingSlash(SITE_URL + routeData.path)
     xmlLines.push(`<url><loc>${url}</loc></url>`)
   }
 
   // Blog posts
   for (const post of postList) {
-    const locString = `<loc>${SITE_URL + getPostURL(post.slug)}</loc>`
+    const locString = `<loc>${addTrailingSlash(SITE_URL + getPostURL(post.slug))}</loc>`
 
     const lastModDate = post.lastUpdateDate ?? post.date ?? null,
       lastModString = lastModDate ? `<lastmod>${lastModDate}</lastmod>` : ''

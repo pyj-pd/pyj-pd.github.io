@@ -4,6 +4,7 @@ import path from 'path'
 import { extractTextFromMDX, parsePostMDX } from './mdx'
 import memoize from 'memoizee'
 import getReadingTime from 'reading-time'
+import { addTrailingSlash } from '../seo'
 
 const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
   POST_CONTENT_FILENAME = 'content.md'
@@ -106,7 +107,8 @@ const POST_ASSETS_PATH_PUBLIC = '/assets/blog/posts'
 export const getPostAssetsPath = (slug: string, src: string): string =>
   `${POST_ASSETS_PATH_PUBLIC}/${slug}/${src}`
 
-export const getPostURL = (postSlug: string) => `/posts/${postSlug}`
+export const getPostURL = (postSlug: string) =>
+  addTrailingSlash(`/posts/${postSlug}`)
 
 /**
  * Retrieves a list of post slugs surrounding a specified post, excluding the current post.

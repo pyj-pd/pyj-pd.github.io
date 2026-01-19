@@ -33,7 +33,7 @@ export const internalRoutesList = {
     changeFrequency: 'always',
   },
   portfolio: {
-    path: '/portfolio',
+    path: '/portfolio/',
     name: '포트폴리오',
 
     priority: 0.8,

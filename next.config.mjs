@@ -10,6 +10,7 @@ const nextConfig = {
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },
+  trailingSlash: true,
 }
 
 const withMDX = createMDX({})

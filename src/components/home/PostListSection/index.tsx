@@ -6,15 +6,16 @@ import PostListTitle from '@/components/blog/PostListTitle'
 const POSTS_NUMBER = 5
 
 export default async function PostListSection() {
-  const postList = await getPostList()
+  const postList = (await getPostList()).slice(0, POSTS_NUMBER)
 
   return (
     <section className={styles.container}>
       <PostListTitle
         type="h2"
         id="posts"
+        showViewAllButton={true}
       >
-        전체 글 목록
+        최근 게시물
       </PostListTitle>
       <PostList postDataList={postList} />
     </section>

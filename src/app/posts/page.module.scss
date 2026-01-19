@@ -1,0 +1,8 @@
+@use '@/styles/mixin' as mixin;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  @include mixin.fixed-width-container-styles;
+}

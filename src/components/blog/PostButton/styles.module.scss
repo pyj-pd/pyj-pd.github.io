@@ -17,6 +17,12 @@
   @include mixin.button-styles;
 
   width: 100%;
+
+  &:hover {
+    .title {
+      text-decoration: underline;
+    }
+  }
 }
 
 .container {

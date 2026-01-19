@@ -25,9 +25,8 @@ export const internalRoutesList = {
      * This URL should be only used for blog post list page.
      * To get URL of each blog post, use `getPostURL` function instead.
      */
-    path: '/#posts',
+    path: '/posts/',
     name: '블로그',
-    includeInSitemap: false,
 
     priority: 1,
     changeFrequency: 'always',

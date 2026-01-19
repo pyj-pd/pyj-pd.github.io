@@ -1,8 +1,5 @@
 import '@/styles/globals.scss'
-import {
-  monospaceFont,
-  sansSerifFont,
-} from '@/styles/fonts'
+import { monospaceFont, sansSerifFont } from '@/styles/fonts'
 import type { Metadata } from 'next'
 import NavigationBar from '@/components/common/NavigationBar'
 import classNames from 'classnames'
@@ -27,7 +24,10 @@ export default function BlogRootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko">
+    <html
+      lang="ko"
+      data-scroll-behavior="smooth"
+    >
       <body
         className={classNames(
           // Fonts

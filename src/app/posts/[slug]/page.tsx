@@ -19,6 +19,7 @@ import PostList from '@/components/blog/PostList'
 import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
 import { generatePostJSONLD } from '@/utils/seo'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -118,7 +119,7 @@ export default async function BlogPostPage({
             type="h2"
             showViewAllButton
           >
-            다른 글도 읽어보세요
+            {locales[DEFAULT_LANGUAGE].postPage.morePostsTitle}
           </PostListTitle>
           <PostList postDataList={nearbyPosts} />
         </section>

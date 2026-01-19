@@ -1,3 +1,5 @@
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
+
 export type PostCategoryList = {
   [categoryId: string]: {
     name: string
@@ -7,16 +9,15 @@ export type PostCategoryList = {
 
 export const categoryList = {
   computer: {
-    name: '컴퓨터',
-    description: '컴퓨터를 사용하며 공유하고 싶었던 경험들을 나눕니다.',
+    name: locales[DEFAULT_LANGUAGE].categories.computer.name,
+    description: locales[DEFAULT_LANGUAGE].categories.computer.description,
   },
   programming: {
-    name: '프로그래밍',
-    description:
-      '저와 같은 삽질을 하지 마시길 바라며, 또는 한 번쯤 읽어볼 만한 주제들을 다룹니다.',
+    name: locales[DEFAULT_LANGUAGE].categories.programming.name,
+    description: locales[DEFAULT_LANGUAGE].categories.programming.description,
   },
   server: {
-    name: '서버',
+    name: locales[DEFAULT_LANGUAGE].categories.server.name,
   },
 } as const satisfies PostCategoryList
 

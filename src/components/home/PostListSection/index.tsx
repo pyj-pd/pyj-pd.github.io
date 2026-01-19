@@ -2,6 +2,7 @@ import { getPostList } from '@/utils/blog/post'
 import styles from './styles.module.scss'
 import PostList from '@/components/blog/PostList'
 import PostListTitle from '@/components/blog/PostListTitle'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 const POSTS_NUMBER = 5
 
@@ -14,7 +15,7 @@ export default async function PostListSection() {
         type="h2"
         id="posts"
       >
-        전체 글 목록
+        {locales[DEFAULT_LANGUAGE].postList.viewAllPosts}
       </PostListTitle>
       <PostList postDataList={postList} />
     </section>

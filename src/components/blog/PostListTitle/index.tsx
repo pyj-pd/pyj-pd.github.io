@@ -2,6 +2,7 @@ import MyLink from '@/components/common/MyLink'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { internalRoutesList } from '@/constants/routes'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 type PostListTitleProps = {
   type: 'h1' | 'h2'
@@ -27,7 +28,9 @@ export default function PostListTitle({
     >
       {type === 'h1' ? <h1>{children}</h1> : <h2>{children}</h2>}
       {showViewAllButton && (
-        <MyLink href={postListPageUrl}>전체 글 보기</MyLink>
+        <MyLink href={postListPageUrl}>
+          {locales[DEFAULT_LANGUAGE].postList.viewAllPosts}
+        </MyLink>
       )}
     </div>
   )

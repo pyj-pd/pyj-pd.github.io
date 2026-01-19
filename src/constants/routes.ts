@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { GITHUB_PROFILE_LINK } from './project'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 // Navbar
 export type NavbarRouteData = {
@@ -17,7 +18,7 @@ export type NavbarRouteData = {
 export const internalRoutesList = {
   home: {
     path: '/',
-    name: '홈',
+    name: locales[DEFAULT_LANGUAGE].routes.home,
     priority: 0.9,
   },
   posts: {
@@ -26,7 +27,7 @@ export const internalRoutesList = {
      * To get URL of each blog post, use `getPostURL` function instead.
      */
     path: '/#posts',
-    name: '블로그',
+    name: locales[DEFAULT_LANGUAGE].routes.posts,
     includeInSitemap: false,
 
     priority: 1,
@@ -34,7 +35,7 @@ export const internalRoutesList = {
   },
   portfolio: {
     path: '/portfolio',
-    name: '포트폴리오',
+    name: locales[DEFAULT_LANGUAGE].routes.portfolio,
 
     priority: 0.8,
   },

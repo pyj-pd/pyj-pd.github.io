@@ -1,5 +1,6 @@
 import type { StaticImageData } from 'next/image'
 import type { TechStackName } from './techstack'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 import randomSeatScreenshot from '@public/assets/projects/thumbnail/random-seat.webp'
 import lottoGeneratorScreenshot from '@public/assets/projects/thumbnail/lotto-generator.webp'
@@ -25,11 +26,8 @@ export const projectList: ProjectData[] = [
     image: randomSeatScreenshot,
 
     id: 'random-seat',
-    title: '무작위 자리 뽑기',
-    description: `
-사용자 지정 크기의 자리 배치에서 무작위로 자리를 지정하는 웹 앱입니다.
-Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사용과, 자리를 뽑을 때 재생되는 소리, 자리를 뽑고 나서 표시되는 콘페티 효과를 통해 더욱 재미있는 사용성을 챙길 수 있었습니다.
-`.trim(),
+    title: locales[DEFAULT_LANGUAGE].projects.randomSeat.title,
+    description: locales[DEFAULT_LANGUAGE].projects.randomSeat.description,
     techStacks: ['Vue', 'Vite', 'Pinia', 'TypeScript', 'Sass(SCSS)'],
 
     githubUrl: 'https://github.com/pyj-pd/random-seat',
@@ -39,12 +37,8 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     image: lottoGeneratorScreenshot,
 
     id: 'lotto-generator',
-    title: '로또 번호 생성기',
-    description: `
-버튼 클릭 한 번으로 간편하게 로또 번호를 생성할 수 있는 웹 앱입니다.
-각종 프레임워크와 라이브러리 사용으로 복잡해진 웹 개발에서 탈피하여, 최소한의 기능과 코드만을 남겨 간단한 웹 앱을 제작하였습니다. 또한 GitHub Actions를 통해 GitHub Pages에 배포하기 전 JS, CSS 파일을 먼저 압축(Minify)하여 업로드하는 방식으로 최종 유저에게 도달하는 파일 용량도 줄일 수 있었습니다.
-`.trim(),
-    // 'A simple website for generating random lotto numbers. I wrote it to be extremely lightweight, using vanilla JS only with GitHub Actions combined to minify the files.',
+    title: locales[DEFAULT_LANGUAGE].projects.lottoGenerator.title,
+    description: locales[DEFAULT_LANGUAGE].projects.lottoGenerator.description,
     techStacks: ['GitHub Actions'],
 
     githubUrl: 'https://github.com/pyj-pd/lotto-generator',
@@ -54,11 +48,8 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     image: daySummaryScreenshot,
 
     id: 'day-summary',
-    title: '시간표 이미지 생성기',
-    description: `
-손쉽게 학교 시간표 이미지를 생성하여 공유할 수 있도록 하는 웹 앱입니다.
-SVG 이미지에 동적으로 글자를 변경한 후 PNG 이미지로 변환하는 과정을 통해 이미지를 생성하는 알고리즘을 구축하였습니다.
-`.trim(),
+    title: locales[DEFAULT_LANGUAGE].projects.daySummary.title,
+    description: locales[DEFAULT_LANGUAGE].projects.daySummary.description,
     techStacks: [
       'React',
       'Next.js',

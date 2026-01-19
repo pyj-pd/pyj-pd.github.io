@@ -2,9 +2,10 @@ import GitHubIcon from '@/components/icons/GitHubIcon'
 import styles from './styles.module.scss'
 import MyLink from '@/components/common/MyLink'
 import { GITHUB_PROFILE_LINK } from '@/constants/project'
-import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
+import { HOMEPAGE_DESCRIPTION, SITE_NAME } from '@/constants/metadata'
 import Image from 'next/image'
 import waveImage from '@public/assets/home/wave.webp'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 export default function LandingSection() {
   return (
@@ -13,7 +14,7 @@ export default function LandingSection() {
         <div className={styles.image}>
           <Image
             src={waveImage}
-            alt="눈이 쌓인 산이 보이고 그 아래 물이 잔잔하게 흐른다."
+            alt={locales[DEFAULT_LANGUAGE].landingSection.altText}
             fill
             loading="eager"
           />
@@ -21,7 +22,7 @@ export default function LandingSection() {
       </div>
       <div className={styles['content-container']}>
         <div className={styles['text-container']}>
-          <h1>pyj-pd</h1>
+          <h1>{SITE_NAME}</h1>
           <p>{HOMEPAGE_DESCRIPTION}</p>
         </div>
         <div className={styles['link-container']}>

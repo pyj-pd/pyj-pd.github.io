@@ -11,13 +11,13 @@ const ZERO_PAD_STRING = '0',
 export const getPostDateString = (date: PostDate) => {
   const dateObject = new Date(date)
 
-  return `${dateObject.getFullYear()}년 ${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}월 ${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}일`
+  return `${dateObject.getFullYear()}/${(dateObject.getMonth() + 1).toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}/${dateObject.getDate().toString().padStart(ZERO_PAD_LENGTH, ZERO_PAD_STRING)}`
 }
 
 export const getPostReadingTimeString = (minutes: number): string => {
   const ceiledMinutes = Math.ceil(minutes),
     flooredMinutes = ceiledMinutes - 1
 
-  if (flooredMinutes < 1) return `${ceiledMinutes}분`
-  else return `${flooredMinutes}~${ceiledMinutes}분`
+  if (flooredMinutes < 1) return `${ceiledMinutes}`
+  else return `${flooredMinutes}~${ceiledMinutes}`
 }

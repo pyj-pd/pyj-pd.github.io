@@ -1,11 +1,15 @@
 import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
 import MyLink from '@/components/common/MyLink'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
+// @todo
 export default function AboutMeSection() {
   return (
     <section className={styles.container}>
-      <PageTitle headingType="h2">About me</PageTitle>
+      <PageTitle headingType="h2">
+        {locales[DEFAULT_LANGUAGE].aboutMeSection.title}
+      </PageTitle>
       <div className={styles['text-container']}>
         <p>
           수년 전 도서관에서 우연히 발견한 웹 개발 입문서를 시작으로 프론트엔드

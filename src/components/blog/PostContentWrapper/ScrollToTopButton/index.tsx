@@ -4,6 +4,7 @@ import { motion, useSpring, type MotionValue } from 'motion/react'
 import styles from './styles.module.scss'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 type ScrollToTopButtonProps = {
   /**
@@ -55,7 +56,7 @@ export default function ScrollToTopButton({
       >
         <button
           className={styles.button}
-          aria-label="맨 위로 스크롤"
+          aria-label={locales[DEFAULT_LANGUAGE].scrollToTop.ariaLabel}
         >
           <svg viewBox="0 0 100 100">
             <path d="M 0 50 L 50 0 L 100 50 M 50 0 L 50 100" />

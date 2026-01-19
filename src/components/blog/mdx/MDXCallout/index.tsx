@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import styles from './styles.module.scss'
 import type { ReactNode } from 'react'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 type CalloutType = 'normal' | 'info' | 'okay' | 'warn' | 'error'
 
@@ -18,23 +19,23 @@ type MDXCalloutProps = Partial<CalloutTitle> & {
 const calloutTitles: { [key in CalloutType]: CalloutTitle } = {
   normal: {
     emoji: '🗣️',
-    title: '알아두기',
+    title: locales[DEFAULT_LANGUAGE].calloutTitles.normal,
   },
   info: {
     emoji: '📌',
-    title: '알아두기',
+    title: locales[DEFAULT_LANGUAGE].calloutTitles.info,
   },
   okay: {
     emoji: '🏆',
-    title: '성공',
+    title: locales[DEFAULT_LANGUAGE].calloutTitles.okay,
   },
   warn: {
     emoji: '⚠️',
-    title: '주의',
+    title: locales[DEFAULT_LANGUAGE].calloutTitles.warn,
   },
   error: {
     emoji: '🚨',
-    title: '오류',
+    title: locales[DEFAULT_LANGUAGE].calloutTitles.error,
   },
 }
 

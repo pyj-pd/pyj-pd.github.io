@@ -1,4 +1,5 @@
 import { externalRoutesList } from '@/constants/routes'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 import styles from './styles.module.scss'
 
 const externalRouteIds = Object.keys(
@@ -9,8 +10,8 @@ export default function PageFooter() {
   return (
     <footer className={styles.container}>
       <div>
-        <p>END OF PAGE</p>
-        <a href="#">맨 위로</a>
+        <p>{locales[DEFAULT_LANGUAGE].footer.endOfPage}</p>
+        <a href="#">{locales[DEFAULT_LANGUAGE].footer.backToTop}</a>
       </div>
       <div>
         {externalRouteIds.map((routeId) => {

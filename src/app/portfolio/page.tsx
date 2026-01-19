@@ -9,6 +9,7 @@ import MyLink from '@/components/common/MyLink'
 import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import { techStackColors } from '@/constants/home/techstack'
+import { DEFAULT_LANGUAGE, locales } from '@/locales'
 
 export const metadata: Metadata = {
   ...getCanonicalMetadataFromPath(navbarRouteList['portfolio'].path),
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <main className={styles.container}>
-      <PageTitle>포트폴리오</PageTitle>
+      <PageTitle>{locales[DEFAULT_LANGUAGE].routes.portfolio}</PageTitle>
       <ul className={styles['project-container']}>
         {projectList.map((projectItem, index) => (
           <li
@@ -33,7 +34,13 @@ export default function PortfolioPage() {
               >
                 <Image
                   src={projectItem.image}
-                  alt={`${projectItem.title} 프로젝트 스크린샷`}
+                  alt={locales[
+                    DEFAULT_LANGUAGE
+                  ].portfolio.projectScreenshot.replace(
+                    '{projectName}',
+                    projectItem.title,
+                  )}
+                  width={300}
                   height={200}
                 />
               </MyLink>
@@ -43,7 +50,7 @@ export default function PortfolioPage() {
                     href={projectItem.githubUrl}
                     target="_blank"
                   >
-                    GitHub 레포지토리
+                    {locales[DEFAULT_LANGUAGE].portfolio.githubRepository}
                   </MyLink>
                 )}
                 {projectItem.projectUrl && (
@@ -51,7 +58,7 @@ export default function PortfolioPage() {
                     href={projectItem.projectUrl}
                     target="_blank"
                   >
-                    프로젝트 사이트
+                    {locales[DEFAULT_LANGUAGE].portfolio.projectSite}
                   </MyLink>
                 )}
               </div>

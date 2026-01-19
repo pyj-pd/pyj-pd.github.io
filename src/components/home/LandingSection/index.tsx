@@ -15,6 +15,7 @@ export default function LandingSection() {
             src={waveImage}
             alt="눈이 쌓인 산이 보이고 그 아래 물이 잔잔하게 흐른다."
             fill
+            loading="eager"
           />
         </div>
       </div>

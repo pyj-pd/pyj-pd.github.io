@@ -4,9 +4,10 @@ import path from 'path'
 import { extractTextFromMDX, parsePostMDX } from './mdx'
 import memoize from 'memoizee'
 import getReadingTime from 'reading-time'
+import { DEFAULT_LANGUAGE } from '@/constants/blog/lang'
 
 const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
-  POST_CONTENT_FILENAME = 'content.md'
+  POST_CONTENT_FILENAME = `${DEFAULT_LANGUAGE}.md` // @todo Support multi-language posts
 
 const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)
 

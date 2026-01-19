@@ -12,8 +12,6 @@
 
 // Image cover
 .image-container {
-  position: relative;
-
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -33,6 +31,8 @@
 }
 
 .image {
+  position: relative;
+
   width: 100%;
   height: 100%;
 

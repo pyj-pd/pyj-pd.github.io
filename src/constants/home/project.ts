@@ -34,7 +34,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     techStacks: ['Vue', 'Vite', 'Pinia', 'TypeScript', 'Sass(SCSS)'],
 
     githubUrl: 'https://github.com/pyj-pd/random-seat',
-    projectUrl: 'https://seat.pyj-pd.dev/',
+    projectUrl: 'https://pyj-pd.github.io/random-seat/',
   },
   {
     image: lottoGeneratorScreenshot,
@@ -49,7 +49,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     techStacks: ['GitHub Actions'],
 
     githubUrl: 'https://github.com/pyj-pd/lotto-generator',
-    projectUrl: 'https://pyj-pd.dev/lotto-generator/',
+    projectUrl: 'https://pyj-pd.github.io/lotto-generator/',
   },
   {
     image: daySummaryScreenshot,

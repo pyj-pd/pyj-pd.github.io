@@ -14,8 +14,7 @@
   width: 100%;
   height: value.$navbar-height;
 
-  background-color: rgba(palette.$background-color, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: palette.$background-color;
 }
 
 .container {

@@ -83,5 +83,6 @@ Vite-SSG를 이용해 정적 사이트로 내보내 배포하는 방식을 택�
     techStacks: ['Vue', 'Vite', 'TypeScript', 'Sass(SCSS)', 'Pinia'],
 
     githubUrl: 'https://github.com/pyj-pd/minecraft-crafting-recipe',
+    projectUrl: 'https://pyj-pd.github.io/minecraft-crafting-recipe/',
   },
 ]

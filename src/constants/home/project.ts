@@ -4,6 +4,7 @@ import type { TechStackName } from './techstack'
 import randomSeatScreenshot from '@public/assets/projects/thumbnail/random-seat.webp'
 import lottoGeneratorScreenshot from '@public/assets/projects/thumbnail/lotto-generator.webp'
 import daySummaryScreenshot from '@public/assets/projects/thumbnail/day-summarry.webp'
+import minecraftCraftingRecipeScreenshot from '@public/assets/projects/thumbnail/minecraft-crafting-recipe.webp'
 
 export type ProjectData = {
   image: StaticImageData
@@ -68,5 +69,19 @@ SVG 이미지에 동적으로 글자를 변경한 후 PNG 이미지로 변환하
     ],
 
     projectUrl: 'https://day-summary.vercel.app/',
+  },
+  {
+    image: minecraftCraftingRecipeScreenshot,
+
+    id: 'minecraft-crafting-recipe',
+    title: '마인크래프트 조합법 검색기(Minecraft Crafting Recipe)',
+    description: `
+게임 마인크래프트(Minecraft) 아이템들의 조합법을 손쉽게 검색할 수 있는 웹 앱입니다.
+NodeJS 환경에서 미리 Raw 데이터를 처리한 후, 이를 프론트엔드 파일과 연계시키는 방법으로 구현하였습니다.
+Vite-SSG를 이용해 정적 사이트로 내보내 배포하는 방식을 택했습니다.
+`.trim(),
+    techStacks: ['Vue', 'Vite', 'TypeScript', 'Sass(SCSS)', 'Pinia'],
+
+    githubUrl: 'https://github.com/pyj-pd/minecraft-crafting-recipe',
   },
 ]

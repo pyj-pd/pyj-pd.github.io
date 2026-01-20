@@ -26,19 +26,28 @@
 }
 
 .techstack-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  padding: 0 value.$content-padding;
-  border-radius: value.$border-radius;
+    padding: 0 value.$content-padding;
+    border-radius: value.$border-radius;
 
-  font-weight: 600;
+    font-weight: 600;
+    text-decoration: none;
 
-  height: 48px;
+    height: 48px;
 
-  white-space: nowrap;
+    white-space: nowrap;
+    user-select: none;
 
-  background-color: var(--background-color);
-  color: var(--text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    @include mixin.pointer-feedback-animation(
+      $hover-brightness: 85%,
+      $active-brightness: 75%
+    );
+  }
 }

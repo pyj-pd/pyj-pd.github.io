@@ -6,20 +6,27 @@
   max-width: value.$fixed-width;
 }
 
-@mixin pointer-feedback-animation {
+@mixin pointer-feedback-animation(
+  $duration: 0.3s,
+  $easing: value.$ease-out,
+
+  $hover-brightness: 90%,
+  $active-brightness: 85%,
+  $active-scale: 0.97
+) {
   opacity: 1;
   transform: scale(1);
   filter: brightness(100%);
 
-  transition: all 0.3s value.$ease-out;
+  transition: all $duration $easing;
 
   &:hover {
-    filter: brightness(93%);
+    filter: brightness($hover-brightness);
   }
 
   &:active {
-    filter: brightness(85%);
-    transform: scale(0.97);
+    filter: brightness($active-brightness);
+    transform: scale($active-scale);
   }
 }
 

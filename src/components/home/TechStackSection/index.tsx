@@ -24,7 +24,12 @@ export default function TechStackSection() {
                     } as CSSProperties
                   }
                 >
-                  {techStack.name}
+                  <a
+                    href={techStack.url}
+                    target="_blank"
+                  >
+                    {techStack.name}
+                  </a>
                 </li>
               ))}
             </ul>

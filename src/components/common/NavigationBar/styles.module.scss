@@ -14,7 +14,8 @@
   width: 100%;
   height: value.$navbar-height;
 
-  background-color: palette.$background-color;
+  background-color: rgba(palette.$background-color, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .container {
@@ -23,7 +24,10 @@
   display: flex;
   justify-content: flex-start;
 
-  width: value.$fixed-width;
+  width: 100%;
+  max-width: value.$fixed-width;
+
+  overflow-x: auto;
 
   padding: 0 value.$content-padding;
 
@@ -51,7 +55,7 @@
   color: currentColor;
   text-decoration: none;
 
-  padding: value.$normal-margin;
+  padding: value.$normal-margin value.$big-margin;
 
   @include mixin.button-styles($background-color: transparent);
   @include mixin.pointer-feedback-animation;

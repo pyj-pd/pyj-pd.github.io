@@ -16,12 +16,9 @@
     margin: value.$large-margin 0;
   }
 
-  // Small screen
-  @media screen and (max-width: value.$small-screen-width) {
-    ul,
-    ol {
-      padding-left: value.$large-margin;
-    }
+  ul,
+  ol {
+    padding-left: value.$large-margin;
   }
 
   // Element margins

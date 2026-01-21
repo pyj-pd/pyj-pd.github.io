@@ -6,7 +6,7 @@ import lottoGeneratorScreenshot from '@public/assets/projects/thumbnail/lotto-ge
 import daySummaryScreenshot from '@public/assets/projects/thumbnail/day-summarry.webp'
 import minecraftCraftingRecipeScreenshot from '@public/assets/projects/thumbnail/minecraft-crafting-recipe.webp'
 
-export type ProjectData = {
+export type PortfolioProjectData = {
   image: StaticImageData
 
   /**
@@ -19,9 +19,10 @@ export type ProjectData = {
 
   githubUrl?: string
   projectUrl?: string
+  includeInSitemap?: boolean
 }
 
-export const projectList: ProjectData[] = [
+export const portfolioProjectList: PortfolioProjectData[] = [
   {
     image: randomSeatScreenshot,
 
@@ -35,6 +36,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
 
     githubUrl: 'https://github.com/pyj-pd/random-seat',
     projectUrl: 'https://pyj-pd.github.io/random-seat/',
+    includeInSitemap: true,
   },
   {
     image: lottoGeneratorScreenshot,
@@ -50,6 +52,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
 
     githubUrl: 'https://github.com/pyj-pd/lotto-generator',
     projectUrl: 'https://pyj-pd.github.io/lotto-generator/',
+    includeInSitemap: true,
   },
   {
     image: daySummaryScreenshot,
@@ -84,5 +87,6 @@ Vite-SSG를 이용해 정적 사이트로 내보내 배포하는 방식을 택�
 
     githubUrl: 'https://github.com/pyj-pd/minecraft-crafting-recipe',
     projectUrl: 'https://pyj-pd.github.io/minecraft-crafting-recipe/',
+    includeInSitemap: true,
   },
 ]

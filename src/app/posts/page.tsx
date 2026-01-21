@@ -6,17 +6,25 @@ import { navbarRouteList } from '@/constants/routes'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import type { Metadata } from 'next'
 import { getPageTitleName } from '@/utils/blog/page'
+import { SITE_URL } from '@/constants/project'
+import { getWebSiteJSONLDScript } from '@/utils/seo'
+import { joinUrlPaths } from '@/utils/url'
+
+const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['posts'].path)
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromPath(navbarRouteList['posts'].path),
+  ...getCanonicalMetadataFromPath(canonicalUrl),
   title: getPageTitleName('블로그 글 목록'),
 }
 
 export default async function PostListPage() {
   const postList = await getPostList()
 
+  const { JSONLDScript } = getWebSiteJSONLDScript(canonicalUrl)
+
   return (
     <main className={styles.container}>
+      {JSONLDScript}
       <PostListTitle
         type="h1"
         id="posts"

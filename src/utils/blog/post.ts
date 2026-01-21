@@ -4,7 +4,7 @@ import path from 'path'
 import { extractTextFromMDX, parsePostMDX } from './mdx'
 import memoize from 'memoizee'
 import getReadingTime from 'reading-time'
-import { addTrailingSlash } from '../seo'
+import { addTrailingSlash } from '../url'
 
 const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
   POST_CONTENT_FILENAME = 'content.md'

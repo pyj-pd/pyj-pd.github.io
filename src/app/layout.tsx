@@ -7,6 +7,7 @@ import {
   HOMEPAGE_DESCRIPTION,
   HOMEPAGE_TITLE_DESCRIPTION,
   sharedMetadata,
+  SITE_NAME,
 } from '@/constants/metadata'
 import { getPageTitleName } from '@/utils/blog/page'
 import PageFooter from '@/components/common/PageFooter'

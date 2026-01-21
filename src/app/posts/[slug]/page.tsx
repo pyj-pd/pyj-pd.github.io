@@ -19,6 +19,8 @@ import PostList from '@/components/blog/PostList'
 import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
 import { generatePostJSONLD } from '@/utils/seo'
+import { joinUrlPaths } from '@/utils/url'
+import { SITE_URL } from '@/constants/project'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -51,8 +53,10 @@ export async function generateMetadata({
         ? categoryList[mdxData.categories[0]].name
         : undefined
 
+  const canonicalUrl = joinUrlPaths(SITE_URL, getPostURL(mdxData.slug))
+
   const canonicalMetadata = getCanonicalMetadataFromPath(
-    getPostURL(mdxData.slug),
+    canonicalUrl,
     // Open graph data
     {
       ...sharedOpenGraph,

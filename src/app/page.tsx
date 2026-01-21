@@ -6,14 +6,22 @@ import PostListSection from '@/components/home/PostListSection'
 import { navbarRouteList } from '@/constants/routes'
 import TechStackSection from '@/components/home/TechStackSection'
 import AboutMeSection from '@/components/home/AboutMeSection'
+import { getWebSiteJSONLDScript } from '@/utils/seo'
+import { joinUrlPaths } from '@/utils/url'
+import { SITE_URL } from '@/constants/project'
+
+const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['home'].path)
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromPath(navbarRouteList['home'].path),
+  ...getCanonicalMetadataFromPath(canonicalUrl),
 }
 
 export default function HomePage() {
+  const { JSONLDScript } = getWebSiteJSONLDScript(canonicalUrl)
+
   return (
     <main className={styles.container}>
+      {JSONLDScript}
       <LandingSection />
       <AboutMeSection />
       <TechStackSection />

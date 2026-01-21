@@ -4,23 +4,31 @@ import { getPageTitleName } from '@/utils/blog/page'
 import { getCanonicalMetadataFromPath } from '@/utils/metadata'
 import type { Metadata } from 'next'
 import styles from './page.module.scss'
-import { projectList } from '@/constants/home/project'
+import { portfolioProjectList } from '@/constants/home/portfolio'
 import MyLink from '@/components/common/MyLink'
 import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import { techStackColors } from '@/constants/home/techstack'
+import { joinUrlPaths } from '@/utils/url'
+import { SITE_URL } from '@/constants/project'
+import { getWebSiteJSONLDScript } from '@/utils/seo'
+
+const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['portfolio'].path)
 
 export const metadata: Metadata = {
-  ...getCanonicalMetadataFromPath(navbarRouteList['portfolio'].path),
+  ...getCanonicalMetadataFromPath(canonicalUrl),
   title: getPageTitleName('포트폴리오'),
 }
 
 export default function PortfolioPage() {
+  const { JSONLDScript } = getWebSiteJSONLDScript(canonicalUrl)
+
   return (
     <main className={styles.container}>
+      {JSONLDScript}
       <PageTitle>포트폴리오</PageTitle>
       <ul className={styles['project-container']}>
-        {projectList.map((projectItem, index) => (
+        {portfolioProjectList.map((projectItem, index) => (
           <li
             key={index}
             className={styles['project-item']}

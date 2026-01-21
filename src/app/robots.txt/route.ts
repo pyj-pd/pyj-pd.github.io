@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/constants/project"
+import { SITE_URL } from '@/constants/project'
 
 export const dynamic = 'force-static'
 
@@ -8,7 +8,7 @@ const robotsData: { [key: string]: string }[] = [
     Disallow: '',
   },
   {
-    Sitemap: `${SITE_URL}/sitemap.xml`,
+    Sitemap: `${SITE_URL}sitemap.xml`,
   },
 ]
 

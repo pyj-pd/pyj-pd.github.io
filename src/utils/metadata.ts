@@ -1,29 +1,25 @@
 import { sharedOpenGraph } from '@/constants/metadata'
-import { SITE_URL } from '@/constants/project'
 import type { Metadata } from 'next'
 import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types'
-import { addTrailingSlash } from './seo'
 
 /**
  * Gets canonical metadata object from path.
- * @param path Page path. For example, `/posts`.
+ * @param url Absolute URL of the page.
  * @param openGraph Optional open graph content that you'd want to inherit. It contains shared open graph data initially.
  * @returns An metadata object with canonical links data and open graph metadata. It can be merged directly into Next.js' `metadata` object.
  */
 export const getCanonicalMetadataFromPath = (
-  path: string,
+  url: string,
   openGraph?: OpenGraph,
 ): Metadata => {
-  const canonical = addTrailingSlash(`${SITE_URL}${path}`)
-
   return {
     alternates: {
-      canonical,
+      canonical: url,
     },
     openGraph: {
       ...sharedOpenGraph,
       ...(openGraph ?? {}),
-      url: canonical,
+      url,
     },
   }
 }

@@ -26,7 +26,7 @@ export const BLOG_AUTHORS: TechArticle['author'] = [
   },
 ]
 
-export const SITE_LOGO_PATH = `${SITE_URL}/apple-icon.png`
+export const SITE_LOGO_PATH = `${SITE_URL}apple-icon.png`
 
 export const sharedOpenGraph: Metadata['openGraph'] = {
     siteName: SITE_NAME,

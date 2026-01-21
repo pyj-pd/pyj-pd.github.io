@@ -1,18 +1,12 @@
 import { SITE_URL } from '@/constants/project'
-import {
-  internalRoutesList,
-  type NavbarRouteId,
-  navbarRouteList,
-} from '@/constants/routes'
-import type { WithContext, TechArticle } from 'schema-dts'
+import { internalRoutesList } from '@/constants/routes'
+import type { WithContext, TechArticle, WebSite } from 'schema-dts'
 import { getPostList, getPostURL } from './blog/post'
 import type { PostData, PostDate } from '@/types/post'
-import { BLOG_AUTHORS } from '@/constants/metadata'
+import { BLOG_AUTHORS, SITE_NAME } from '@/constants/metadata'
 import { categoryList } from '@/constants/blog/categories'
-
-export const addTrailingSlash = (url: string): string => {
-  return url.endsWith('/') ? url : url + '/'
-}
+import { addTrailingSlash, joinUrlPaths } from './url'
+import { portfolioProjectList } from '@/constants/home/portfolio'
 
 /**
  * Generates content for `sitemap.xml` file.
@@ -31,13 +25,21 @@ export const generateSitemapXML = async (): Promise<string> => {
   for (const [id, routeData] of Object.entries(internalRoutesList)) {
     if ('includeInSitemap' in routeData && !routeData.includeInSitemap) continue // Don't include in sitemap
 
-    const url = addTrailingSlash(SITE_URL + routeData.path)
+    const url = addTrailingSlash(joinUrlPaths(SITE_URL, routeData.path))
+    xmlLines.push(`<url><loc>${url}</loc></url>`)
+  }
+
+  // Other family sites
+  for (const routeData of portfolioProjectList) {
+    if (!routeData.includeInSitemap) continue // Don't include in sitemap
+
+    const url = routeData.projectUrl
     xmlLines.push(`<url><loc>${url}</loc></url>`)
   }
 
   // Blog posts
   for (const post of postList) {
-    const locString = `<loc>${addTrailingSlash(SITE_URL + getPostURL(post.slug))}</loc>`
+    const locString = `<loc>${addTrailingSlash(joinUrlPaths(SITE_URL, getPostURL(post.slug)))}</loc>`
 
     const lastModDate = post.lastUpdateDate ?? post.date ?? null,
       lastModString = lastModDate ? `<lastmod>${lastModDate}</lastmod>` : ''
@@ -68,9 +70,13 @@ const convertToISO8601Date = (dateString: PostDate): string => {
 export const generatePostJSONLD = (
   postData: PostData,
 ): WithContext<TechArticle> => {
+  const canonicalUrl = joinUrlPaths(SITE_URL, getPostURL(postData.slug))
+
   return {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
+    name: SITE_NAME,
+    url: canonicalUrl,
     headline: postData.title,
     description: postData.description,
 
@@ -84,5 +90,26 @@ export const generatePostJSONLD = (
       : undefined,
 
     author: BLOG_AUTHORS,
+  }
+}
+
+export const getWebSiteJSONLDScript = (url: string = SITE_URL) => {
+  const jsonLD: WithContext<WebSite> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url,
+  }
+
+  const JSONLDScript = (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+    />
+  )
+
+  return {
+    jsonLD,
+    JSONLDScript,
   }
 }

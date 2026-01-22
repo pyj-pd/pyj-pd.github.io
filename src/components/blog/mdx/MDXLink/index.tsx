@@ -1,16 +1,15 @@
+import NormalLink from '@/components/common/NormalLink'
 import type { ComponentPropsWithoutRef } from 'react'
 
-type MDXLinkProps = ComponentPropsWithoutRef<'a'>
-
-const HEADING_LINK_PREFIX = '#'
+type MDXLinkProps = ComponentPropsWithoutRef<'a'> & {
+  href: string
+}
 
 export default function MDXLink(props: MDXLinkProps) {
-  const isHeadingLink = props.href?.startsWith(HEADING_LINK_PREFIX)
-
   return (
-    <a
+    <NormalLink
       {...props}
-      target={!isHeadingLink ? '_blank' : undefined}
+      href={props.href}
     />
   )
 }

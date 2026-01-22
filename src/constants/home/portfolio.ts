@@ -29,7 +29,9 @@ export const portfolioProjectList: PortfolioProjectData[] = [
     id: 'random-seat',
     title: '무작위 자리 뽑기',
     description: `
-사용자 지정 크기의 자리 배치에서 무작위로 자리를 지정하는 웹 앱입니다.
+사용자 지정 크기의 자리 배치에서 무작위로 자리를 지정하는 웹 앱입니다. [CSS를 이용해 플랫 그림자를 구현한 후](/posts/css-long-flat-shadow/) 이를 버튼 디자인에 적용하였고,
+가로x세로라는 [2차원 배열 구조를 이용하여](/posts/javascript-replacing-items-in-multidimensional-array/) 자리 배치를 표현하였습니다.
+
 Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사용과, 자리를 뽑을 때 재생되는 소리, 자리를 뽑고 나서 표시되는 콘페티 효과를 통해 더욱 재미있는 사용성을 챙길 수 있었습니다.
 `.trim(),
     techStacks: [

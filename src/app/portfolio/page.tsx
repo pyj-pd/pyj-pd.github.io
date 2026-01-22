@@ -14,6 +14,7 @@ import { techStackColors } from '@/constants/home/techstack'
 import { joinUrlPaths } from '@/utils/url'
 import { SITE_URL } from '@/constants/project'
 import { getWebSiteJSONLDScript } from '@/utils/seo'
+import { parsePortfolioMDX } from '@/utils/portfolio/mdx'
 
 const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['portfolio'].path)
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   title: getPageTitleName('포트폴리오'),
 }
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
   const { JSONLDScript } = getWebSiteJSONLDScript(canonicalUrl)
 
   return (
@@ -30,7 +31,7 @@ export default function PortfolioPage() {
       {JSONLDScript}
       <PageTitle>포트폴리오</PageTitle>
       <ul className={styles['project-container']}>
-        {portfolioProjectList.map((projectItem, index) => (
+        {portfolioProjectList.map(async (projectItem, index) => (
           <li
             key={index}
             className={styles['project-item']}
@@ -68,7 +69,7 @@ export default function PortfolioPage() {
             </div>
             <div className={styles['info-container']}>
               <h2>{projectItem.title}</h2>
-              <p>{projectItem.description}</p>
+              <div>{await parsePortfolioMDX(projectItem.description)}</div>
               <ul className={styles['techstack-container']}>
                 {projectItem.techStacks.map((techStack, index) => (
                   <li

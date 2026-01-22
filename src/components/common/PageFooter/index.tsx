@@ -1,5 +1,6 @@
 import { externalRoutesList } from '@/constants/routes'
 import styles from './styles.module.scss'
+import NormalLink from '../NormalLink'
 
 const externalRouteIds = Object.keys(
   externalRoutesList,
@@ -17,13 +18,13 @@ export default function PageFooter() {
           const routeData = externalRoutesList[routeId]
 
           return (
-            <a
+            <NormalLink
               key={routeId}
               href={routeData.path}
               target="_blank"
             >
               {routeData.name}
-            </a>
+            </NormalLink>
           )
         })}
       </div>

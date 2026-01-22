@@ -3,13 +3,13 @@ title: '다차원 Array의 아이템 교체하기'
 description: '여러 개의 Array가 네스팅되어 있는 Array의 아이템을 안전하게 교체하는 방법에 대해 알아봅니다. Array.fill 메소드를 통해 채운 Array를 수정할 때 발생하는 문제점에 대해 알아보고, 더 나은 방법을 탐색해봅니다.'
 
 date: '2024-05-19'
-lastUpdateDate: '2024-05-20'
+lastUpdateDate: '2026-01-22'
 categories: ['programming']
 ---
 
 ## 문제 발생
 
-다음과 같은 형태의 코드를 사용해 2차원 배열이 Array를 생성하고자 하였다.
+[무작위 자리 뽑기 프로젝트](/portfolio/#random-seat)를 제작하는 중 자리 배치를 위해 2차원 배열을 사용해야 하는 상황이 있었고, 따라서 다음과 같은 형태의 코드를 사용해 2차원 Array를 생성하고자 하였다.
 
 ```js
 const rowSize = 5,

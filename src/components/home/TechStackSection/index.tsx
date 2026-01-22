@@ -4,6 +4,7 @@ import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
 import { techStackList } from '@/constants/home/techstack'
 import type { CSSProperties } from 'react'
+import NormalLink from '@/components/common/NormalLink'
 
 export default function TechStackSection() {
   return (
@@ -24,12 +25,12 @@ export default function TechStackSection() {
                     } as CSSProperties
                   }
                 >
-                  <a
+                  <NormalLink
                     href={techStack.url}
                     target="_blank"
                   >
                     {techStack.name}
-                  </a>
+                  </NormalLink>
                 </li>
               ))}
             </ul>

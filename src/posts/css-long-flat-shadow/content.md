@@ -3,13 +3,15 @@ title: 'CSS로 플랫 그림자 그리기'
 description: 'clip-path를 이용해 플랫 디자인의 상징과도 같은 플랫 그림자를 CSS를 이용해 버튼에 입히는 방법에 대해 알아봅니다.'
 
 date: '2024-05-14'
-lastUpdateDate: '2024-12-25'
+lastUpdateDate: '2026-01-22'
 categories: ['programming']
 ---
 
 <Image src="longshadow-content-box-2.png" width="715" height="345" alt="최종 그림자의 모습" />
 
-이 글에서는 위와 같은 그림자를 만들어 볼 예정이다.
+이 글에서는 위와 같은 그림자를 만들어 볼 예정이다. 플랫 디자인에서 유행했던, 일명 'Flat Shadow' 기법이다.
+
+이 디자인은 필자의 포트폴리오 프로젝트 중 [무작위 자리 뽑기 프로젝트](/portfolio/#random-seat)에서 사용되었던 디자인이기도 하다. 특유의 깔끔한 인상을 주면서도 입체감을 살릴 수 있어 유용하게 쓰였다.
 
 ## 기존의 그림자
 

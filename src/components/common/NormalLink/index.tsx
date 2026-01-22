@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import type { ComponentPropsWithoutRef } from 'react'
 
-type MyLinkProps = ComponentPropsWithoutRef<typeof Link>
+type NormalLinkProps = ComponentPropsWithoutRef<typeof Link>
 
-export default function MyLink(props: MyLinkProps) {
+export default function NormalLink(props: NormalLinkProps) {
   return (
     <Link
-      {...props}
       prefetch={false}
+      {...props}
     />
   )
 }

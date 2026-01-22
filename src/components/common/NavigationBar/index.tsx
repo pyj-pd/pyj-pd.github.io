@@ -1,6 +1,6 @@
 import { internalRoutesList } from '@/constants/routes'
 import styles from './styles.module.scss'
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 import { Fragment } from 'react'
 
 const routeIds = Object.keys(
@@ -18,7 +18,7 @@ export default function NavigationBar() {
             return (
               <Fragment key={index}>
                 <li className={styles['route-button']}>
-                  <MyLink href={route.path}>{route.name}</MyLink>
+                  <NormalLink href={route.path}>{route.name}</NormalLink>
                   {index < routeIds.length - 1 && (
                     <span className={styles.separator} />
                   )}

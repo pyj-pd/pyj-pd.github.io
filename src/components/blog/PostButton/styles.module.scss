@@ -13,7 +13,7 @@
 
   text-decoration: none;
 
-  @include mixin.pointer-feedback-animation;
+  @include mixin.pointer-feedback-animation($active-scale: 0.98);
   @include mixin.button-styles;
 
   width: 100%;
@@ -81,12 +81,29 @@
   }
 }
 
+.date-container,
 .category-container {
   display: flex;
   gap: value.$small-margin;
 
+  align-items: center;
+}
+
+.category-container {
   .category {
-    display: inline-flex;
+    display: flex;
     gap: value.$small-margin;
+    align-items: center;
+
+    padding: value.$small-margin value.$normal-margin;
+
+    color: palette.$dark-gray;
+
+    font-size: value.$small-font-size;
+
+    height: 30px;
+
+    border-radius: 100vmax;
+    background-color: rgba(palette.$gray, 0.15);
   }
 }

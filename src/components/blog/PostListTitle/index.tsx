@@ -1,7 +1,8 @@
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { internalRoutesList } from '@/constants/routes'
+import { HiArrowRight } from 'react-icons/hi'
 
 type PostListTitleProps = {
   type: 'h1' | 'h2'
@@ -27,7 +28,13 @@ export default function PostListTitle({
     >
       {type === 'h1' ? <h1>{children}</h1> : <h2>{children}</h2>}
       {showViewAllButton && (
-        <MyLink href={postListPageUrl}>전체 글 보기</MyLink>
+        <NormalLink
+          href={postListPageUrl}
+          className={styles['more-post-link']}
+        >
+          전체 글 보기
+          <HiArrowRight className={styles.arrow} />
+        </NormalLink>
       )}
     </div>
   )

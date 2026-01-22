@@ -2,7 +2,6 @@ import { getPostList } from '@/utils/blog/post'
 import styles from './styles.module.scss'
 import PostList from '@/components/blog/PostList'
 import PostListTitle from '@/components/blog/PostListTitle'
-// import MyLink from '@/components/common/MyLink'
 // import { internalRoutesList } from '@/constants/routes'
 
 const POSTS_NUMBER = 3

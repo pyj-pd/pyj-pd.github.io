@@ -32,7 +32,14 @@ export const portfolioProjectList: PortfolioProjectData[] = [
 사용자 지정 크기의 자리 배치에서 무작위로 자리를 지정하는 웹 앱입니다.
 Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사용과, 자리를 뽑을 때 재생되는 소리, 자리를 뽑고 나서 표시되는 콘페티 효과를 통해 더욱 재미있는 사용성을 챙길 수 있었습니다.
 `.trim(),
-    techStacks: ['Vue', 'Vite', 'Pinia', 'TypeScript', 'Sass(SCSS)'],
+    techStacks: [
+      'Vue',
+      'Vite',
+      'Pinia',
+      'TypeScript',
+      'Sass(SCSS)',
+      'GitHub Actions',
+    ],
 
     githubUrl: 'https://github.com/pyj-pd/random-seat',
     projectUrl: 'https://pyj-pd.github.io/random-seat/',
@@ -83,7 +90,14 @@ SVG 이미지에 동적으로 글자를 변경한 후 PNG 이미지로 변환하
 NodeJS 환경에서 미리 Raw 데이터를 처리한 후, 이를 프론트엔드 파일과 연계시키는 방법으로 구현하였습니다.
 Vite-SSG를 이용해 정적 사이트로 내보내 배포하는 방식을 택했습니다.
 `.trim(),
-    techStacks: ['Vue', 'Vite', 'TypeScript', 'Sass(SCSS)', 'Pinia'],
+    techStacks: [
+      'Vue',
+      'Vite',
+      'TypeScript',
+      'Sass(SCSS)',
+      'Pinia',
+      'GitHub Actions',
+    ],
 
     githubUrl: 'https://github.com/pyj-pd/minecraft-crafting-recipe',
     projectUrl: 'https://pyj-pd.github.io/minecraft-crafting-recipe/',

@@ -1,6 +1,6 @@
 import GitHubIcon from '@/components/icons/GitHubIcon'
 import styles from './styles.module.scss'
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 import { GITHUB_PROFILE_LINK } from '@/constants/project'
 import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
 import Image from 'next/image'
@@ -24,13 +24,13 @@ export default function LandingSection() {
           <p>{HOMEPAGE_DESCRIPTION}</p>
         </div>
         <div className={styles['link-container']}>
-          <MyLink
+          <NormalLink
             href={GITHUB_PROFILE_LINK}
             aria-label="GitHub"
             target="_blank"
           >
             <GitHubIcon />
-          </MyLink>
+          </NormalLink>
         </div>
       </div>
     </section>

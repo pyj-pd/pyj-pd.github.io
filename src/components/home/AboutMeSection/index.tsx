@@ -1,6 +1,6 @@
 import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 
 export default function AboutMeSection() {
   return (
@@ -17,12 +17,12 @@ export default function AboutMeSection() {
           이 블로그에서는 제가 컴퓨터를 사용해오며 발견한 것, 알게 된 것,
           공유하고 싶은 것들을 글을 통해 기록할 예정입니다. 이 블로그는
           오픈소스로,{' '}
-          <MyLink
+          <NormalLink
             href="https://github.com/pyj-pd/pyj-pd.github.io"
             target="_blank"
           >
             GitHub 레포지토리
-          </MyLink>
+          </NormalLink>
           에서 코드를 공유하고 있으므로 관심있으신 분들께서는 둘러보시는 것도
           추천드립니다.
         </p>

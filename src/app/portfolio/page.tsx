@@ -7,7 +7,7 @@ import {
 import type { Metadata } from 'next'
 import styles from './page.module.scss'
 import { portfolioProjectList } from '@/constants/home/portfolio'
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import { techStackColors } from '@/constants/home/techstack'
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
             id={projectItem.id}
           >
             <div className={styles['image-container']}>
-              <MyLink
+              <NormalLink
                 href={projectItem.image.src}
                 className={styles['project-image-link']}
               >
@@ -46,23 +46,23 @@ export default function PortfolioPage() {
                   alt={`${projectItem.title} 프로젝트 스크린샷`}
                   height={200}
                 />
-              </MyLink>
+              </NormalLink>
               <div className={styles['link-container']}>
                 {projectItem.githubUrl && (
-                  <MyLink
+                  <NormalLink
                     href={projectItem.githubUrl}
                     target="_blank"
                   >
                     GitHub 레포지토리
-                  </MyLink>
+                  </NormalLink>
                 )}
                 {projectItem.projectUrl && (
-                  <MyLink
+                  <NormalLink
                     href={projectItem.projectUrl}
                     target="_blank"
                   >
                     프로젝트 사이트
-                  </MyLink>
+                  </NormalLink>
                 )}
               </div>
             </div>

@@ -2,8 +2,9 @@ import type { PostData } from '@/types/post'
 import styles from './styles.module.scss'
 import { categoryList } from '@/constants/blog/categories'
 import { getPostURL } from '@/utils/blog/post'
-import MyLink from '@/components/common/MyLink'
+import NormalLink from '@/components/common/NormalLink'
 import { getPostDateString } from '@/utils/blog/post-info'
+import { HiOutlineCalendar, HiOutlineTag } from 'react-icons/hi'
 
 type PostButtonProps = { postData: PostData }
 
@@ -13,7 +14,7 @@ export default function PostButton({ postData }: PostButtonProps) {
 
   return (
     <li className={styles['list-container']}>
-      <MyLink
+      <NormalLink
         href={getPostURL(postData.slug)}
         className={styles['link-wrapper']}
       >
@@ -29,24 +30,28 @@ export default function PostButton({ postData }: PostButtonProps) {
           <div className={styles['info-container']}>
             <div className={styles['date-container']}>
               {postLatestDate && (
-                <time dateTime={postLatestDate}>
-                  {getPostDateString(postLatestDate)}
-                </time>
+                <>
+                  <HiOutlineCalendar />
+                  <time dateTime={postLatestDate}>
+                    {getPostDateString(postLatestDate)}
+                  </time>
+                </>
               )}
             </div>
             <div className={styles['category-container']}>
               {postData.categories.map((categoryId, index) => (
-                <span
+                <div
                   className={styles.category}
                   key={index}
                 >
-                  #{categoryList[categoryId].name}
-                </span>
+                  <HiOutlineTag />
+                  <span>{categoryList[categoryId].name}</span>
+                </div>
               ))}
             </div>
           </div>
         </article>
-      </MyLink>
+      </NormalLink>
     </li>
   )
 }

@@ -31,3 +31,24 @@
     font-size: inherit;
   }
 }
+
+.more-post-link {
+  display: flex;
+  gap: value.$small-margin;
+  align-items: center;
+
+  text-decoration: none;
+
+  border-bottom: solid value.$border-width currentColor;
+
+  .arrow {
+    transition: transform 0.3s value.$ease-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .arrow {
+      transform: translateX(3px);
+    }
+  }
+}

@@ -8,6 +8,10 @@ export const BLOG_POST_TYPE = 'article',
   BLOG_DESCRIPTION =
     'JavaScript/TypeScript를 다루며, 컴퓨터를 다루며 배우게 된 점, 느끼게 된 점을 나눕니다.'
 
+// Blog post list page
+export const BLOG_POST_LIST_PAGE_DESCRIPTION =
+  '프론트엔드 개발, 컴퓨터, 프로그래밍 등 다양한 주제의 글들을 적습니다. 이곳에서 전체 글 목록을 확인해보세요.'
+
 // Home
 export const HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
   HOMEPAGE_DESCRIPTION =

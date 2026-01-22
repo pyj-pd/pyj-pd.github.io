@@ -2,11 +2,11 @@ import type { PostData } from '@/types/post'
 import PostButton from '../PostButton'
 import styles from './styles.module.scss'
 
-type MorePostsProps = {
+type PostListProps = {
   postDataList: PostData[]
 }
 
-export default function PostList({ postDataList }: MorePostsProps) {
+export default function PostList({ postDataList }: PostListProps) {
   return (
     <ol className={styles.container}>
       {postDataList.map((postData, index) => (

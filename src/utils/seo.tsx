@@ -22,6 +22,7 @@ export const generateSitemapXML = async (): Promise<string> => {
   ]
 
   // Internal links
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const [id, routeData] of Object.entries(internalRoutesList)) {
     if ('includeInSitemap' in routeData && !routeData.includeInSitemap) continue // Don't include in sitemap
 

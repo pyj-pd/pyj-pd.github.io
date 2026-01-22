@@ -1,14 +1,16 @@
 import PostTitle from '@/components/blog/PostTitle'
 import styles from './page.module.scss'
 import type { Metadata } from 'next'
-import { getPageTitleName } from '@/utils/blog/page'
 import {
   getPostData,
   retrieveNearbyPostSlugs,
   getPostSlugList,
   getPostURL,
 } from '@/utils/blog/post'
-import { getCanonicalMetadataFromPath } from '@/utils/metadata'
+import {
+  getCanonicalMetadataFromPath,
+  getPageTitleName,
+} from '@/utils/metadata'
 import { categoryList } from '@/constants/blog/categories'
 import {
   SITE_NAME,

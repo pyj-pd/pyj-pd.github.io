@@ -1,7 +1,9 @@
 import PageTitle from '@/components/common/PageTitle'
 import { navbarRouteList } from '@/constants/routes'
-import { getPageTitleName } from '@/utils/blog/page'
-import { getCanonicalMetadataFromPath } from '@/utils/metadata'
+import {
+  getCanonicalMetadataFromPath,
+  getPageTitleName,
+} from '@/utils/metadata'
 import type { Metadata } from 'next'
 import styles from './page.module.scss'
 import { portfolioProjectList } from '@/constants/home/portfolio'

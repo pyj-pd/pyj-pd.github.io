@@ -3,9 +3,11 @@ import PostListTitle from '@/components/blog/PostListTitle'
 import { getPostList } from '@/utils/blog/post'
 import styles from './page.module.scss'
 import { navbarRouteList } from '@/constants/routes'
-import { getCanonicalMetadataFromPath } from '@/utils/metadata'
+import {
+  getCanonicalMetadataFromPath,
+  getPageTitleName,
+} from '@/utils/metadata'
 import type { Metadata } from 'next'
-import { getPageTitleName } from '@/utils/blog/page'
 import { SITE_URL } from '@/constants/project'
 import { getWebSiteJSONLDScript } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'

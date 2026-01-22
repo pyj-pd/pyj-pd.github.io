@@ -20,6 +20,7 @@ export default function ScrollToTopButton({
   const [isBorderVisible, setIsBorderVisible] = useState<boolean>(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsBorderVisible(true)
   }, [])
 

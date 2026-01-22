@@ -7,11 +7,10 @@ import {
   HOMEPAGE_DESCRIPTION,
   HOMEPAGE_TITLE_DESCRIPTION,
   sharedMetadata,
-  SITE_NAME,
 } from '@/constants/metadata'
-import { getPageTitleName } from '@/utils/blog/page'
 import PageFooter from '@/components/common/PageFooter'
 import styles from './layout.module.scss'
+import { getPageTitleName } from '@/utils/metadata'
 
 export const metadata: Metadata = {
   ...sharedMetadata,

@@ -113,7 +113,7 @@ export const getPostURL = (postSlug: string) =>
 /**
  * Retrieves a list of post slugs surrounding a specified post, excluding the current post.
  * @param targetSlug The slug of the reference post.
- * @param range The number of slugs to retrieve around the current post. This defines the total number of posts returned (excluding the current post).
+ * @param range The number of slugs to retrieve around the current post. This defines the total number of posts returned (excluding the current post). This number should be even.
  * @returns An array of post data objects representing the slugs of the surrounding posts.
  */
 
@@ -121,6 +121,8 @@ export const retrieveNearbyPostSlugs = async (
   targetSlug: string,
   range: number = 4,
 ): Promise<PostData[]> => {
+  console.assert(range % 2 === 0, 'Range should be an even number.')
+
   const postList = await getPostList()
   const targetPostIndex = postList.findIndex((post) => post.slug === targetSlug)
 

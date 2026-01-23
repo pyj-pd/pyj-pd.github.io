@@ -2,6 +2,12 @@
 @use '@/styles/value' as value;
 
 @mixin mdx-elements {
+  > * {
+    max-width: 100%;
+
+    padding: 0 value.$content-padding;
+  }
+
   // Headings
   > h1,
   > h2,
@@ -18,7 +24,7 @@
 
   ul,
   ol {
-    padding-left: value.$large-margin;
+    padding-left: value.$list-padding;
   }
 
   // Element margins
@@ -41,6 +47,8 @@
 
   // Syntax highlighting
   code {
+    width: fit-content;
+
     font-size: value.$content-small-font-size;
     letter-spacing: normal;
   }

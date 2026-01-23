@@ -8,6 +8,8 @@ import {
 type PostTitleProps = { postMetadata: PostMetadata }
 
 export default function PostTitle({ postMetadata }: PostTitleProps) {
+  const latestDate = postMetadata.lastUpdateDate || postMetadata.date
+
   return (
     <div className={styles.container}>
       <div className={styles['title-container']}>
@@ -15,26 +17,14 @@ export default function PostTitle({ postMetadata }: PostTitleProps) {
       </div>
       <div className={styles['info-container']}>
         <ul>
-          {postMetadata.date && (
+          {latestDate && (
             <li>
-              <time dateTime={postMetadata.date}>
-                {getPostDateString(postMetadata.date)}
-              </time>
-              에 업로드
-            </li>
-          )}
-          {postMetadata.lastUpdateDate && (
-            <li>
-              <time dateTime={postMetadata.lastUpdateDate}>
-                {getPostDateString(postMetadata.lastUpdateDate)}
-              </time>
-              에 마지막 수정
+              <time dateTime={latestDate}>{getPostDateString(latestDate)}</time>
             </li>
           )}
           {postMetadata.readingTime && (
             <li>
-              읽는 데 약 {getPostReadingTimeString(postMetadata.readingTime)}{' '}
-              정도 걸려요
+              읽는 데 {getPostReadingTimeString(postMetadata.readingTime)} 소요
             </li>
           )}
         </ul>

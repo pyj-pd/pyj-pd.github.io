@@ -3,8 +3,6 @@
 @use '@/styles/value' as value;
 
 .container {
-  position: relative;
-
   display: flex;
   gap: value.$normal-margin;
   flex-direction: column;
@@ -30,6 +28,10 @@
   justify-content: flex-start;
 
   width: 100%;
+
+  h1 {
+    font-size: value.$post-title-font-size;
+  }
 }
 
 .info-container {

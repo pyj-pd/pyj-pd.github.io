@@ -43,6 +43,6 @@ export const sharedOpenGraph: Metadata['openGraph'] = {
     type: 'website',
   },
   sharedMetadata: Metadata = {
-    robots: 'all',
+    robots: 'index, follow',
     openGraph: sharedOpenGraph,
   }

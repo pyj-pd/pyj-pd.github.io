@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 const robotsData: { [key: string]: string }[] = [
   {
     'User-agent': '*',
-    Disallow: '',
+    Allow: '/',
   },
   {
     Sitemap: SITEMAP_URL,
@@ -18,7 +18,7 @@ export async function GET() {
   const robotsText = robotsData
     .map((section) =>
       Object.keys(section)
-        .map((key) => `${key}: ${section[key]}`) // Pair keys and data
+        .map((key) => `${key}: ${section[key]}`.trim()) // Pair keys and data
         .join(LINE_BREAK),
     )
     .join(LINE_BREAK.repeat(2)) // Extra line break between sections

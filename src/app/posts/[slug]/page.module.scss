@@ -21,7 +21,8 @@
 .content-container {
   line-height: value.$content-line-spacing;
 
-  padding: value.$large-margin 0;
+  // padding: value.$large-margin 0;
+  padding: value.$large-margin value.$content-padding; // @todo change this later
 
   font-size: value.$content-font-size;
 

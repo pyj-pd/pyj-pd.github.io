@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
-import { SITE_URL } from './project'
 import type { TechArticle } from 'schema-dts'
+
+// URLs
+export const GITHUB_PROFILE_LINK = 'https://github.com/pyj-pd',
+  BLOG_REPOSITORY_LINK = 'https://github.com/pyj-pd/pyj-pd.github.io',
+  SITE_URL = 'https://pyj-pd.github.io/',
+  SITEMAP_URL = `${SITE_URL}sitemap.xml`
 
 // Blog
 export const BLOG_POST_TYPE = 'article',

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { GITHUB_PROFILE_LINK } from './project'
+import { GITHUB_PROFILE_LINK } from './info'
 
 // Navbar
 export type NavbarRouteData = {

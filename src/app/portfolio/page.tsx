@@ -12,9 +12,9 @@ import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import { techStackColors } from '@/constants/home/techstack'
 import { joinUrlPaths } from '@/utils/url'
-import { SITE_URL } from '@/constants/project'
 import { getWebSiteJSONLDScript } from '@/utils/seo'
 import { parsePortfolioMDX } from '@/utils/portfolio/mdx'
+import { SITE_URL } from '@/constants/info'
 
 const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['portfolio'].path)
 

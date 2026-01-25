@@ -8,7 +8,7 @@ import TechStackSection from '@/components/home/TechStackSection'
 import AboutMeSection from '@/components/home/AboutMeSection'
 import { getWebSiteJSONLDScript } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'
-import { SITE_URL } from '@/constants/project'
+import { SITE_URL } from '@/constants/info'
 
 const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['home'].path)
 

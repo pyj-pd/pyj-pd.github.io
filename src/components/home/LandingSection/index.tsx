@@ -1,8 +1,7 @@
 import GitHubIcon from '@/components/icons/GitHubIcon'
 import styles from './styles.module.scss'
 import NormalLink from '@/components/common/NormalLink'
-import { GITHUB_PROFILE_LINK } from '@/constants/project'
-import { HOMEPAGE_DESCRIPTION } from '@/constants/metadata'
+import { GITHUB_PROFILE_LINK, HOMEPAGE_DESCRIPTION } from '@/constants/info'
 import Image from 'next/image'
 import waveImage from '@public/assets/home/wave.webp'
 

@@ -7,7 +7,7 @@ import {
   HOMEPAGE_DESCRIPTION,
   HOMEPAGE_TITLE_DESCRIPTION,
   sharedMetadata,
-} from '@/constants/metadata'
+} from '@/constants/info'
 import PageFooter from '@/components/common/PageFooter'
 import styles from './layout.module.scss'
 import { getPageTitleName } from '@/utils/metadata'

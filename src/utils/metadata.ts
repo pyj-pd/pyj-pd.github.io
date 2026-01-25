@@ -2,7 +2,7 @@ import {
   sharedOpenGraph,
   SITE_NAME,
   TITLE_SEPARATOR_DASH,
-} from '@/constants/metadata'
+} from '@/constants/info'
 import type { Metadata } from 'next'
 import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types'
 

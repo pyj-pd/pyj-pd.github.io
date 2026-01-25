@@ -1,7 +1,7 @@
 import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
 import NormalLink from '@/components/common/NormalLink'
-import { BLOG_REPOSITORY_LINK } from '@/constants/project'
+import { BLOG_REPOSITORY_LINK } from '@/constants/info'
 
 export default function AboutMeSection() {
   return (

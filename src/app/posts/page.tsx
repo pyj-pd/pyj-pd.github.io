@@ -7,10 +7,9 @@ import {
   getPageTitleName,
 } from '@/utils/metadata'
 import type { Metadata } from 'next'
-import { SITE_URL } from '@/constants/project'
 import { getWebSiteJSONLDScript } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'
-import { BLOG_POST_LIST_PAGE_DESCRIPTION } from '@/constants/metadata'
+import { BLOG_POST_LIST_PAGE_DESCRIPTION, SITE_URL } from '@/constants/info'
 import PostList from '@/components/blog/PostList'
 
 const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['posts'].path)

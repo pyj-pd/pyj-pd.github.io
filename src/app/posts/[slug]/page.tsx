@@ -16,13 +16,13 @@ import {
   SITE_NAME,
   BLOG_POST_TYPE,
   sharedOpenGraph,
-} from '@/constants/metadata'
+  SITE_URL,
+} from '@/constants/info'
 import PostList from '@/components/blog/PostList'
 import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
 import { generatePostJSONLD } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'
-import { SITE_URL } from '@/constants/project'
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>

@@ -1,6 +1,7 @@
 import PageTitle from '@/components/common/PageTitle'
 import styles from './styles.module.scss'
 import NormalLink from '@/components/common/NormalLink'
+import { BLOG_REPOSITORY_LINK } from '@/constants/project'
 
 export default function AboutMeSection() {
   return (
@@ -18,7 +19,7 @@ export default function AboutMeSection() {
           공유하고 싶은 것들을 글을 통해 기록할 예정입니다. 이 블로그는
           오픈소스로,{' '}
           <NormalLink
-            href="https://github.com/pyj-pd/pyj-pd.github.io"
+            href={BLOG_REPOSITORY_LINK}
             target="_blank"
           >
             GitHub 레포지토리

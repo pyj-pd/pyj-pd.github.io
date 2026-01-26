@@ -44,7 +44,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     ],
 
     githubUrl: 'https://github.com/pyj-pd/random-seat',
-    projectUrl: 'https://pyj-pd.github.io/random-seat/',
+    projectUrl: 'https://pyj-pd.dev/random-seat/',
     includeInSitemap: true,
   },
   {
@@ -60,7 +60,7 @@ Step-by-step 식으로 진행되는 자리 배치 설정을 통해 손쉬운 사
     techStacks: ['GitHub Actions'],
 
     githubUrl: 'https://github.com/pyj-pd/lotto-generator',
-    projectUrl: 'https://pyj-pd.github.io/lotto-generator/',
+    projectUrl: 'https://pyj-pd.dev/lotto-generator/',
     includeInSitemap: true,
   },
   {
@@ -102,7 +102,7 @@ Vite-SSG를 이용해 정적 사이트로 내보내 배포하는 방식을 택�
     ],
 
     githubUrl: 'https://github.com/pyj-pd/minecraft-crafting-recipe',
-    projectUrl: 'https://pyj-pd.github.io/minecraft-crafting-recipe/',
+    projectUrl: 'https://pyj-pd.dev/minecraft-crafting-recipe/',
     includeInSitemap: true,
   },
 ]

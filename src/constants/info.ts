@@ -4,7 +4,7 @@ import type { TechArticle } from 'schema-dts'
 // URLs
 export const GITHUB_PROFILE_LINK = 'https://github.com/pyj-pd',
   BLOG_REPOSITORY_LINK = 'https://github.com/pyj-pd/pyj-pd.github.io',
-  SITE_URL = 'https://pyj-pd.github.io/',
+  SITE_URL = 'https://pyj-pd.dev/',
   SITEMAP_URL = `${SITE_URL}sitemap.xml`
 
 // Blog

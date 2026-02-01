@@ -18,6 +18,13 @@
   @include mixin.fixed-width-container-styles;
 }
 
+.article-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
 .content-container {
   line-height: value.$content-line-spacing;
 

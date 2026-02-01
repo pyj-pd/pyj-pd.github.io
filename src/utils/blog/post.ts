@@ -6,7 +6,7 @@ import memoize from 'memoizee'
 import getReadingTime from 'reading-time'
 import { addTrailingSlash } from '../url'
 
-const POST_FILE_DIRECTORY = path.join(process.cwd(), 'src/posts'),
+const POST_FILE_DIRECTORY = path.join(process.cwd(), './posts'),
   POST_CONTENT_FILENAME = 'content.md'
 
 const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)

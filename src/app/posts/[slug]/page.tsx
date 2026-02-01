@@ -19,7 +19,8 @@ import {
   SITE_URL,
 } from '@/constants/info'
 import PostList from '@/components/blog/PostList'
-import PostContentWrapper from '@/components/blog/PostContentWrapper'
+// @todo
+// import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
 import { generatePostJSONLD } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'
@@ -113,13 +114,15 @@ export default async function BlogPostPage({
         }}
       />
       <main className={styles.container}>
-        <header>
-          <PostTitle postMetadata={postMetadata} />
-        </header>
-        <PostContentWrapper>
-          <section className={styles['content-container']}>{content}</section>
-        </PostContentWrapper>
-        <section className={styles['more-posts-container']}>
+        <article className={styles['article-container']}>
+          <header>
+            <PostTitle postMetadata={postMetadata} />
+          </header>
+          {/* <PostContentWrapper> */}
+          <div className={styles['content-container']}>{content}</div>
+          {/* </PostContentWrapper> */}
+        </article>
+        <aside className={styles['more-posts-container']}>
           <PostListTitle
             type="h2"
             showViewAllButton
@@ -127,7 +130,7 @@ export default async function BlogPostPage({
             다른 글도 읽어보세요
           </PostListTitle>
           <PostList postDataList={nearbyPosts} />
-        </section>
+        </aside>
       </main>
     </div>
   )

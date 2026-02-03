@@ -13,11 +13,24 @@ const POST_SLUG_REGEX = new RegExp(/^[a-z|A-Z|\-|0-9]*$/)
 
 /**
  * Reads directory that contains posts and gets post slugs.
+ * Used only internally. Use `getPostList` for getting post list.
  * @returns Array that contains post slugs
  */
-export const getPostSlugList = memoize(
+const _getPostSlugList = memoize(
   async (): Promise<string[]> => {
-    const postSlugList = await readdir(POST_FILE_DIRECTORY)
+    const filesList = await readdir(POST_FILE_DIRECTORY, {
+      withFileTypes: true,
+    })
+    const postSlugList: string[] = []
+
+    for (const fileInfo of filesList) {
+      if (!fileInfo.isDirectory()) continue // Not a directory
+
+      const dirName = fileInfo.name
+      if (!POST_SLUG_REGEX.test(dirName)) continue // Invalid slug format
+
+      postSlugList.push(dirName)
+    }
 
     return postSlugList
   },
@@ -37,7 +50,7 @@ export const getPostList = memoize(
   async (): Promise<PostData[]> => {
     const postDataList: PostData[] = []
 
-    const postSlugList = await getPostSlugList()
+    const postSlugList = await _getPostSlugList()
     for (const postSlug of postSlugList) {
       const postPath = path.join(
         POST_FILE_DIRECTORY,

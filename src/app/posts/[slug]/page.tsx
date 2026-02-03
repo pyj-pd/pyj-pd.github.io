@@ -4,8 +4,8 @@ import type { Metadata } from 'next'
 import {
   getPostData,
   retrieveNearbyPostSlugs,
-  getPostSlugList,
   getPostURL,
+  getPostList,
 } from '@/utils/blog/post'
 import {
   getCanonicalMetadataFromPath,
@@ -84,10 +84,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const postSlugList = await getPostSlugList()
+  const postList = await getPostList()
 
-  return postSlugList.map((postSlug) => ({
-    slug: postSlug,
+  return postList.map((postData) => ({
+    slug: postData.slug,
   }))
 }
 

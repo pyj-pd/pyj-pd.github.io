@@ -34,6 +34,7 @@ export const generateSitemapXML = async (): Promise<string> => {
     if (!routeData.includeInSitemap) continue // Don't include in sitemap
 
     const url = routeData.projectUrl
+    if (!url?.startsWith(SITE_URL)) continue // Only include links within the same domain
     xmlLines.push(`<url><loc>${url}</loc></url>`)
   }
 

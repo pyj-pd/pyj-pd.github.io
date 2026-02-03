@@ -86,7 +86,7 @@ SVG 이미지에 동적으로 글자를 변경한 후 PNG 이미지로 변환하
     image: minecraftCraftingRecipeScreenshot,
 
     id: 'minecraft-crafting-recipe',
-    title: '마인크래프트 조합법 검색기(Minecraft Crafting Recipe)',
+    title: 'Minecraft Crafting Recipe',
     description: `
 게임 마인크래프트(Minecraft) 아이템들의 조합법을 손쉽게 검색할 수 있는 웹 앱입니다.
 NodeJS 환경에서 미리 Raw 데이터를 처리한 후, 이를 프론트엔드 파일과 연계시키는 방법으로 구현하였습니다.

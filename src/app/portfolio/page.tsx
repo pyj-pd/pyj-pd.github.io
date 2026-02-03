@@ -1,5 +1,5 @@
 import PageTitle from '@/components/common/PageTitle'
-import { navbarRouteList } from '@/constants/routes'
+import { internalRoutesList } from '@/constants/routes'
 import {
   getCanonicalMetadataFromPath,
   getPageTitleName,
@@ -16,7 +16,10 @@ import { getWebSiteJSONLDScript } from '@/utils/seo'
 import { parsePortfolioMDX } from '@/utils/portfolio/mdx'
 import { SITE_URL } from '@/constants/info'
 
-const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['portfolio'].path)
+const canonicalUrl = joinUrlPaths(
+  SITE_URL,
+  internalRoutesList['portfolio'].path,
+)
 
 export const metadata: Metadata = {
   ...getCanonicalMetadataFromPath(canonicalUrl),

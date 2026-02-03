@@ -26,6 +26,8 @@ export const HOMEPAGE_TITLE_DESCRIPTION = 'Frontend Developer',
 export const SITE_NAME = 'pyj-pd',
   TITLE_SEPARATOR_DASH = ' — '
 
+export const COPYRIGHT_DISCLAIMER = `© ${new Date().getFullYear()} ${SITE_NAME} | Licensed under AGPL-3.0.`
+
 // JSON-LD
 export const BLOG_AUTHORS: TechArticle['author'] = [
   {

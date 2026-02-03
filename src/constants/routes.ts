@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { GITHUB_PROFILE_LINK } from './info'
+import { BLOG_REPOSITORY_LINK, GITHUB_PROFILE_LINK } from './info'
+import { portfolioProjectList } from './home/portfolio'
 
 // Navbar
 export type NavbarRouteData = {
@@ -8,7 +9,6 @@ export type NavbarRouteData = {
     name: string
     /** @default true */
     includeInSitemap?: boolean
-    openInNewTab?: boolean
   } & Partial<
     Pick<MetadataRoute.Sitemap[number], 'changeFrequency' | 'priority'>
   >
@@ -43,13 +43,59 @@ export const externalRoutesList = {
   githubProfile: {
     path: GITHUB_PROFILE_LINK,
     name: 'GitHub',
-    openInNewTab: true,
+  },
+  blogGithubRepository: {
+    path: BLOG_REPOSITORY_LINK,
+    name: '블로그 레포지토리',
   },
 } as const satisfies NavbarRouteData
 
-export const navbarRouteList = {
-  ...internalRoutesList,
-  ...externalRoutesList,
-} as const satisfies NavbarRouteData
+// Footer links
+export type FooterLink = {
+  name: string
+  url: string
+}
 
-export type NavbarRouteId = keyof typeof navbarRouteList
+export type FooterLinkData = {
+  categoryName: string
+  links: FooterLink[]
+  openInExternal?: boolean
+}[]
+
+export const footerLinks: FooterLinkData = [
+  {
+    categoryName: '블로그',
+    links: Object.values(internalRoutesList).map<FooterLink>((routeData) => {
+      return {
+        name: routeData.name,
+        url: routeData.path,
+      }
+    }),
+    openInExternal: false,
+  },
+  {
+    categoryName: '외부 링크',
+    links: Object.values(externalRoutesList).map<FooterLink>((routeData) => {
+      return {
+        name: routeData.name,
+        url: routeData.path,
+      }
+    }),
+    openInExternal: true,
+  },
+  {
+    categoryName: '패밀리 사이트',
+    links: portfolioProjectList
+      .map<FooterLink | null>((projectData) => {
+        const url = projectData.projectUrl
+        if (!url) return null
+
+        return {
+          name: projectData.title,
+          url,
+        }
+      })
+      .filter((link) => link !== null),
+    openInExternal: true,
+  },
+]

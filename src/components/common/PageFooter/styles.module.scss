@@ -1,29 +1,87 @@
 @use '@/styles/value' as value;
 @use '@/styles/palette' as palette;
+@use '@/styles/mixin' as mixin;
+
+$footer-gap: value.$large-margin * 3;
 
 .container {
   display: flex;
   align-items: center;
-  gap: value.$normal-margin;
+  gap: $footer-gap;
   flex-direction: column;
 
   width: 100%;
 
-  padding: value.$content-padding * 2 0;
+  padding: $footer-gap 0;
 
   font-size: value.$small-font-size;
 
   color: palette.$gray;
-
-  > div {
-    display: flex;
-    justify-content: center;
-    gap: value.$small-margin;
-  }
 
   a {
     color: inherit;
 
     cursor: pointer;
   }
+}
+
+// End of page
+.end-of-page-container {
+  display: flex;
+  justify-content: center;
+  gap: value.$small-margin;
+}
+
+// Info container
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  gap: value.$large-margin;
+
+  @include mixin.fixed-width-container-styles;
+
+  ul {
+    list-style: none;
+  }
+
+  @media screen and (max-width: value.$small-screen-width) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// Site info
+.site-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: value.$normal-margin;
+
+  @media screen and (max-width: value.$small-screen-width) {
+    align-items: center;
+  }
+
+  color: palette.$black;
+
+  .site-name {
+    font-weight: bold;
+    font-size: value.$content-font-size;
+  }
+}
+
+// Links
+.link-category-container {
+  display: flex;
+  gap: value.$large-margin;
+
+  .link-category-name {
+    font-weight: bold;
+  }
+}
+
+.category-container,
+.category-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: value.$normal-margin;
 }

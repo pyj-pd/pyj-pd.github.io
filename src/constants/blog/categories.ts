@@ -12,8 +12,11 @@ export const categoryList = {
   },
   programming: {
     name: '프로그래밍',
-    description:
-      '저와 같은 삽질을 하지 마시길 바라며, 또는 한 번쯤 읽어볼 만한 주제들을 다룹니다.',
+    description: '프로그래밍 관련 팁, 기술, 경험 등을 공유합니다.',
+  },
+  seo: {
+    name: 'SEO',
+    description: '검색 엔진 최적화(SEO) 관련 팁과 정보를 공유합니다.',
   },
   server: {
     name: '서버',

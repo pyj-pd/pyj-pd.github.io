@@ -1,7 +1,7 @@
 import PostListTitle from '@/components/blog/PostListTitle'
 import { getPostList } from '@/utils/blog/post'
 import styles from './page.module.scss'
-import { navbarRouteList } from '@/constants/routes'
+import { internalRoutesList } from '@/constants/routes'
 import {
   getCanonicalMetadataFromPath,
   getPageTitleName,
@@ -12,7 +12,7 @@ import { joinUrlPaths } from '@/utils/url'
 import { BLOG_POST_LIST_PAGE_DESCRIPTION, SITE_URL } from '@/constants/info'
 import PostList from '@/components/blog/PostList'
 
-const canonicalUrl = joinUrlPaths(SITE_URL, navbarRouteList['posts'].path)
+const canonicalUrl = joinUrlPaths(SITE_URL, internalRoutesList['posts'].path)
 
 export const metadata: Metadata = {
   ...getCanonicalMetadataFromPath(canonicalUrl, {

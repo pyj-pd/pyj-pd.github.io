@@ -36,7 +36,6 @@ $footer-gap: value.$large-margin * 3;
 .info-container {
   display: flex;
   justify-content: space-around;
-  gap: value.$large-margin;
 
   @include mixin.fixed-width-container-styles;
 
@@ -45,6 +44,7 @@ $footer-gap: value.$large-margin * 3;
   }
 
   @media screen and (max-width: value.$small-screen-width) {
+    gap: $footer-gap;
     flex-direction: column;
     align-items: center;
   }

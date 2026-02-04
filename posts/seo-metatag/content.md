@@ -25,7 +25,7 @@ categories: ['seo', 'programming']
 
 Canonical 링크는 해당 페이지에서 주가 되는 URL을 말한다. 예를 들어, `https://example.com/`, `https://example.com/?id=1`, `https://www.example.com/`과 같이 같은 내용을 담는 페이지들 중에서 main이 되는 페이지의 URL을 뜻한다.
 
-검색 엔진들이 같은(또는 비슷한) 내용의 페이지들을 중복(duplicated)된 페이지로 처리할 수 있기 때문에, 이를 방지하기 위해서 canonical 링크를 설정해줄 필요가 있다.
+검색 엔진들이 같은(또는 비슷한) 내용의 페이지들을 중복(duplicate)된 페이지로 처리할 수 있기 때문에, 이를 방지하기 위해서 canonical 링크를 설정해줄 필요가 있다.
 
 **잘못된 canonical 링크를 설정할 경우 검색 엔진 알고리즘에 혼란을 줄 수 있고, 적절한 색인(indexing)이 이루어지지 않을 수 있기 때문에 이 값은 정확하게 설정해주어야 한다.**
 

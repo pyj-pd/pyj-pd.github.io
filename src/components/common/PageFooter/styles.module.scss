@@ -74,6 +74,15 @@ $footer-gap: value.$large-margin * 5;
   display: flex;
   gap: value.$large-margin;
 
+  @media screen and (max-width: value.$small-screen-width) {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    padding: 0 value.$normal-margin;
+  }
+
   .link-category-name {
     font-weight: bold;
   }

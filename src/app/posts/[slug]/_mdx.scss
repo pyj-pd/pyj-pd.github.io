@@ -1,6 +1,8 @@
 @use '@/styles/palette' as palette;
 @use '@/styles/value' as value;
 
+$code-border-radius: 0.8em;
+
 @mixin mdx-elements {
   > * {
     max-width: 100%;
@@ -19,6 +21,10 @@
     position: relative;
 
     margin: value.$large-margin 0;
+
+    code {
+      font-weight: inherit;
+    }
   }
 
   ul,
@@ -54,7 +60,7 @@
 
   :not(pre) > code,
   pre {
-    border-radius: value.$border-radius;
+    border-radius: $code-border-radius;
 
     background-color: palette.$code-background-color;
     color: palette.$code-text-color;
@@ -88,9 +94,10 @@
       display: inline-block;
 
       &:global(.highlighted) {
+        // Highlighted line background
         background-color: rgba(palette.$gray, 12%);
 
-        border-radius: value.$border-radius;
+        border-radius: $code-border-radius;
       }
     }
   }

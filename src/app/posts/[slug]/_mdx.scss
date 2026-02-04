@@ -16,8 +16,6 @@
   > h4,
   > h5,
   > h6 {
-    @extend %headings !optional;
-
     position: relative;
 
     margin: value.$large-margin 0;

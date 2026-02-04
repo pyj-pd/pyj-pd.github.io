@@ -19,8 +19,7 @@ import {
   SITE_URL,
 } from '@/constants/info'
 import PostList from '@/components/blog/PostList'
-// @todo
-// import PostContentWrapper from '@/components/blog/PostContentWrapper'
+import PostContentWrapper from '@/components/blog/PostContentWrapper'
 import PostListTitle from '@/components/blog/PostListTitle'
 import { generatePostJSONLD } from '@/utils/seo'
 import { joinUrlPaths } from '@/utils/url'
@@ -118,9 +117,9 @@ export default async function BlogPostPage({
           <header>
             <PostTitle postMetadata={postMetadata} />
           </header>
-          {/* <PostContentWrapper> */}
-          <div className={styles['content-container']}>{content}</div>
-          {/* </PostContentWrapper> */}
+          <PostContentWrapper>
+            <div className={styles['content-container']}>{content}</div>
+          </PostContentWrapper>
         </article>
         <aside className={styles['more-posts-container']}>
           <PostListTitle

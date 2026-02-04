@@ -25,7 +25,7 @@ export default function ScrollToTopButton({
   }, [])
 
   return (
-    <div
+    <aside
       className={classNames(
         styles.container,
         isBorderVisible && styles['border-visible'],
@@ -63,6 +63,6 @@ export default function ScrollToTopButton({
           </svg>
         </button>
       </a>
-    </div>
+    </aside>
   )
 }

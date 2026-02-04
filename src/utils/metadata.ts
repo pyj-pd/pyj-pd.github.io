@@ -28,7 +28,10 @@ export const getCanonicalMetadataFromPath = (
   }
 }
 
-export const getPageTitleName = (title?: string) => {
+export const getPageTitleName = (title?: string, reverse: boolean = false) => {
   if (title === undefined) return SITE_NAME
-  else return `${SITE_NAME}${TITLE_SEPARATOR_DASH}${title}`
+  else {
+    if (reverse) return `${SITE_NAME}${TITLE_SEPARATOR_DASH}${title}`
+    else return `${title}${TITLE_SEPARATOR_DASH}${SITE_NAME}`
+  }
 }

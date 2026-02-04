@@ -14,7 +14,7 @@ import { getPageTitleName } from '@/utils/metadata'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
-  title: getPageTitleName(HOMEPAGE_TITLE_DESCRIPTION),
+  title: getPageTitleName(HOMEPAGE_TITLE_DESCRIPTION, true),
   description: HOMEPAGE_DESCRIPTION,
 }
 

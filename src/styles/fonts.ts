@@ -1,4 +1,5 @@
-import { PT_Mono, Asta_Sans } from 'next/font/google'
+import { PT_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 
 export const monospaceFont = PT_Mono({
   subsets: ['latin'],
@@ -6,8 +7,7 @@ export const monospaceFont = PT_Mono({
   variable: '--f-mono',
 })
 
-export const sansSerifFont = Asta_Sans({
-  weight: 'variable',
-  subsets: ['latin'],
+export const sansSerifFont = localFont({
+  src: '../../public/assets/fonts/AstaSans-VariableFont_wght.woff2',
   variable: '--f-sans-serif',
 })

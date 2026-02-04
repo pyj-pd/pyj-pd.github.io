@@ -2,7 +2,7 @@
 @use '@/styles/palette' as palette;
 @use '@/styles/mixin' as mixin;
 
-$footer-gap: value.$large-margin * 3;
+$footer-gap: value.$large-margin * 5;
 
 .container {
   display: flex;

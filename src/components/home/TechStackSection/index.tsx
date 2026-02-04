@@ -9,7 +9,7 @@ import NormalLink from '@/components/common/NormalLink'
 export default function TechStackSection() {
   return (
     <section className={styles.container}>
-      <PageTitle headingType="h2">사용 기술</PageTitle>
+      <PageTitle headingType="h2">사용하는 기술 스택</PageTitle>
       <ul className={styles['list-container']}>
         {techStackList.map((category, categoryIndex) => (
           <li key={categoryIndex}>

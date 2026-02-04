@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/constants/info'
+
 export const joinUrlPaths = (...paths: string[]): string => {
   const joined = []
 
@@ -25,3 +27,8 @@ export const joinUrlPaths = (...paths: string[]): string => {
 export const addTrailingSlash = (url: string): string => {
   return url.endsWith('/') ? url : url + '/'
 }
+
+const INTERNAL_LINK_PREFIX = [SITE_URL, '/', '#']
+
+export const checkIfInternalLink = (url: string): boolean =>
+  INTERNAL_LINK_PREFIX.some((prefix) => url.startsWith(prefix))

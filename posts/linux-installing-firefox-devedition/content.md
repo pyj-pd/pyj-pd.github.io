@@ -3,20 +3,39 @@ title: 'Linux에서 Firefox Developer Edition 설치하기'
 description: 'Firefox Developer Edition을 설치하는 두 가지 방법, apt를 통해 설치하는 방법과 압축 파일 자체로 설치하는 방법을 알아봅니다.'
 
 date: '2024-08-15'
+lastUpdateDate: '2026-02-26'
 categories: ['computer']
 ---
 
-Windows 환경에서 프로그램을 설치하기란 간단하다. `.msi`나 `.exe`로 끝나는 파일을 실행하여 설치기가 하라는 대로만 따르면 설치가 완료된다.
-
-하지만 Linux 환경에서는 다르다. 간단한 프로그램조차 터미널에서 명령어를 통해야 하는 경우가 많다. 이 글에서는 Firefox Developer Edition을 압축 파일을 이용해 직접 설치하는 방법을 소개해 보려고 한다.
+이 글에서는 Firefox Developer Edition을 압축 파일을 이용해 직접 설치하는 방법을 소개해 보려고 한다.
 
 ## Debian과 그 파생 배포판(Ubuntu 등) 환경에서 apt 이용하기
 
 [Mozilla 공식 문서](https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions)에 쓰여진 절차들을 **6번을 제외하고** 모두 따른다(해당 명령어들을 실행시킨다).
 
-<Image src="ubuntu firefox.png" width="1336" height="1187" alt="Mozilla 공식 문서에 쓰여있는 절차" />
+```bash
+sudo install -d -m 0755 /etc/apt/keyrings
 
-그 후 다음 명령어를 실행시켜 Firefox Developer Edition(패키지명: `firefox-devedition`을 설치한다.
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+
+gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); if($0 == "35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3") print "\nThe key fingerprint matches ("$0").\n"; else print "\nVerification failed: the fingerprint ("$0") does not match the expected one.\n"}'
+
+cat <<EOF | sudo tee /etc/apt/sources.list.d/mozilla.sources
+Types: deb
+URIs: https://packages.mozilla.org/apt
+Suites: mozilla
+Components: main
+Signed-By: /etc/apt/keyrings/packages.mozilla.org.asc
+EOF
+
+echo '
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+' | sudo tee /etc/apt/preferences.d/mozilla
+```
+
+그 후 다음 명령어를 실행시켜 Firefox Developer Edition(패키지명: `firefox-devedition`)을 설치한다.
 
 ```bash
 sudo apt update
@@ -27,7 +46,7 @@ sudo apt install firefox-devedition
 
 [Firefox Developer Edition 페이지](https://www.mozilla.org/en-US/firefox/developer/)에서 압축 파일을 내려받는다. "Download for Linux" 버튼을 자신의 환경(64비트 또는 32비트)에 따라 클릭하면 된다. 버전은 시간에 따라 다를 수 있다.
 
-<Image src="firefox archive.png" width="1943" height="1023" alt="압축 파일을 내려받은 모습" />
+<Image src="download-firefox.webp" width="1754" height="999" alt="다운로드 버튼 스크린샷" />
 
 ---
 
@@ -57,7 +76,8 @@ sudo mv ./firefox-버전 /opt/firefox-aurora
 
 위 명령어를 실행할 때도 마찬가지로 `firefox-`를 친 뒤 'Tab' 키를 눌러 폴더 이름을 자동 완성할 수 있다.
 
-참고로, `firefox-aurora`는 Firefox의 예전 베타 채널 중 하나였던 것으로 현재는 Developer Edition이 이를 사용한다. 폴더명 자체는 바꾸어도 되지만 이 글에서는 해당 폴더명으로 진행하겠다. 폴더명을 바꾸고 싶다면 다음에 서술할 Desktop entry 파일의 내용 또한 바꾸어줘야 한다.
+참고로, `firefox-aurora`는 Firefox의 예전 베타 채널 중 하나였던 것으로 현재는 Developer Edition이 이를 사용한다. 폴더명 자체는 바꾸어도 되지만, 이 글에서는 해당 폴더명으로 진행하겠다.
+폴더명을 바꾸고 싶다면 다음에 서술할 Desktop entry 파일의 내용 또한 바꾸어줘야 한다.
 
 ---
 
@@ -66,7 +86,7 @@ sudo mv ./firefox-버전 /opt/firefox-aurora
 다음 명령어를 이용해 새로운 Desktop entry 파일을 생성할 것이다.
 
 ```bash
-mkdir ~/.local/share/applications # 선택 사항. 새로 설치한 경우 먼저 실행하여 본다.
+mkdir ~/.local/share/applications
 sudo nano ~/.local/share/applications/firefox-aurora.desktop
 ```
 

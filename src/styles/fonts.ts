@@ -10,4 +10,5 @@ export const monospaceFont = PT_Mono({
 export const sansSerifFont = localFont({
   src: '../../public/assets/fonts/AstaSans-VariableFont_wght.woff2',
   variable: '--f-sans-serif',
+  weight: '100 900',
 })
